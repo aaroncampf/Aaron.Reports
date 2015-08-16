@@ -9,11 +9,6 @@ Public NotInheritable Class ReportToPDF
     End Sub
 
 
-
-
-
-
-
     ''' <summary>
     ''' 
     ''' </summary>
@@ -65,9 +60,4 @@ Public NotInheritable Class ReportToPDF
         oImage.ScaleAbsolute(iWidthGoal, iHeightGoal)
         oPdfWriter.DirectContent.AddImage(oImage)
     End Sub
-
-
-
-
-
 End Class

@@ -62,7 +62,7 @@ Public Class Chart
         MyClone.Height = Me.Height
         MyClone.TableName = Me.TableName
 
-		Return MyClone
+        Return MyClone
     End Function
 
 
@@ -92,20 +92,20 @@ Public Class Chart
     '***********************************************************************************************************************************************
 
 
-	Public Property ChartType() As Visifire.Charts.RenderAs
-		Get
-			Return MyBase._renderAs
-		End Get
-		Set(value As Visifire.Charts.RenderAs)
-			MyBase._renderAs = value
-		End Set
-	End Property
+    Public Property ChartType() As Visifire.Charts.RenderAs
+        Get
+            Return MyBase._renderAs
+        End Get
+        Set(value As Visifire.Charts.RenderAs)
+            MyBase._renderAs = value
+        End Set
+    End Property
 
     '<DebuggerNonUserCode()>
     Sub New()
         If Me.Height < 1 Then Me.Height = 150
-		If Me.Width < 1 Then Me.Width = 300
-	End Sub
+        If Me.Width < 1 Then Me.Width = 300
+    End Sub
 
     ''' <summary>
     ''' 
@@ -113,72 +113,34 @@ Public Class Chart
     ''' <param name="ChartType"></param>
     ''' <remarks></remarks>
     ''' <stepthrough>Enabled</stepthrough>
-	<DebuggerNonUserCode()>
-	Sub New(TableName As String, Columns As String, ChartType As Visifire.Charts.RenderAs)
-		Me.New(Nothing, TableName, Columns, ChartType)
-		'Me.TableName = TableName
-		'Me.TableColumns = Columns
-		'Me.ChartType = ChartType
-		'Me.Height = 150
-		'Me.Width = 300
-	End Sub
+    <DebuggerNonUserCode()>
+    Sub New(TableName As String, Columns As String, ChartType As Visifire.Charts.RenderAs)
+        Me.New(Nothing, TableName, Columns, ChartType)
+        'Me.TableName = TableName
+        'Me.TableColumns = Columns
+        'Me.ChartType = ChartType
+        'Me.Height = 150
+        'Me.Width = 300
+    End Sub
 
-	''' <summary>
-	''' 
-	''' </summary>
-	''' <param name="ChartType"></param>
-	''' <remarks></remarks>
-	''' <stepthrough>Enabled</stepthrough>
-	<DebuggerNonUserCode()>
-	Sub New(Title As String, TableName As String, Columns As String, ChartType As Visifire.Charts.RenderAs)
-		Me.Title = Title
-		Me.TableName = TableName
-		Me.TableColumns = Columns
-		Me.ChartType = ChartType
-		Me.Height = 150
-		Me.Width = 300
-	End Sub
-
-
-
-    'Protected Overrides Sub PrepareChart()
-    '    MyBase.PrepareChart()
-
-
-
-    '    'MyBase._chart.Series(0).DataPoints.Add(New Visifire.Charts.DataPoint With {.AxisXLabel = "Aaron", .YValue = 5})
-
-    '    'MyBase._chart = New Visifire.Charts.Chart With {.Height = 150, .Width = 300}
-
-    'End Sub
-
-    'Public Overrides Sub UpdateChart()
-    '    MyBase.UpdateChart()
-
-    '    'MyBase._chart = New Visifire.Charts.Chart With {.Height = 150, .Width = 300}
-
-    '    'MyBase._chart.Series.Add(New Visifire.Charts.DataSeries With {.RenderAs = Visifire.Charts.RenderAs.Column})
-    '    'MyBase._chart.Series(0).DataPoints.Add(New Visifire.Charts.DataPoint With {.AxisXLabel = "Aaron", .YValue = 5})
-
-
-
-
-
-    '    'Dim Title1 As New Visifire.Charts.Title
-    '    'Title1.Text = "Hello Title1"
-
-    '    'MyBase._chart.Titles.Add(Title1)
-    'End Sub
-
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="ChartType"></param>
+    ''' <remarks></remarks>
+    ''' <stepthrough>Enabled</stepthrough>
+    <DebuggerNonUserCode()>
+    Sub New(Title As String, TableName As String, Columns As String, ChartType As Visifire.Charts.RenderAs)
+        Me.Title = Title
+        Me.TableName = TableName
+        Me.TableColumns = Columns
+        Me.ChartType = ChartType
+        Me.Height = 150
+        Me.Width = 300
+    End Sub
 
     Public Function ToXML() As XElement
         Dim Node = Extensions.ToXML(Me)
-
-
         Return Node
     End Function
-
-
-
-
 End Class
