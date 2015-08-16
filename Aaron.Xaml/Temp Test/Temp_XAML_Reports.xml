@@ -1,0 +1,771 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Temp_XAML_Reports
+</name>
+</assembly>
+<members>
+<member name="M:ConsoleApplication1.XamlHelper1.LoadXamlFromString(System.String)">
+	<summary>
+ Loads a XAML object from string
+ </summary>
+	<param name="s">string containing the XAML object</param>
+	<returns>XAML object or null, if string was empty</returns>
+</member><member name="M:ConsoleApplication1.XamlHelper1.CloneTableRow(System.Windows.Documents.TableRow)">
+	<summary>
+ Clones a table row
+ </summary>
+	<param name="orig">original table row</param>
+	<returns>cloned table row</returns>
+</member><member name="M:ConsoleApplication1.XamlHelper1.CloneBlock(System.Windows.Documents.Block)">
+	<summary>
+ Clones a complete block
+ </summary>
+	<param name="orig">orininal block</param>
+	<returns>cloned block</returns>
+</member><member name="M:ConsoleApplication1.XamlHelper1.CloneUIElement(System.Windows.UIElement)">
+	<summary>
+ Clones a complete UIElement
+ </summary>
+	<param name="orig">original UIElement</param>
+	<returns>cloned UIElement</returns>
+</member><member name="M:ConsoleApplication1.XamlHelper1.SaveImageBmp(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+	<summary>
+ Saves a visual to bitmap into stream
+ </summary>
+	<param name="visual">visual</param>
+	<param name="stream">stream</param>
+	<param name="width">width</param>
+	<param name="height">height</param>
+	<param name="dpiX">X DPI resolution</param>
+	<param name="dpiY">Y DPI resolution</param>
+</member><member name="M:ConsoleApplication1.XamlHelper1.SaveImagePng(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+	<summary>
+ Saves a visual to PNG into stream
+ </summary>
+	<param name="visual">visual</param>
+	<param name="stream">stream</param>
+	<param name="width">width</param>
+	<param name="height">height</param>
+	<param name="dpiX">X DPI resolution</param>
+	<param name="dpiY">Y DPI resolution</param>
+</member><member name="T:ConsoleApplication1.XamlHelper1">
+	<summary>
+ Helper class for XAML
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportContextValueType1.PageNumber">
+	<summary>
+ Current page number
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportContextValueType1.PageCount">
+	<summary>
+ Total page count
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportContextValueType1.ReportName">
+	<summary>
+ Report name
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportContextValueType1.ReportTitle">
+	<summary>
+ Report title
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ReportContextValueType1">
+	<summary>
+ Enumeration of all available context value types
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.SectionReportHeader1.PageHeaderHeight">
+	<summary>
+ Gets or sets the page header height in percent
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.SectionReportHeader1">
+	<summary>
+ Section representing the report header
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.SectionReportFooter1.PageFooterHeight">
+	<summary>
+ Gets or sets the page footer height in percent
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.SectionReportFooter1">
+	<summary>
+ Section representing the report footer
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.ReportProperties1.ReportName">
+	<summary>
+ Gets or sets the report name
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.ReportProperties1.ReportTitle">
+	<summary>
+ Gets or sets the report title
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ReportProperties1">
+	<summary>
+ Specifies properties for report
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IInlineContextValue1">
+	<summary>
+ Interface for inline context values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IPropertyValue1.PropertyName">
+	<summary>
+ Gets or sets the property name
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IPropertyValue1">
+	<summary>
+ Interface for property values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IAggregateValue1.AggregateGroup">
+	<summary>
+ Gets or sets the aggregate group
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IAggregateValue1">
+	<summary>
+ Interface for values to be used as aggregate values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IHasValue1.Format">
+	<summary>
+ Gets or sets the value format
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IHasValue1.Value">
+	<summary>
+ Gets or sets the object value
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IHasValue1">
+	<summary>
+ Interface for values
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IInlineDocumentValue1">
+	<summary>
+ Interface for inline property values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IChart1.TableColumns">
+	<summary>
+ Gets or sets the table columns which are used to draw the chart
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IChart1.TableName">
+	<summary>
+ Gets or sets the table name containing the data to be drawn
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IChart1.DataColumns">
+	<summary>
+ Gets or sets the data columns which are used to draw the chart
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.IChart1.DataView">
+	<summary>
+ Data view to be used to draw the data
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Misc.IChart1.UpdateChart">
+	<summary>
+ Updates the chart to use the chart data
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IChart1">
+	<summary>
+ Interface for a chart object
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.IInlinePropertyValue1">
+	<summary>
+ Interface for inline property values
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ITableCellValue1">
+	<summary>
+ Interface for table cell values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.ITableRowForDataTable1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ITableRowForDataTable1">
+	<summary>
+ Interface for special table rows
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.ITableRowForDynamicDataTable1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ITableRowForDynamicDataTable1">
+	<summary>
+ Interface for special table rows
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.ITableRowForDynamicHeader1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ITableRowForDynamicHeader1">
+	<summary>
+ Interface for special table rows
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineAggregateValue1.AggregateGroup">
+	<summary>
+ Gets or sets the aggregate group
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineAggregateValue1.AggregateValueType">
+	<summary>
+ Gets or sets the report value aggregate type
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineAggregateValue1.EmptyValue">
+	<summary>
+ Gets or sets the value which is shown if the computation has no result
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineAggregateValue1.ErrorValue">
+	<summary>
+ Gets or sets the value which is shown if the computation fails
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Misc.InlineAggregateValue1.ComputeAndFormat(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}})">
+	<summary>
+ Computes an aggregate value and formats it
+ </summary>
+	<param name="values">list of values</param>
+	<returns>calculated and formatted value</returns>
+	<exception cref="T:System.NotSupportedException">The aggregate value type {0} is not supported yet!</exception>
+</member><member name="T:ConsoleApplication1.Mod_Misc.InlineAggregateValue1">
+	<summary>
+ Computes a single aggregate report value that is to be displayed on the report (e.g. report title)
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1.Average">
+	<summary>
+ Computes the average value
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1.Count">
+	<summary>
+ Gets the values count
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1.Maximum">
+	<summary>
+ Determines the maximum value
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1.Minimum">
+	<summary>
+ Determines the minimum value
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1.Sum">
+	<summary>
+ Computes the sum over all values
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.ReportAggregateValueType1">
+	<summary>
+ Enumeration of available aggregate types
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineHasValue1.Format">
+	<summary>
+ Gets or sets the value format
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineHasValue1.Value">
+	<summary>
+ Gets or sets the object value
+ </summary>
+</member><member name="F:ConsoleApplication1.Mod_Misc.InlineHasValue1.ValueChangedEvent">
+	<summary>
+ Identifies the ValueChanged routed event.
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Misc.InlineHasValue1.OnValueChanged(System.Windows.RoutedPropertyChangedEventArgs{System.Decimal})">
+	<summary>
+ Raises the ValueChanged event.
+ </summary>
+	<param name="args">Arguments associated with the ValueChanged event.</param>
+</member><member name="M:ConsoleApplication1.Mod_Misc.InlineHasValue1.FormatValue(System.Object,System.String)">
+	<summary>
+ Formats a value for output
+ </summary>
+	<param name="value">value</param>
+	<param name="format">format</param>
+	<returns></returns>
+</member><member name="T:ConsoleApplication1.Mod_Misc.InlineHasValue1">
+	<summary>
+ Abstract class for fillable run values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.TableRowForDataTable1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Misc.TableRowForDataTable1.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.TableRowForDataTable1">
+	<summary>
+ Class for fillable table row values
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlineContextValue.AggregateGroup">
+	<summary>
+ Gets or sets the aggregate group
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.InlineContextValue">
+	<summary>
+ Contains a single report context value that is to be displayed on the report
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Misc.InlinePropertyValue.PropertyName">
+	<summary>
+ Gets or sets the property name
+ </summary>
+</member><member name="T:ConsoleApplication1.Mod_Misc.InlinePropertyValue">
+	<summary>
+ Abstract class for fillable run values
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportPaginatorDynamicCache1.FlowDocument">
+	<summary>
+ Gets the associacted flow document
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportPaginatorDynamicCache1.#ctor(System.Windows.Documents.FlowDocument)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="flowDocument">flow document</param>
+</member><member name="M:ConsoleApplication1.ReportPaginatorDynamicCache1.BuildCache">
+	<summary>
+ Build cache
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportPaginatorDynamicCache1.GetFlowDocumentVisualListByType(System.Type)">
+	<summary>
+ Gets an ArrayList of all document visual object of a specific type
+ </summary>
+	<param name="type">type of document visual object</param>
+	<returns>empty ArrayList, if type does not exist</returns>
+</member><member name="M:ConsoleApplication1.ReportPaginatorDynamicCache1.GetFlowDocumentVisualListByInterface(System.Type)">
+	<summary>
+ Gets an ArrayList of all document visual object of a specific interface
+ </summary>
+	<param name="type">type of document visual object</param>
+	<returns>empty ArrayList, if type does not exist</returns>
+	<exception cref="T:System.ArgumentException">Specified type must be an interface</exception>
+</member><member name="T:ConsoleApplication1.ReportPaginatorDynamicCache1">
+	<summary>
+ Dynamic cache class for report paginator
+ </summary>
+</member><member name="M:ConsoleApplication1.MultipleReportPaginator1.#ctor(ConsoleApplication1.ReportDocument1,System.Collections.Generic.IEnumerable{ConsoleApplication1.ReportData1})">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">report document</param>
+	<param name="data">multiple report data</param>
+	<exception cref="T:System.ArgumentException">Need at least two ReportData objects</exception>
+</member><member name="M:ConsoleApplication1.MultipleReportPaginator1.GetPage(System.Int32)">
+	<summary>
+ Gets a document page of the appropriate generated report
+ </summary>
+	<param name="pageNumber">page number</param>
+	<returns>parsed DocumentPage</returns>
+</member><member name="P:ConsoleApplication1.MultipleReportPaginator1.IsPageCountValid">
+	<summary>
+ Determines if the current page count is valid
+ </summary>
+</member><member name="P:ConsoleApplication1.MultipleReportPaginator1.PageCount">
+	<summary>
+ Gets the total page count
+ </summary>
+</member><member name="P:ConsoleApplication1.MultipleReportPaginator1.PageSize">
+	<summary>
+ Gets or sets the page size
+ </summary>
+</member><member name="P:ConsoleApplication1.MultipleReportPaginator1.Source">
+	<summary>
+ We don't have only one paginator source
+ </summary>
+</member><member name="T:ConsoleApplication1.MultipleReportPaginator1">
+	<summary>
+ Paginator to concat multiple reports
+ </summary>
+</member><member name="P:ConsoleApplication1.DataRowBoundEventArgs1.DataRow">
+	<summary>
+ Gets the DataRow object being processed
+ </summary>
+</member><member name="P:ConsoleApplication1.DataRowBoundEventArgs1.ReportDocument">
+	<summary>
+ Gets the associated ReportDocument
+ </summary>
+</member><member name="P:ConsoleApplication1.DataRowBoundEventArgs1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="P:ConsoleApplication1.DataRowBoundEventArgs1.TableRow">
+	<summary>
+ Gets or sets the newly created table row
+ </summary>
+</member><member name="M:ConsoleApplication1.DataRowBoundEventArgs1.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:ConsoleApplication1.DataRowBoundEventArgs1.#ctor(ConsoleApplication1.ReportDocument1)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">associated report document</param>
+</member><member name="M:ConsoleApplication1.DataRowBoundEventArgs1.#ctor(ConsoleApplication1.ReportDocument1,System.Data.DataRow)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">associated report document</param>
+	<param name="row">DataRow object being processed</param>
+</member><member name="T:ConsoleApplication1.DataRowBoundEventArgs1">
+	<summary>
+ Special event args for data row bound event
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.DataRow">
+	<summary>
+ Gets the DataRow object being processed
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.ReportDocument">
+	<summary>
+ Gets the associated ReportDocument
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.TableName">
+	<summary>
+ Gets or sets the table name
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.TableRow">
+	<summary>
+ Gets or sets the newly created table row
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.#ctor(ConsoleApplication1.ReportDocument1)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">associated report document</param>
+</member><member name="M:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1.#ctor(ConsoleApplication1.ReportDocument1,System.Data.DataRow)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">associated report document</param>
+	<param name="row">DataRow object being processed</param>
+</member><member name="T:ConsoleApplication1.Mod_Errors.DataRowBoundEventArgs1">
+	<summary>
+ Special event args for data row bound event
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.Exception">
+	<summary>
+ Gets the exception
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.Handled">
+	<summary>
+ Gets or sets the handled state. If handled is true the current image processing exception is 
+ suppressed and report generation will continue.
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.Image">
+	<summary>
+ Gets the Image object being processed
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.ReportDocument">
+	<summary>
+ Gets the associated ReportDocument
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.#ctor(System.Exception)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="exception">exception</param>
+</member><member name="M:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1.#ctor(System.Exception,ConsoleApplication1.ReportDocument1)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="exception">exception</param>
+	<param name="report">associated report document</param>
+</member><member name="T:ConsoleApplication1.Mod_Errors.ImageErrorEventArgs1">
+	<summary>
+ Special event args for image errors
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageEventArgs1.Image">
+	<summary>
+ Gets the Image object being processed
+ </summary>
+</member><member name="P:ConsoleApplication1.Mod_Errors.ImageEventArgs1.ReportDocument">
+	<summary>
+ Gets the associated ReportDocument
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.ImageEventArgs1.#ctor">
+	<summary>
+ Constructor
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Errors.ImageEventArgs1.#ctor(ConsoleApplication1.ReportDocument1)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">associated report document</param>
+</member><member name="T:ConsoleApplication1.Mod_Errors.ImageEventArgs1">
+	<summary>
+ Special event args for image processing events
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportData1.ReportDocumentValues">
+	<summary>
+ Gets a list of document values
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportData1.DataTables">
+	<summary>
+ Gets a list of data tables
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportData1.ShowUnknownValues">
+	<summary>
+ Shows all unknown values on the page
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportData1.GetDataTableByName(System.String)">
+	<summary>
+ Gets a data table by table name
+ </summary>
+	<param name="tableName">table name (case insensitive)</param>
+	<returns>null, if DataTable not found</returns>
+</member><member name="M:ConsoleApplication1.ReportData1.SetDataRowValuesToDocumentValues(System.Data.DataRow,System.String)">
+	<summary>
+ Sets all DataRow values to document values
+ </summary>
+	<param name="dataRow">data row containing the document values</param>
+	<param name="prefix">add prefix to name</param>
+</member><member name="M:ConsoleApplication1.ReportData1.SetDataRowValuesToDocumentValues(System.Data.DataRow)">
+	<summary>
+ Sets all DataRow values to document values
+ </summary>
+	<param name="dataRow">data row containing the document values</param>
+</member><member name="M:ConsoleApplication1.ReportData1.SetDataRowValuesToDocumentValues(System.Data.DataRowView,System.String)">
+	<summary>
+ Sets all DataRow values to document values
+ </summary>
+	<param name="dataRowView">data row containing the document values</param>
+	<param name="prefix">add prefix to name</param>
+</member><member name="M:ConsoleApplication1.ReportData1.SetDataRowValuesToDocumentValues(System.Data.DataRowView)">
+	<summary>
+ Sets all DataRow values to document values
+ </summary>
+	<param name="dataRowView">data row containing the document values</param>
+</member><member name="T:ConsoleApplication1.ReportData1">
+	<summary>
+ Contains all report data
+ </summary>
+</member><member name="T:ConsoleApplication1.DocumentVisitedEventHandler">
+	<summary>
+ THe delegate type of the event that will be raised
+ </summary>
+</member><member name="P:ConsoleApplication1.DocumentWalker1.Tag">
+	<summary>
+ Gets or sets the tag associated to this walker
+ </summary>
+</member><member name="E:ConsoleApplication1.DocumentWalker1.VisualVisited">
+	<summary>
+ This is the event to hook on.
+ </summary>
+</member><member name="M:ConsoleApplication1.DocumentWalker1.Walk(System.Windows.Documents.FlowDocument)">
+	<summary>
+ Traverses whole document
+ </summary>
+	<param name="fd">FlowDocument</param>
+	<returns>list of inlines</returns>
+</member><member name="M:ConsoleApplication1.DocumentWalker1.Walk``1(System.Windows.Documents.FlowDocument)">
+	<summary>
+ Traverses whole document
+ </summary>
+	<param name="fd">FlowDocument</param>
+	<returns>list of inlines</returns>
+</member><member name="M:ConsoleApplication1.DocumentWalker1.TraverseInlines``1(System.Windows.Documents.InlineCollection)">
+	<summary>
+ Traverses an InlineCollection
+ </summary>
+	<param name="inlines">InlineCollection to be traversed</param>
+	<returns>list of inlines</returns>
+</member><member name="M:ConsoleApplication1.DocumentWalker1.TraverseParagraph``1(System.Windows.Documents.Paragraph)">
+	<summary>
+ Traverses only passed paragraph
+ </summary>
+	<param name="p">paragraph</param>
+	<returns>list of inlines</returns>
+</member><member name="M:ConsoleApplication1.DocumentWalker1.TraverseBlockCollection``1(System.Collections.Generic.IEnumerable{System.Windows.Documents.Block})">
+	<summary>
+ Traverses passed block collection
+ </summary>
+	<param name="blocks">blocks to be traversed</param>
+	<returns>list of inlines</returns>
+</member><member name="T:ConsoleApplication1.DocumentWalker1">
+	<summary>
+ The Document walker class enables a traversal of the flow document tree and raises an event for each node 
+ in the document tree. I used it to find all instances of a FormattedRun control in the flowdocument defintion. 
+ It is pretty straightforward, so I will just show the code itself. 
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportPaginatorStaticCache1.#cctor">
+	<summary>
+ Static constructor
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportPaginatorStaticCache1.GetReportContextValueTypeByName(System.String)">
+	<summary>
+ Gets a report context value type by name
+ </summary>
+	<param name="name">name of report context value</param>
+	<returns>null, if it does not exist</returns>
+</member><member name="P:ConsoleApplication1.ReportDocument1.PageHeaderHeight">
+	<summary>
+ Gets or sets the page header height
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.PageFooterHeight">
+	<summary>
+ Gets or sets the page footer height
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.PageHeight">
+	<summary>
+ Gets the original page height of the FlowDocument
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.PageWidth">
+	<summary>
+ Gets the original page width of the FlowDocument
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.ReportName">
+	<summary>
+ Gets or sets the optional report name
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.ReportTitle">
+	<summary>
+ Gets or sets the optional report title
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.XamlImagePath">
+	<summary>
+ XAML image path
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.XamlData">
+	<summary>
+ XAML report data
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportDocument1.XpsCompressionOption">
+	<summary>
+ Gets or sets the compression option which is used to create XPS files
+ </summary>
+	<seealso cref="!:CreateXpsDocument(ReportData data, string fileName)"/>
+</member><member name="E:ConsoleApplication1.ReportDocument1.DataRowBound">
+	<summary>
+ Event occurs after a data row is bound
+ </summary>
+</member><member name="E:ConsoleApplication1.ReportDocument1.GetPageCompleted">
+	<summary>
+ Event occurs after a page has been completed
+ </summary>
+</member><member name="E:ConsoleApplication1.ReportDocument1.ImageError">
+	<summary>
+ Event occurs if an exception has encountered while loading the BitmapSource
+ </summary>
+</member><member name="E:ConsoleApplication1.ReportDocument1.ImageProcessing">
+	<summary>
+ Event occurs before an image is being processed
+ </summary>
+</member><member name="E:ConsoleApplication1.ReportDocument1.ImageProcessed">
+	<summary>
+ Event occurs after an image has being processed
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportDocument1.FireEventGetPageCompleted(System.Windows.Documents.GetPageCompletedEventArgs)">
+	<summary>
+ Fire event after a page has been completed
+ </summary>
+	<param name="ea">GetPageCompletedEventArgs</param>
+</member><member name="M:ConsoleApplication1.ReportDocument1.FireEventDataRowBoundEventArgs(ConsoleApplication1.DataRowBoundEventArgs1)">
+	<summary>
+ Fire event after a data row has been bound
+ </summary>
+	<param name="ea">DataRowBoundEventArgs</param>
+</member><member name="M:ConsoleApplication1.ReportDocument1.CreateFlowDocument">
+	<summary>
+ Creates a flow document of the report data
+ </summary>
+	<returns></returns>
+	<exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
+	<exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
+	<exception cref="T:System.ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
+</member><member name="M:ConsoleApplication1.ReportDocument1.CreateXpsDocument(ConsoleApplication1.ReportData1)">
+	<summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+	<param name="data">report data</param>
+	<returns></returns>
+</member><member name="M:ConsoleApplication1.ReportDocument1.CreateXpsDocument(System.Collections.Generic.IEnumerable{ConsoleApplication1.ReportData1})">
+	<summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+	<param name="data">enumerable report data</param>
+	<returns></returns>
+	<exception cref="T:System.ArgumentNullException">data</exception>
+</member><member name="M:ConsoleApplication1.ReportDocument1.CreateXpsDocument(ConsoleApplication1.ReportData1,System.String)">
+	<summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+	<param name="data">report data</param>
+	<param name="fileName">file to save XPS to</param>
+	<returns></returns>
+</member><member name="M:ConsoleApplication1.ReportDocument1.CreateXpsDocument(System.Collections.Generic.IEnumerable{ConsoleApplication1.ReportData1},System.String)">
+	<summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+	<param name="data">enumerable report data</param>
+	<param name="fileName">file to save XPS to</param>
+	<returns></returns>
+</member><member name="T:ConsoleApplication1.ReportDocument1">
+	<summary>
+ Contains a complete report template without data
+ </summary>
+</member><member name="M:ConsoleApplication1.Mod_Helpers.AddFontResourceToFixedPage(System.Windows.Xps.Packaging.IXpsFixedPageWriter,System.String)">
+	<summary>
+ Add the Font Resource to the Fixed Page
+ </summary>
+	<param name="pageWriter">The IXpsFixedPageWriter object to 'add' the Font Resource too</param>
+	<param name="fontFileName">Full path the font resource being used</param>
+	<returns>The fonrURI (as a string) of the Font resource</returns>
+</member><member name="F:ConsoleApplication1.ReportPaginator1._paginator">
+	<summary>
+ Reference to a original flowdoc paginator
+ </summary>
+</member><member name="M:ConsoleApplication1.ReportPaginator1.#ctor(ConsoleApplication1.ReportDocument1,ConsoleApplication1.ReportData1)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="report">report document</param>
+	<param name="data">report data</param>
+	<exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
+	<exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
+	<exception cref="T:System.ArgumentException">Flow document can have only one report header section</exception>
+	<exception cref="T:System.ArgumentException">Flow document can have only one report footer section</exception>
+</member><member name="M:ConsoleApplication1.ReportPaginator1.FillCharts(System.Collections.ArrayList)">
+	<summary>
+ Fill charts with data
+ </summary>
+	<param name="charts">list of charts</param>
+	<exception cref="T:System.TimeoutException">Thread for drawing charts timed out</exception>
+</member><member name="M:ConsoleApplication1.ReportPaginator1.FillData">
+	<summary>
+ Fills document with data
+ </summary>
+	<exception cref="T:System.IO.InvalidDataException">ReportTableRow must have a TableRowGroup as parent</exception>
+</member><member name="M:ConsoleApplication1.ReportPaginator1.GetPage(System.Int32)">
+	<summary>
+ This is most important method, modifies the original 
+ </summary>
+	<param name="pageNumber">page number</param>
+	<returns></returns>
+</member><member name="P:ConsoleApplication1.ReportPaginator1.IsPageCountValid">
+	<summary>
+ Determines if the current page count is valid
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportPaginator1.PageCount">
+	<summary>
+ Gets the total page count
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportPaginator1.PageSize">
+	<summary>
+ Gets or sets the page size
+ </summary>
+</member><member name="P:ConsoleApplication1.ReportPaginator1.Source">
+	<summary>
+ Gets the paginator source
+ </summary>
+</member><member name="P:ConsoleApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ConsoleApplication1.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ConsoleApplication1.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

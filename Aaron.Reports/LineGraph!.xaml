@@ -1,0 +1,44 @@
+﻿<FlowDocument  
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+PageWidth="600" MinPageWidth="600" PagePadding="0,0,0,0">
+	<Section>
+		<Paragraph>			
+			<Grid ShowGridLines="False" Background="#FFFFFFFF" Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="140"/>
+					<ColumnDefinition Width="460"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="20"/>
+				</Grid.RowDefinitions>
+				<Canvas Background="#FFFFFFFF" Name="Canvas0" Width="460" Height="40" Grid.Column="1" Grid.Row="1">
+					<Rectangle Fill="#FFD3D3D3" Width="140" Height="40" Canvas.Left="160" Canvas.Top="0"/>
+					<Rectangle Fill="#FFA9A9A9" Width="91" Height="40" Canvas.Left="188" Canvas.Top="0"/>
+					<Ellipse Fill="#FF3E00C1" Width="7" Height="7" Canvas.Left="282.978417266187" Canvas.Top="6.5"/>
+					<Ellipse Fill="#FF1D00E2" Width="7" Height="7" Canvas.Left="199.508" Canvas.Top="26.5"/>
+					<Line X1="286.478417266187" Y1="10" X2="203.008" Y2="30" StrokeThickness="2">
+						<Line.Stroke>
+							<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+								<LinearGradientBrush.GradientStops>
+									<GradientStop Color="#FF1D00E2" Offset="0"/>
+									<GradientStop Color="#FF3E00C1" Offset="1"/>
+								</LinearGradientBrush.GradientStops>
+							</LinearGradientBrush>
+						</Line.Stroke>
+					</Line>
+					<Line X1="286.478417266187" Y1="10" X2="300" Y2="40" StrokeThickness="2">
+						<Line.Stroke>
+							<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+								<LinearGradientBrush.GradientStops>
+									<GradientStop Color="#FF1D00E2" Offset="0"/>
+									<GradientStop Color="#FF3E00C1" Offset="1"/>
+								</LinearGradientBrush.GradientStops>
+							</LinearGradientBrush>
+						</Line.Stroke>
+					</Line>
+				</Canvas>
+			</Grid>
+		</Paragraph>
+	</Section>
+</FlowDocument>

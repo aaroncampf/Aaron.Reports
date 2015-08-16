@@ -1,0 +1,3 @@
+﻿<Paragraph>
+    <crcv:ColumnChart TableName="{0}" TableColumns="{1},{2}" Width="{3}cm" Height="{4}cm" View3D="{5}" Title="{6}"></crcv:ColumnChart>
+</Paragraph>

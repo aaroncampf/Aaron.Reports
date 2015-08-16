@@ -1,0 +1,582 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Aaron.Reports
+</name>
+</assembly>
+<members>
+<member name="T:Aaron.Reports.Google.ChartItem">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Google.ChartItem.#ctor(System.Double,System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <param name="Lable"></param>
+ <param name="Legend"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="T:Aaron.Reports.Google.Chart">
+ <summary>
+ Summary description for PieGraph
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Google.Chart.GraphTitle">
+ <summary>
+ Graph Title to be displayed above the Graph
+ </summary> 
+</member>
+<member name="P:Aaron.Reports.Google.Chart.GraphWidth">
+ <summary>
+ Graph Dimensions width (2:1 -|- width:height)
+ </summary> 
+</member>
+<member name="P:Aaron.Reports.Google.Chart.GraphHeight">
+ <summary>
+ Graph Dimensions Height (2:1 -|- width:height)
+ </summary> 
+</member>
+<member name="P:Aaron.Reports.Google.Chart.GraphTitleColor">
+ <summary>
+ Graph Title Color (Title Font Color eg:5533AA)
+ </summary> 
+</member>
+<member name="P:Aaron.Reports.Google.Chart.GraphTitleSize">
+ <summary>
+ Graph Title Size (Title Font Size in pixcels 1-20)
+ </summary>  
+</member>
+<member name="P:Aaron.Reports.Google.Chart.Data">
+ <summary>
+ DataSet for Drawing the Graph Column:2 for Labels and Column:3 for Column Data
+ </summary> 
+</member>
+<member name="M:Aaron.Reports.Google.Chart.GenerateGraph">
+ <summary>
+ Method which returns the Url be placed in the image src tag
+ </summary>
+ <returns>URL String </returns>
+</member>
+<member name="P:Aaron.Reports.Mod_Test.CustomReport.Details">
+ <summary>An Optional Paragraph Detailing the Report</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Left">
+ <summary>The Text for the Bottom Left of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Center">
+ <summary>The Text for the Bottom Center of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Right">
+ <summary>The Text for the Bottom Right of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Sections">
+ <summary>The Sections that make up the Report</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Title">
+ <summary>The Title of the Report</summary> 
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Details">
+ <summary>An Optional Paragraph Detailing the Report</summary> 
+</member>
+<member name="M:Aaron.Reports.Mod_Test.ReportDocument_Child.#ctor(System.String,System.String,System.Windows.TextAlignment)">
+ <summary>
+ 
+ </summary>  
+ <param name="Title">The Title of the Report</param>
+ <param name="Details">The Details of the Report</param>
+ <param name="Paragraph_Text_Alignment"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Mod_Test.ReportDocument_Child.#ctor(System.String,System.String,Aaron.Reports.Sections.Base[])">
+ <summary>
+ 
+ </summary>
+ <param name="Title">The Title of the Report</param>
+ <param name="Details">The Details of the Report</param>
+ <param name="Sections"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Resources">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <remarks>Already set with Default Resources</remarks>
+</member>
+<member name="T:Aaron.Reports.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ChartReport">
+<summary>
+  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
+              xmlns:crcv=&quot;clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire&quot;
+              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
+    &lt;xrd:ReportProperties&gt;
+        &lt;xrd:ReportProperties.ReportName&gt;Ch [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ChartTable">
+<summary>
+  Looks up a localized string similar to &lt;Paragraph&gt;
+    &lt;crcv:ColumnChart TableName=&quot;{0}&quot; TableColumns=&quot;{1},{2}&quot; Width=&quot;{3}cm&quot; Height=&quot;{4}cm&quot; View3D=&quot;{5}&quot; Title=&quot;{6}&quot;&gt;&lt;/crcv:ColumnChart&gt;
+&lt;/Paragraph&gt;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.MyText">
+<summary>
+  Looks up a localized string similar to &lt;xrd:SectionDataGroup DataGroupName=&quot;Group2&quot;&gt;
+    &lt;Paragraph FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; BorderThickness=&quot;2&quot;&gt;{1}&lt;/Paragraph&gt;
+    &lt;Table CellSpacing=&quot;0&quot; BorderBrush=&quot;Black&quot; BorderThickness=&quot;2&quot;&gt;
+        &lt;TableRowGroup Style=&quot;{StaticResource headerFooterRowStyle}&quot;&gt;
+            &lt;xrd:TableRowForDynamicHeader TableName=&quot;{2}&quot;/&gt;
+        &lt;/TableRowGroup&gt;
+
+        &lt;TableRowGroup Style=&quot;{StaticResource dataRowStyle}&quot;&gt;
+            &lt;xrd:TableRowForDynamicDataTable TableName=&quot;{0}&quot;/&gt;
+        &lt;/TableRowGroup&gt;
+ [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.Template1">
+<summary>
+  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
+              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
+
+    &lt;FlowDocument.Resources&gt;
+        &lt;!-- Style for header/footer rows. --&gt;
+        &lt;Style x:Key=&quot;headerFooterRowStyle&quot; TargetType=&quot;{x:Type TableRowGroup}&quot;&gt;
+            &lt;Setter Property=&quot; [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="T:Aaron.Reports.Sections">
+ <summary>
+
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough>Disabled</stepthrough>
+</member>
+<member name="T:Aaron.Reports.Sections.Base">
+ <summary>
+ The Base Section that all Sections Derive From
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.Base.Content">
+ <summary>
+ Gets the specialized content for this specific section type
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="P:Aaron.Reports.Sections.Base.Padding">
+ <summary>Update this so it Uses 4 Singles not 1 String</summary>
+</member>
+<member name="M:Aaron.Reports.Sections.Base.ToXML">
+ <summary>
+ Converts the Class into an <see cref="T:System.Xml.Linq.XElement">XElement</see>.
+ General Translation: XElement.Name To Me.Name; XElement.Attributes To Me.Properties(As Value); XElement.Elements To Me.Properties(As Collection)
+ </summary>
+ <returns>
+ </returns>
+ <stepthrough>Enabled</stepthrough>
+ <History>
+ Aaron: 6/8/2013 Removed xmlns:xrd="clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml" and xrd:
+ </History>
+</member>
+<member name="P:Aaron.Reports.Sections.Basic.Custom_XAML">
+ <summary>Represents the Custom Content for this Section. By Default this is not used</summary> 
+</member>
+<member name="P:Aaron.Reports.Sections.Pictures.Pictures">
+ <summary>
+ The Pictures that will be used ordered by there place in this list. 
+ Example: <example>[Image Height="100" Width="100" Source="C:\Test\Untitled.jpg"/]</example>
+ </summary>
+ <value></value>
+ <remarks></remarks>
+</member>
+<member name="T:Aaron.Reports.Sections.Table">
+ <summary>
+
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough></stepthrough>
+</member>
+<member name="P:Aaron.Reports.Sections.Table.Table">
+ <summary>The Column Header Row's values are Created from each TableColumn's Tag</summary>
+</member>
+<member name="M:Aaron.Reports.Sections.Table.#ctor(System.String,System.String,System.Double)">
+ <summary>
+
+ </summary>
+ <param name="Title">The Title of the Section</param>
+ <param name="Details">The Optional Details of the Section</param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.Table.#ctor(System.Windows.Documents.TableColumn[])">
+ <summary>
+
+ </summary>
+ <param name="Columns">The Column Header Row's values are Created from each TableColumn's Tag</param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.Table.#ctor(System.String,System.Windows.TextAlignment,System.String,System.String,System.Windows.Documents.TableColumn[])">
+ <summary>
+
+ </summary>
+ <param name="Columns">The Column Header Row's values are Created from each TableColumn's Tag</param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="P:Aaron.Reports.Sections.List.List">
+ <summary>A Bulleted List where the Text of Each Item is the ListItem's Tag</summary>
+</member>
+<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.String[])">
+ <summary>
+
+ </summary>
+ <param name="Title">The Title of the List. If Empty then Not Used</param>
+ <param name="ListItems"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.Windows.Documents.ListItem[])">
+ <summary>
+
+ </summary>
+ <param name="Title">The Title of the List. If Empty then Not Used</param>
+ <param name="ListItems"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="T:Aaron.Reports.Sections.ChartS">
+ <summary>
+ A Section Containing A Chart
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.ChartS.#ctor(System.String,System.String,Visifire.Charts.RenderAs,System.String,System.String)">
+ <summary>
+
+ </summary>
+ <param name="Title"></param>
+ <param name="Details"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="P:Aaron.Reports.Chart.DataView">
+ <summary>Data view to be used to draw the data</summary>
+</member>
+<member name="M:Aaron.Reports.Chart.#ctor(System.String,System.String,Visifire.Charts.RenderAs)">
+ <summary>
+ 
+ </summary>
+ <param name="ChartType"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Chart.#ctor(System.String,System.String,System.String,Visifire.Charts.RenderAs)">
+ <summary>
+ 
+ </summary>
+ <param name="ChartType"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="T:Aaron.Reports.Extensions">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRange(System.Windows.Documents.InlineCollection@,System.String[])">
+ <summary>
+ Adds A Range of Strings to A <see cref="T:System.Windows.Documents.InlineCollection">InlineCollection</see> Converting Each NewLine into A {LineBreak/} and 
+ Adding A {LineBreak/} After each Section
+ </summary>
+ <param name="InlineCollection">The InlineCollection you want to Add to</param>
+ <param name="Sections">The Sections you want to Add to the InlineCollection</param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Windows.TextAlignment,System.String[])">
+ <summary>
+ Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ </summary>
+ <param name="Table">The Table you want to Use</param>
+ <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
+ <param name="Default_Alignment"></param>
+ 
+ <param name="Cells"></param>
+ <remarks></remarks>
+ <stepthrough>The Cells you want to Add</stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Int32,System.Windows.TextAlignment,System.String[])">
+ <summary>
+ Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ </summary>
+ <param name="Table">The Table you want to Use</param>
+ <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
+ <param name="Default_Alignment"></param>
+ 
+ <param name="Cells"></param>
+ <remarks></remarks>
+ <stepthrough>The Cells you want to Add</stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.Standardize_CellBorderThickness(System.Windows.Documents.TableRowGroup,System.Single)">
+ <summary>
+ Standardizes the Actual Thickness of Cell Borders when the Cell Padding is 0
+ </summary>
+ <param name="RowGroup"></param>
+ <param name="Thickness"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Extensions.ToXML(System.Windows.DependencyObject)">
+ <summary>
+ Converts A <see cref="T:System.Windows.DependencyObject">DependencyObject</see> into an XElement
+ </summary>
+ <param name="DependencyObject"></param>
+ <returns></returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="T:Aaron.Reports.Reports">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough>Disabled</stepthrough>
+</member>
+<member name="T:Aaron.Reports.Reports.Basic">
+ <summary>
+ A Basic Report and the Base Class for All Reports
+ </summary>
+ <remarks>
+ 'TODO Upgrade to use Aaron.XAML(I think the Report Document)
+ </remarks>
+ <features></features>
+ <stepthrough></stepthrough>
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Bottom_Left">
+ <summary>The Text for the Bottom Left of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Bottom_Right">
+ <summary>The Text for the Bottom Right of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Header">
+ <summary>Use this to setup how the SectionReportHeader is Constructed</summary>
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Footer">
+ <summary>Use this to setup how the SectionReportFooter is Constructed</summary>
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Sections">
+ <summary>The Sections that make up the Report</summary> 
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Title">
+ <summary>The Title of the Report</summary> 
+</member>
+<member name="P:Aaron.Reports.Reports.Basic.Details">
+ <summary>An Optional Paragraph Detailing the Report</summary> 
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
+ <summary>
+ 
+ </summary>  
+ <param name="Title">The Title of the Report</param>
+ <param name="Details">The Details of the Report</param>
+ <param name="Paragraph_Text_Alignment"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.#ctor(System.String,System.String,Aaron.Reports.Sections.Base[])">
+ <summary>
+ 
+ </summary>
+ <param name="Title">The Title of the Report</param>
+ <param name="Details">The Details of the Report</param>
+ <param name="Sections"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.AsStream(CodeReason.Reports.ReportDocument,System.Int32,System.Single)">
+ <summary>
+ 
+ </summary>
+ <param name="Quality"></param>
+ <returns></returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.AsPDF(System.Single)">
+ <summary>
+ 
+ </summary>
+ <param name="Quality"></param>
+ <returns>The Full Name of the PDF File</returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.Print(System.Boolean)">
+ <summary>
+ 
+ </summary>
+ <param name="Hidden"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.ShowHelper(CodeReason.Reports.ReportDocument,CodeReason.Reports.ReportData)">
+ <summary>
+ Displays the Report that was Generated in <see cref="M:Aaron.Reports.Reports.Basic.Show"/>
+ </summary>
+ <param name="Report"></param>
+ <param name="Data"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.Show">
+ <summary>
+ Prepares A <see cref="T:CodeReason.Reports.ReportDocument">ReportDocument</see> and <see cref="T:CodeReason.Reports.ReportData">ReportData</see>
+ and Uses then in <see cref="M:Aaron.Reports.Reports.Basic.ShowHelper(CodeReason.Reports.ReportDocument,CodeReason.Reports.ReportData)"/>
+ </summary>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Reports.Basic.GetString">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks>
+ Aaron Campf: 6/7/2013 Added [Formatted_Sections]
+ </remarks>
+ <stepthrough>Disabled</stepthrough>
+</member>
+<member name="T:Aaron.Reports.ReportToPDF">
+ <summary>
+ Leave this Class here for now and just See where the Best place to put code is
+ </summary>
+ <remarks></remarks>
+ <features></features>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.ReportToPDF.AddImage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
+ <summary>
+ 
+ </summary>
+ <param name="Resize"></param>
+ <param name="Image"></param>
+ <param name="oPdfDoc"></param>
+ <param name="oPdfWriter"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="T:Aaron.Reports.XpsImage">
+ <summary>
+ Provides methods for converting XPS document in to various image format
+ </summary>
+</member>
+<member name="P:Aaron.Reports.XpsImage.XpsFileName">
+ <summary>
+ Sets the XPS file to be read
+ </summary>
+</member>
+<member name="P:Aaron.Reports.XpsImage.OutputFormat">
+ <summary>
+ Gets or Sets the image format for thumbnail
+ </summary>
+</member>
+<member name="P:Aaron.Reports.XpsImage.OutputQuality">
+ <summary>
+ Gets or Sets the image quality for thumbnail
+ </summary>
+</member>
+<member name="P:Aaron.Reports.XpsImage.OutputStream">
+ <summary>
+ Returns the Memory stream of generated thumbnail
+ </summary>
+</member>
+<member name="M:Aaron.Reports.XpsImage.#ctor(System.String,Aaron.Reports.XpsImage.Output,System.Single)">
+ <summary>
+ 
+ </summary>
+ <param name="XpsFileName"></param>
+ <param name="OutputFormat"></param>
+ <param name="OutputQuality"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.XpsImage.GenerateThumbnail">
+ <summary>
+ Generate the thumbnail of given document and populates the ThumbnailStream property
+ </summary>
+</member>
+<member name="M:Aaron.Reports.XpsImage.Save">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.XpsImage.Save(Aaron.Reports.Reports.Basic)">
+ <summary>
+ Feature Not Constructed Yet
+ </summary>
+ <param name="Report"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="T:Aaron.Reports.XpsImage.Output">
+ <summary>
+ Imageformat
+ </summary>
+</member>
+<member name="T:Aaron.Reports.XpsImage.Quality">
+ <summary>
+ Image Quality
+ </summary>
+</member>
+</members>
+</doc>

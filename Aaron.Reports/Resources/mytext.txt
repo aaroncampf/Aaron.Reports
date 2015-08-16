@@ -1,0 +1,12 @@
+﻿<xrd:SectionDataGroup DataGroupName="Group2">
+    <Paragraph FontSize="20" FontWeight="Bold" BorderThickness="2">{1}</Paragraph>
+    <Table CellSpacing="0" BorderBrush="Black" BorderThickness="2">
+        <TableRowGroup Style="{StaticResource headerFooterRowStyle}">
+            <xrd:TableRowForDynamicHeader TableName="{2}"/>
+        </TableRowGroup>
+
+        <TableRowGroup Style="{StaticResource dataRowStyle}">
+            <xrd:TableRowForDynamicDataTable TableName="{0}"/>
+        </TableRowGroup>
+    </Table>
+</xrd:SectionDataGroup>

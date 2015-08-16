@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Documentation>
+  <Project Name ="Aaron.Reports" Summary ="A Series of tools that Work with A Reporting Engine to Create WPF Reports Based on [1 Report] To [Many Sections]">
+    <SubReports>
+
+    </SubReports>
+  </Project>
+
+  <Websites>
+    <Website Name="Reporting Engine Overview" Details ="An overview of the Report Engine Project" URL ="http://www.codeproject.com/Articles/70128/Open-Source-WPF-Reporting-Engine"/>
+    <Website Name="WPF Documentation" Details ="Documents All WPF Namespaces" URL ="http://msdn.microsoft.com/en-us/library/gg145013.aspx"/>
+    <Website Name="Project Website" Details ="The Website of the Actual Project" URL ="http://wpfreports.codeplex.com/releases/view/35201"/>
+    <Website Name="XAMLPAD Details" Details="Contains Details about XAMLPAD" URL="http://msdn.microsoft.com/en-us/library/ms742398(v=vs.90).aspx#using_xamlpad"/>
+    <Website Name="XAML Syntax OverView" Details="Overview of XAML Syntax" URL="http://msdn.microsoft.com/en-us/library/ms788723.aspx"/>
+    <Website Name="WPF TextElement Overview" Details="Overview of WPF Features Relating to Text/Reports" URL="http://msdn.microsoft.com/en-us/library/aa970786.aspx"/>
+    <Website Name="XAML Writer Class" Details="This Class can Save Objects as XAML" URL="http://msdn.microsoft.com/en-us/library/system.windows.markup.xamlwriter.aspx"/>
+  </Websites>
+
+  <Details>
+    <Detail Value="Most Objects can be Divided into 2 Groups UIContent(Controls) + Block(Text)"/>
+    <Detail Value="All WPF Objects can be converted into XML [Use .ToXML Extension Located in the Extenion Namespace] along with other Objects like Controls"/>
+    <Detail Value ="Reports Consist of Header, Footer, Styles, Optional Title, Optional Details, and Sections"/>
+    <Detail Value ="Sections are Devided into 2 Groups: Text + Charts. Text: Use Wrappers. Charts: Use DataTables and the Report's Data Property"/>
+    <Details Value ="You can Manually Edit the XAML used in the Report by Changing the XAMLData(As String) in the Report ShowHelper or in the Report's Buffer(You know what I mean"/>
+    <Details Value ="The Inline BaseClass is the Parent for all Classes that Format Text Like {Bold/} and Stuff like {LineBreak/} which Add's A New Line"/>
+    <Details Value ="Lists can be Created Using [System.Windows.Documents.List]/[{List} *Add Items* {/List}]"/>
+    <Details Value ="XAMLPAD is A Tool that can be used to Preview Standard XAML. Create for Experimentation and Validation"/>
+  </Details>
+
+</Documentation>

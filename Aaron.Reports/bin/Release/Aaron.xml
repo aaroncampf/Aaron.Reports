@@ -1,0 +1,2472 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Aaron
+</name>
+</assembly>
+<members>
+<member name="M:Aaron.Main.Mod_Reflection.GetCustomAttributes(System.Type,System.Boolean)">
+	<summary>http://msdn.microsoft.com/en-us/library/a4165a90.aspx</summary>
+</member><member name="M:Aaron.Main.Mod_Reflection.GetCustomAttributes_Info(System.Type,System.Boolean)">
+	<summary>http://msdn.microsoft.com/en-us/library/a4165a90.aspx</summary>
+</member><member name="M:Aaron.Main.Mod_Reflection.GetValue(System.Reflection.PropertyInfo,System.Object)">
+	<summary>
+ Uses a <see cref="T:System.Reflection.PropertyInfo">PropertyInfo</see> to Grab that Properties Value From the <paramref name="IsItem"/>;
+ This should be MUCH faster then using A String....If you already have the <see cref="T:System.Reflection.PropertyInfo">PropertyInfo</see> Created
+ </summary>
+	<param name="_Property">The <see cref="T:System.Reflection.PropertyInfo"/> for the Property to be used</param>
+	<param name="IsItem">The Object who Contains the Value you want</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.GetValue(System.String,System.Object)">
+	<summary>
+ Grabs the Value of the Property From <paramref name="Main_Value"/> with the Give <paramref name="IsItem">Name</paramref>
+	</summary>
+	<param name="Main_Value">The Name of the Property you want</param>
+	<param name="IsItem">The Object who Contains the Value you want</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.Contains_IComparable(System.ComponentModel.PropertyDescriptor)">
+	<summary>
+ Returns Whether or not the Property Uses IComparable
+ </summary>
+	<param name="property"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Reflection.Contains_IComparable``1">
+	<summary>
+ Returns Whether or not the Property Uses IComparable
+ </summary>
+	<typeparam name="T">The Type you are Checking</typeparam>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Reflection.Contains_IComparable_T``1">
+	<summary>
+ Returns Whether or not the Property Uses IComparable(Of T)
+ </summary>
+	<typeparam name="T">The Type you are Checking</typeparam>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Reflection.GetFormByName(System.String)">
+	<summary>
+ References a Form Using a String. CAN ONLY BE USED IF THE FUNCTION IS IN THE LOCAL
+ THIS FUNCTION WILL NOT WORK
+ ADD THIS TO THE MY --- NAMESPACE
+ </summary>
+	<param name="formName">Name of the Form.</param>
+	<returns></returns>
+</member><member name="M:Aaron.Main.Mod_Reflection.TruncateTypeName(System.Type)">
+	<summary>
+ Returns the the Type's Name by Trimming the FullName
+ </summary>
+	<param name="Type">The Type you want the Truncated Namr of</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Reflection">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.Reflect.GetMethod``1(System.Linq.Expressions.Expression{System.Action{``0}})">
+	<summary>
+ Gets the MethodInfo for the method that is called in the provided <paramref name="expression"/>
+	</summary>
+	<typeparam name="TClass">The type of the class.</typeparam>
+	<param name="expression">The expression.</param>
+	<returns>Method info</returns>
+	<exception cref="T:System.ArgumentException">The provided expression is not a method call</exception>
+</member><member name="M:Aaron.Main.Mod_Reflection.Reflect.GetProperty``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+	<summary>
+ Returns the PropertyInfo from A Property By Using An LINQ Expression.
+ This Allows you to Get the String Name of A Property But still have it Strongly Typed
+ </summary>
+	<typeparam name="TClass">The Type that you will be using in the Expression</typeparam>
+	<param name="expression">The Expression that Returns the Desired Property</param>
+	<returns></returns>
+	<remarks>
+		<seealso cref="M:Aaron.Main.Mod_Reflection.Reflect.GetMethod``1(System.Linq.Expressions.Expression{System.Action{``0}})"/>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.Reflect.Transfer_Properties``1(``0,``0)">
+	<summary>
+ Transfers all Full Properties (Read and Write) Between the Objects
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Original"></param>
+	<param name="Receiver"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Reflection.Reflect">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Classes.Thing`1.#ctor(System.String,`0)">
+	<summary>
+	</summary>
+	<param name="Name">The Name of the Object</param>
+	<param name="Value">The Object's Value</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Classes.Thing`1.ToString">
+	<summary>
+ Return Me.Name
+ </summary>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.Thing`1">
+	<summary>
+	</summary>
+	<typeparam name="Self"></typeparam>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Classes.Branch`2.#ctor(System.String,`0)">
+	<summary>
+	</summary>
+	<param name="Name">The Name of the Object</param>
+	<param name="Value">The Object's Value</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Classes.Branch`2.Fill(System.Func{Aaron.Main.Classes.Branch{`0,`1},System.Collections.Generic.Dictionary{System.String,`1}})">
+	<summary>
+ Uses A Function to Fill this Branch with Leaves
+ </summary>
+	<param name="Fill_Action"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.Branch`2">
+	<summary>
+ Represents A Branch of A Tree [A Item with A Parent and Childs]
+ </summary>
+	<typeparam name="Self">The Type of the Branches Value</typeparam>
+	<typeparam name="T">The Type that the Leafs will have</typeparam>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.Tree`3">
+	<summary>
+	</summary>
+	<typeparam name="Self">The Type this Tree's Value will be</typeparam>
+	<typeparam name="TBranch">The Type the Branch's Values will be</typeparam>
+	<typeparam name="TLeaf">The Type of the Tree's Leafs's Value</typeparam>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="P:Aaron.Main.Classes.StringCollection.Name">
+	<summary>The Name of the Collection</summary>
+</member><member name="P:Aaron.Main.Classes.StringCollection.Strings">
+	<summary>The Strings in the Collection</summary>
+</member><member name="M:Aaron.Main.Classes.StringCollection.#ctor(System.String,System.String[])">
+	<summary>
+	</summary>
+	<param name="Name">The Name for the Collection</param>
+	<param name="Strings">The Strings in the Collection</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.StringCollection">
+	<summary>
+ A Named Collection of Strings
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Classes.MultiKeyDictionary`3.Get(`0)">
+	<summary>
+	</summary>
+	<param name="Key">The Key for the Values</param>
+	<returns></returns>
+	<remarks>Created By: Aaron</remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.MultiKeyDictionary`3">
+	<summary>
+ Multi-Key Dictionary Class
+ </summary>
+	<typeparam name="K">Primary Key Type</typeparam>
+	<typeparam name="L">Sub Key Type</typeparam>
+	<typeparam name="V">Value Type</typeparam>
+</member><member name="T:Aaron.Main.Classes.MultiKeyValueDictionary`3">
+	<summary>
+ Make this Work like the MultiKeyDictionary but with only 1 Key
+ </summary>
+	<typeparam name="K"></typeparam>
+	<typeparam name="L"></typeparam>
+	<typeparam name="V"></typeparam>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Classes.MultiKeyValueDictionary`4">
+	<summary>
+ Make this Work like the MultiKeyDictionary but with only 1 Key
+ </summary>
+	<typeparam name="K"></typeparam>
+	<typeparam name="L"></typeparam>
+	<typeparam name="V"></typeparam>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Classes.Boxes.Display.#ctor(System.Collections.IEnumerable,System.Func{System.Collections.IEnumerable,System.String})">
+	<summary>
+	</summary>
+	<param name="Items">The Items that will be used in the Display</param>
+	<param name="Display">The Function that Determines the Value of ToString()</param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Classes.Boxes.Display.ToString">
+	<summary>
+	</summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Classes.Boxes.Display">
+	<summary>
+ Used to Display A Value in A PropertyGrid by Converting an IEnumerable into A String using A Custom Func(Of IEnumerable, String). 
+ Figure out A way to Replace this with some kind of XML Literal based thing/
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.Boxes">
+	<summary>
+ A Collection of Structures that Look like Tuples and Lists that use them
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Disabled</stepthrough>
+</member><member name="T:Aaron.Main.Classes.Misc.Documentation">
+	<summary>
+ Stores Documentation and Provides Functionality for Previewing Documentation [By Returning Strings Containing all needed Information]
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Classes.Misc.Math`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+	<summary>
+	</summary>
+	<param name="Data">The Original Data</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Classes.Misc.Math`1.STDEVA">
+	<summary>
+ Calculates and Returns the Standard Deviation of the Data
+ </summary>
+	<returns></returns>
+	<remarks>
+		<history>
+         Date: 11/16/2011, Aaron: Merged 2 ForEach into the the ForEach Under Line(Dim Squared As Decimal)
+     </history>
+	</remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Classes.Misc.Math`1.ZScore(System.Int32,System.Int32,System.Int32)">
+	<summary>Z-Score Calculator</summary>
+	<param name="Dev">The Standard Devation.</param>
+	<param name="Mean">Average</param>
+	<param name="X">The Input Value</param>
+</member><member name="T:Aaron.Main.Classes.Misc.Math`1">
+	<summary>
+ Contains A Variety of Mathematical Functionality. Add More Features as Needed
+ </summary>
+	<typeparam name="T">The Type(As Number) that the Original Data Started out as</typeparam>
+	<remarks>Add More Features to this</remarks>
+	<features></features>
+	<stepthrough>Disabled</stepthrough>
+</member><member name="P:Aaron.Main.Classes.Misc.CollectionDebugView.Items">
+	<summary>
+ I Manually Commented out the Above Attribute
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Classes.Misc.CollectionDebugView">
+	<summary>
+ Used in the in Conjunction with the DebuggerTypeProxy Attribute to Properly Display Custom Collections
+ </summary>
+	<remarks>Example: <code>[DebuggerTypeProxy(GetType(CollectionDebugView))]</code></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="F:Aaron.Main.Classes.Misc.Master_Tools.Tools_List.WindowsSideshow_Gallery">
+	<summary>http://gallery.live.com/default.aspx?pl=7</summary>
+</member><member name="T:Aaron.Main.Classes.Misc.Master_Tools.Tools_List">
+	<summary>Text</summary>
+</member><member name="M:Aaron.Main.Classes.Misc.Master_Tools.Tool_Object(Aaron.Main.Classes.Misc.Master_Tools.Tools_List)">
+	<summary>
+ Remove this Function and Move it into the NEW for the   
+ Sub New(ByVal Item As Tools_List)
+ IDK if i can Move it Into Their
+ </summary>
+	<param name="Selected_Tool">The selected_ tool.</param>
+	<remarks>
+ Move this into A Different DLL and Store the List of Tools in An XML File so it can be Easily Changed
+ <seealso cref="T:Aaron.Main.Classes.Misc.Master_Tools.Tools_List"/>
+	</remarks>
+</member><member name="T:Aaron.Main.Classes.Misc.Master_Tools">
+	<summary>
+ DO NOT DELETE! 
+ Instructions on How to Grab A Tool's Data. First Make a Local {Dim Tool as AC*.Mod_Enum.Master_Tools.Tool_Master}
+ Then Add {Tool = AC*.Mod_Enum.Master_Tools.Tool_Object(AC*.Master_Tools.Tools_List.ToolYouWant)}
+ </summary>
+</member><member name="P:Aaron.Main.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Aaron.Main.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Aaron.Main.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Aaron.Main.Mod_Examples.ILifeForm">
+	<summary>
+ The Most Basic Interface Used for Tests
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Examples.Human">
+	<summary>
+ The Most Basic Class for Tests
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Examples.State.Cities">
+	<summary>The Cities in the State</summary>
+</member><member name="P:Aaron.Main.Mod_Examples.State.Count">
+	<summary>The Number of Cities in the State</summary>
+</member><member name="P:Aaron.Main.Mod_Examples.State.Citizens">
+	<summary>A List of Every Human in Every City in <see cref="P:Aaron.Main.Mod_Examples.State.Cities"/></summary>
+</member><member name="T:Aaron.Main.Mod_Examples.State">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Examples.City.Count">
+	<summary>Gets the number of elements actually contained in the System.Collections.Generic.List(Of T).</summary>
+	<returns>number of elements actually contained in the System.Collections.Generic.List(Of T).</returns>
+	<remarks>This should Stop the Be-Damned Exception you keep getting when Trying to View the Count</remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples.City.#ctor(System.String,Aaron.Main.Mod_Examples.Human[])">
+	<summary>
+	</summary>
+	<param name="Name">The Name of the Town</param>
+	<param name="People">The People in the Town</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples.City.ToString">
+	<summary>
+ Return Me.Name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Examples.City">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples.IndexedValue`1.#ctor(System.Int32,`0)">
+	<summary>
+	</summary>
+	<param name="Index"></param>
+	<param name="Value"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples.IndexedValue`1.ToString">
+	<summary>Code: <code>Return "Index: " + Me.Index + "  Value: " + Me.Value.ToString</code></summary>
+</member><member name="T:Aaron.Main.Mod_Examples">
+	<summary>
+ Contains Classes, Functionality, and Data Used in Tests and Other Stuff
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Disabled</stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="P:Aaron.Main.Mod_Examples._Data.Names">
+	<summary>
+ A List(Of Names(As String))
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Examples._Data.Numbers">
+	<summary>Returns A List(Of Integer) Containing All Numbers From 1 to 1000</summary>
+</member><member name="P:Aaron.Main.Mod_Examples._Data.People">
+	<summary>
+ A List(Of <see cref="T:Aaron.Main.Mod_Examples.Human">Human</see>) Created From the Names in <see cref="P:Aaron.Main.Mod_Examples._Data.Names">Names</see>
+	</summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Examples._Data.Human_List(System.Int32)">
+	<summary>
+ Returns A List of Humans
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples._Data.Human_Stack(System.Int32)">
+	<summary>
+ Returns A Stack of Humans
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples._Data.City_List(System.Int32)">
+	<summary>
+ Returns A List of Humans
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples._Data.State_List">
+	<summary>
+	</summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Examples._Data.Create_IndexedValue_List``1(``0[])">
+	<summary>
+ Returns
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Values">Dete</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Examples._Data">
+	<summary>Contains all the Premade Data for Testing</summary>
+</member><member name="M:Aaron.Main.Extensions.Not_Hidden.ToString``1(``0,System.String[])">
+	<summary>
+ A Combines .ToString and <see cref="T:System.String"/>
+ This could cause Issues as it Affects All Objects
+ </summary>
+	<param name="Thing">The Object you want to Format</param>
+	<param name="Formats">The Formats you want to use</param>
+	<returns></returns>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Extensions.Not_Hidden">
+	<summary>
+ Contains Methods that are not Browser Hidden and thus can Overload Pre-Existing Methods
+ </summary>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority></filterpriority>
+</member><member name="M:Aaron.Main.Extensions.General.RemoveDuplicates``1(System.Collections.Generic.List{``0},System.Func{``0,``0,System.Boolean})">
+	<summary>
+ Removes All Duplicates in A List Using <paramref name="IsFunc">IsFunc</paramref> to Determine if two Items are Duplicates
+ </summary>
+	<typeparam name="T">The Type of Items in the List</typeparam>
+	<param name="_List">The List being Used</param>
+	<param name="IsFunc">The Function that Determines if to Items are Duplicates</param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Extensions.General.Remove_Duplicates``2(System.Collections.Generic.Dictionary{``0,``1},System.Func{``0,``0,System.Boolean})">
+	<summary>
+  A Fast way to Remove Duplicates from A Dictionary
+ </summary>
+	<param name="IsFunc"></param>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.General.RemoveDuplicates``1(System.Collections.Generic.IList{``0},System.Reflection.PropertyInfo)">
+	<summary>
+ Removes Duplicates from A List by Comparing each Item based on their Property(Determined by <paramref name="_Property"/>); Is Slow
+ </summary>
+	<typeparam name="T">The List's Original Type</typeparam>
+	<param name="List1">The Original List</param>
+	<param name="_Property">The <see cref="T:System.Reflection.PropertyInfo">PropertyInfo</see> for the Property you want to Compare</param>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.General.ToDictionary3``4(System.Collections.Generic.IEnumerable{``0},System.Converter{``0,``1},System.Converter{``0,``2},System.Converter{``0,``3})">
+	<summary>
+ Converts A Collection into A <see cref="T:Aaron.Main.Classes.MultiKeyDictionary`3"/>
+	</summary>
+	<typeparam name="T"></typeparam>
+	<typeparam name="TIndex"></typeparam>
+	<typeparam name="TKey"></typeparam>
+	<typeparam name="TValue"></typeparam>
+	<param name="List1"></param>
+	<param name="Convert1"></param>
+	<param name="Convert2"></param>
+	<param name="Convert3"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.General.ToDataTable``1(System.Collections.Generic.List{``0})">
+	<summary>
+ Converts the List(Of T) into A DataTable via Reflection(AKA I bet its Slow) Using <see cref="M:Aaron.Main.CollectionHelper.ConvertTo``1(System.Collections.Generic.IList{``0})"/>
+	</summary>
+	<typeparam name="T"></typeparam>
+	<param name="List"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.General.Math``1(System.Collections.Generic.IEnumerable{``0})">
+	<summary>
+ Contains A Variety of Mathematical Functionality. Add More Features as Needed
+ </summary>
+	<typeparam name="T">The Type(As Number) that the Original Data Started out as</typeparam>
+	<param name="Data">&gt;The Original Data</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.General.Quarter(System.DateTime)">
+	<summary>
+ Returns the Date's Quarter
+ </summary>
+	<param name="Date"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.General.AsString(System.Enum)">
+	<summary>
+ If the Enum Has Attribute <see cref="T:Aaron.Main.Mod_Att.AsStringAttribute">AsString</see> Then Returns AsString.String Else Returns Enum.ToString
+ </summary>
+	<param name="Enum">The Enum you want to Grab</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.General.AsSQL(System.Enum)">
+	<summary>
+ If the Enum Has Attribute <see cref="T:Aaron.Main.Mod_Att.AsStringAttribute">AsString</see> Then Returns AsString.String Else Returns Enum.ToString
+ </summary>
+	<param name="Enum">The Enum you want to Grab</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Extensions.General">
+	<summary>
+	</summary>
+	<remarks>
+ The [SCE(SC.EditorBrowsableState.Never)] Attribute Hides all Methods in this Module 
+ BUT they show up in the Extended Class
+ 
+ </remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Extensions.String_Extensions.Shorten(System.String,System.Int32)">
+	<summary>
+ Removes Characters from the End of A String
+ </summary>
+	<param name="IsString">The String to Trim</param>
+	<param name="Length">How Many Characters you want Removed</param>
+	<returns></returns>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.String_Extensions.Clean(System.String)">
+	<summary>
+ Formats A String so it can be used as a Parameter in an SQL Query
+ </summary>
+	<param name="IsString"></param>
+	<returns>The Formatted String</returns>
+	<remarks>
+ This Safely Handles all <c>'</c> AND <c>"</c> 
+ Code: <code>Return "'" + IsString.Replace("'", "''") + "'"</code>
+	</remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.String_Extensions.AutoClean(System.String)">
+	<summary>
+ Formats A Parameter for SQL Queries. If Input Is Integer then Return Input Else Return Input.<see cref="M:Aaron.Main.Extensions.String_Extensions.Clean(System.String)"/>
+	</summary>
+	<param name="IsString">The String you want to Format</param>
+	<returns>Slower then Using <see cref="M:Aaron.Main.Extensions.String_Extensions.Clean(System.String)"/> Directly</returns>
+	<remarks>
+ Code: <code>If Integer.TryParse(IsString, Nothing) Then Return IsString Else Return If(IsString.StartsWith("'") AndAlso IsString.EndsWith("'"), IsString, IsString.Clean)</code>
+	</remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.String_Extensions.Formatter(System.String)">
+	<summary>
+ Replaces {\t --&gt; Tab, \n --&gt; LineBreak, \q --&gt; "}
+ </summary>
+	<param name="IsString"></param>
+	<returns></returns>
+	<remarks>Code: <code>Return IsString.Replace("\t", T1).Replace("\n", C1)</code></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Extensions.String_Extensions">
+	<summary>
+ Utilities for Strings
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Extensions.Collections.SetGroup`2">
+	<summary>
+ Used to Group Items From A Collection(Of Value) into A Dictionary(Of Key, Value)
+ </summary>
+	<typeparam name="TValue">The Type of the Value</typeparam>
+	<typeparam name="TGroup">The Type of The Key/Group</typeparam>
+	<param name="Item">The Item(As Value) you are Currently Working With</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.Collections.Group``2(System.Collections.Generic.IEnumerable{``0},Aaron.Main.Extensions.Collections.SetGroup{``0,``1})">
+	<summary>
+ Converts A Collection into A Dictionary(Of Key, List(Of Value) by using <paramref name="_SetGroup"/> to Define/Create the Key 
+ Then Helps you Add the Items into the List
+ </summary>
+	<typeparam name="TValue">The Original Type of the List</typeparam>
+	<typeparam name="TGroup">The Type for the Key/Group</typeparam>
+	<param name="List1">The Original List</param>
+	<param name="_SetGroup">The Delegate Function used to Create and Fill the Groups</param>
+	<returns>This is Much Faster then LINQ's .GroupBy in Many Situations </returns>
+	<remarks>
+		<code>
+ Public Function Group(Of TValue, TGroup)(List1 As IEnumerable(Of TValue), _SetGroup As SetGroup(Of TValue, TGroup)) As Dictionary(Of TGroup, List(Of TValue))
+     Dim IsDictionary As New Dictionary(Of TGroup, List(Of TValue))
+     For Each Item In List1
+         If Not IsDictionary.ContainsKey(_SetGroup(Item)) Then
+             IsDictionary.Add(_SetGroup(Item), New List(Of TValue))
+         End If
+         IsDictionary(_SetGroup(Item)).Add(Item)
+     Next
+     Return IsDictionary
+ End Function
+ </code>
+	</remarks>
+</member><member name="M:Aaron.Main.Extensions.Collections.UnRoll``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+	<summary>
+ (UnRolls/Converts) A IEnumerable(Of IEnumerable(Of T)) Into A regul
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Data">The List of Lists to UnRoll</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.Sort``2(System.Collections.Generic.IDictionary{``0,``1})">
+	<summary>
+ Sorts A Dictionary Based on its Index
+ </summary>
+	<typeparam name="T1"></typeparam>
+	<typeparam name="T2"></typeparam>
+	<param name="List"></param>
+	<remarks>Converts A Dictionary into A List(Of Key); List.Sort; Converts the List into A Dictionary and Reattaches the Values; 
+ Old Dictionary Items are Replaced by the New Dictionary Items</remarks>
+</member><member name="M:Aaron.Main.Extensions.Collections.Sort``1(System.Collections.Generic.List{``0},System.String,System.ComponentModel.ListSortDirection)">
+	<summary>
+ Sorts the List using The MemberName and SortDirection
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="List"></param>
+	<param name="PropertyName">The Name of the Property you want to Sort By</param>
+	<param name="Sort">The Direction of the Sort</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.AddRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.KeyValuePair{``0,``1}[])">
+	<summary>
+ Add Emulation of the AddRange for Lists
+ </summary>
+	<typeparam name="TKey"></typeparam>
+	<typeparam name="TValue"></typeparam>
+	<param name="List1"></param>
+	<param name="Items"></param>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.Collections.AddRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})">
+	<summary>
+ Add Emulation of the AddRange for Lists
+ </summary>
+	<typeparam name="TKey"></typeparam>
+	<typeparam name="TValue"></typeparam>
+	<param name="List1"></param>
+	<param name="List"></param>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.Collections.Add(System.Collections.Generic.List{Aaron.Main.Classes.Boxes.Box},System.String,System.String)">
+	<summary>
+ Adds A Box to the List
+ </summary>
+	<param name="List1"></param>
+	<param name="Key"></param>
+	<param name="Value"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.Add``1(System.Collections.Generic.List{Aaron.Main.Classes.Boxes.Box{``0}},System.String,``0)">
+	<summary>
+ Adds A Box to the List
+ </summary>
+	<param name="List1"></param>
+	<param name="Key"></param>
+	<param name="Value"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.Add``2(System.Collections.Generic.List{Aaron.Main.Classes.Boxes.Box{``0,``1}},``0,``1)">
+	<summary>
+ Adds A Box to the List
+ </summary>
+	<param name="List1"></param>
+	<param name="Key"></param>
+	<param name="Value"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.Add(System.Collections.Generic.List{Aaron.Main.Classes.Boxes.Box2},System.String,System.String,System.String)">
+	<summary>
+ Adds A Box to the List
+ </summary>
+	<param name="List1"></param>
+	<param name="Key"></param>
+	<param name="Value"></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extensions.Collections.ForEach``1(System.Collections.IEnumerable,System.Action{``0})">
+	<summary>
+ Runs <paramref name="action"/> Using Each Item in the List
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="List">The List that will be Used</param>
+	<param name="Action">The Action that will be Performed on Each Item of the List</param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Collections.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+	<summary>
+ Runs <paramref name="Action"/> Using Each Item in the List
+ </summary>
+	<typeparam name="T">The Type of the IEnumerable</typeparam>
+	<param name="List">The List that will be Used</param>
+	<param name="Action">The Action that will be Performed on Each Item of the List</param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Collections.ForEachI``1(System.Collections.Generic.IEnumerable{``0},System.Action{System.Int32,``0})">
+	<summary>
+ A ForEach that Also Supplies an Auto-Incrementing Integer(Starting at 0)
+ </summary>
+	<typeparam name="T">The Type of Items in the List</typeparam>
+	<param name="List">The List you want to Run Through</param>
+	<param name="Procedure">The Procedure that</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Extensions.Collections.ToList``1(System.Collections.IEnumerable)">
+	<summary>
+ Converts the an IEnumerable(Of T) To List(Of T)
+ </summary>
+	<param name="Items"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Extensions.Collections">
+	<summary>
+ Utilities for Collections
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Extensions.Controls.ExpandGroup(System.Windows.Forms.PropertyGrid,System.String)">
+	<summary>
+ Expands A PropertyGrid's Group using it's <paramref name="groupName">Label</paramref>
+	</summary>
+	<param name="propertyGrid"></param>
+	<param name="groupName">The Label of the Group you want</param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.ExpandGridItem_2Deep(System.Windows.Forms.PropertyGrid,System.String,System.String)">
+	<summary>
+ Expands An Item in A PropertyGrid; Locates the Item using it's 
+ <paramref name="GroupName">Group/Column Name</paramref> and its <paramref name="ItemName">Label or maybe Name (I think its Label)</paramref>
+	</summary>
+	<param name="propertyGrid"></param>
+	<param name="GroupName">The Group Containing the Item you want to Expand</param>
+	<param name="ItemName">The Label or maybe Name (I think its Label) of the Item you want to Expand</param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.TopGridItem(System.Windows.Forms.PropertyGrid)">
+	<summary>
+	</summary>
+	<param name="propertyGrid"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.RemoveDuplicates(System.Windows.Forms.ListBox)">
+	<summary>
+ Removes all Duplicates from A ListBox based each Item's .ToString Value
+ </summary>
+	<param name="ListBox"></param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.RemoveDuplicates(System.Windows.Forms.ComboBox)">
+	<summary>
+ Removes all Duplicates from A ComboBox based each Item's .ToString Value 
+ </summary>
+	<param name="ComboBox"></param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.SetChecks``1(System.Windows.Forms.CheckedListBox,System.Func{``0,System.Boolean})">
+	<summary>
+ Changes the CheckState of Each Item in the CheckBox Based on A Function
+ </summary>
+	<param name="IsCheckListBox">The CheckListBox who's checks will be Set</param>
+	<param name="SetCheckAction">The Function that Determines the CheckState</param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extensions.Controls.AutoSetSplitter(System.Windows.Forms.PropertyGrid@)">
+	<summary>
+ Sets the Position of the PropertyGrid's Splitter 20 Units Ahead of the the Largest Item and 
+ Changes the Splitter's DoubleClick Event to do the Same
+ </summary>
+	<param name="PropertyGrid">The PropertyGrid you want to Adjust</param>
+	<remarks>If the PropertyGrid.SelectedObject = Nothing then Nothing will Happen at all</remarks>
+	<stepthrough>Enabled</stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Extensions.Controls">
+	<summary>
+ Contains Utilities for Controls
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Aaron.Main.Extras.C1">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.C2">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.C3">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.C4">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.T1">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.T2">
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Extras.T3">
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extras.MethodToString``1(System.Linq.Expressions.Expression{System.Action{``0}})">
+	<summary>
+ Lets you run the Method of A Class and Return that Methods Name; Strongly Typed.   
+ MethodToString(Of Customer)(Function(Customer) Customer.ToString) VS "ToString"
+ </summary>
+	<typeparam name="TClass"></typeparam>
+	<param name="expression"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extras.PropToString``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+	<summary>
+ Lets you run the Property of A Class and Return that Property Name; Strongly Typed.   
+ PropToString(Of Customer)(Function(Customer, String) Customer.Name) VS "Name"
+ </summary>
+	<typeparam name="TClass"></typeparam>
+	<param name="expression"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extras.Macro_New``1(``0)">
+	<summary>
+ Allows you to Use A New Thingy Then Use that Thing Macro_New(Of Customer)(New Customer).Action
+ </summary>
+	<param name="Thing">The Object you want to Return</param>
+	<returns></returns>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extras.Do(System.Action[])">
+	<summary>
+ Runs Several Actions on A Single Line; Great for Single Line Lambdas
+ </summary>
+	<param name="Actions">The Actions you want to Run</param>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Extras.IFA``2(System.Boolean,``0,System.Func{``0,``1},System.Func{``0,``1})">
+	<summary>
+ An If() Function that Contains the Input and If Then on 1 Line
+ </summary>
+	<typeparam name="X">The Type of the Input</typeparam>
+	<typeparam name="T">The Type of the Output</typeparam>
+	<param name="Condition">Determines whether the OnTrue or OnFalse will be used</param>
+	<param name="Input">The Input that will be used</param>
+	<param name="OnTrue">The Function used when Condition = True</param>
+	<param name="OnFalse">The Function used when Condition = False</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Extras.IFA``1(System.Boolean,``0,System.Action{``0},System.Action{``0})">
+	<summary>
+ An If() Sub that Contains the Input and If Then on 1 Line
+ </summary>
+	<typeparam name="X">The Type of the Input</typeparam>
+	<param name="Condition">Determines whether the OnTrue or OnFalse will be used</param>
+	<param name="Input">The Input that will be used</param>
+	<param name="OnTrue">The Action used when Condition = True</param>
+	<param name="OnFalse">The Action used when Condition = False</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Extras">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.FileFolder.TryCreate">
+	<summary>
+ If the File\Folder does not Exist then it is Created
+ </summary>
+	<returns><c>If</c> Created Then Returns True <c>Else</c> False</returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.Exists">
+	<summary>
+ Determines if this File/Folder Exists
+ </summary>
+	<remarks>Code: <code>Return FileSystemInfo.Exists</code></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.FileFolder">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.IsValidPath(System.String)">
+	<summary>
+ Checks to see if the File/Folder Path is Valid
+ </summary>
+	<param name="pathString">The Path to be Checked</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.TryCreate(System.String)">
+	<summary>
+ Attempts to Create the File System Object and Returns Operation Used(See Results)
+ </summary>
+	<param name="Path">The Path of the File System Object to Create</param>
+	<returns>Returns True If Created, False if Not Created, and UseDefault if it Already Exists</returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.New(System.String)">
+	<summary>
+ Returns A New FileFolder
+ </summary>
+	<param name="Path"></param>
+	<remarks>Code: <code>Return New FileFolder(Path)</code></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.CreateFileFolder(System.String)">
+	<summary>
+	</summary>
+	<param name="Path"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.Exists(System.String)">
+	<summary>
+ Determines if the File/Folder Exists. Invalid Paths always Return False
+ </summary>
+	<param name="Path">The Path of the File/Folder</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.Delete(Aaron.Main.FileFolder.Deletes)">
+	<summary>
+	</summary>
+	<param name="Method"></param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.Move">
+	<summary>
+ Lets the User Select the Location to Move the File\Folder
+ </summary>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.Move(System.String)">
+	<summary>
+ Move the File\Folder to the Specified Location [I think this des not show any Dialog Boxes for Errors or Progress]
+ </summary>
+	<param name="Location">The [File\Folder]'s Destination</param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.FileFolder.TryDelete">
+	<summary>
+ Deletes this File\Folder If it Exists. If Deleted Returns True Else Returns False
+ </summary>
+	<returns>If Deleted Returns True Else Returns False</returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="F:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.Break">
+	<summary>
+ Why do we have this?
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.Fail(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="message"></param>
+	<param name="detailMessage"></param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.GetAssertText(System.String)">
+	<summary>
+	</summary>
+	<param name="message"></param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.GetTrace">
+	<summary>
+ Sets up the <see cref="F:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.TraceText">Trace Text</see> that will be Displayed
+ </summary>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.GetLine">
+	<summary>
+ Clean this Code!! That While Looks Ugly
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.AssertBox.BaseName(System.String,System.Char)">
+	<summary>
+	</summary>
+	<param name="name"></param>
+	<param name="ch"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Debugging.AssertBox.AssertBox">
+	<summary>
+ Summary description for AssertBox.
+ </summary>
+	<remarks>http://www.codeproject.com/KB/cs/assert.aspx</remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.CollectionHelper.CreateItem``1(System.Data.DataRow)">
+	<summary>
+ Converts A DataRow into <c>[T]</c>
+	</summary>
+	<typeparam name="T">The Type of Object you want to Create</typeparam>
+	<param name="row">The Row to Convert into <c>[T]</c></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.CollectionHelper.ConvertTo``1(System.Collections.Generic.IList{``0})">
+	<summary>
+ Converts A <see cref="T:System.Collections.Generic.IList`1"/> into A DataTable; Each Row has the Data of an Item from the List
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="list"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.CollectionHelper.CreateTable``1">
+	<summary>
+ Creates an Empty Table using <c>[T]</c> to Determine the Columns
+ </summary>
+	<typeparam name="T"></typeparam>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.CollectionHelper.ConvertTo``1(System.Data.DataTable)">
+	<summary>
+ Converts A <see cref="T:System.Data.DataTable"/>  into A <see cref="T:System.Collections.Generic.IList`1"/>
+	</summary>
+	<typeparam name="T"></typeparam>
+	<param name="table"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.CollectionHelper.ConvertTo``1(System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+ Converts A <see cref="T:System.Collections.Generic.IList`1"/> into A <see cref="T:System.Collections.Generic.IList`1"/>
+	</summary>
+	<typeparam name="T"></typeparam>
+	<param name="rows"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.CollectionHelper">
+	<summary>
+ Contains Utilities to Convert Between (<see cref="T:System.Data.DataTable"/> and <see cref="T:System.Collections.Generic.IList`1"/>)
+ and (<see cref="T:System.Collections.Generic.IList`1"/> and <see cref="T:System.Collections.Generic.IList`1"/>)
+ and (Generic(Of T) and <see cref="T:System.Data.DataRow"/>))
+ </summary>
+	<remarks>Does not work with Structures Only Classes!</remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="F:Aaron.Main.Database.Mod_Queries.Connections">
+	<summary>
+ A Shared Dictionary(Of String, Connection) used to Reduce the number of Times A Connection is Opened (Which is Very Slow)
+ </summary>
+	<remarks>This use to be A List, but was changed because the code looks slightly better and I'm sure this is faster</remarks>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.GetConnection(System.String)">
+	<summary>
+ Handles the Process of Opening the Shared <see cref="F:Aaron.Main.Database.Mod_Queries.Connections">ConnectionString</see>; 
+ Thus Reducing the number of Times A Connection is Opened (Which is Very Slow)
+ </summary>
+	<param name="IsConnectionString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.GrabTable(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="IsConnectionString"></param>
+	<param name="strsql"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.Grab(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="IsConnectionString">The OleDb ConnectionString for the Database</param>
+	<param name="strsql">The SQL you want to Use</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.Grab_FirstRow(System.String,System.String)">
+	<summary>
+ Ensures the Query(.ToUpper) Contains "TOP 1" Then Returns the First Row Or A New Row if No Rows are Found
+ </summary>
+	<param name="IsConnectionString"></param>
+	<param name="strsql"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.ExecuteScalar(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="IsConnectionString"></param>
+	<param name="strsql"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.SQL_Insert(System.String,System.String,Aaron.Main.Classes.Boxes.Box[])">
+	<summary>
+ A Wrapper for an SQL Creating and Executing A Insert Statement
+ </summary>
+	<param name="IsConnection">The ConnectionString for the Query</param>
+	<param name="IsTable">The Name of the Table you want to Use</param>
+	<param name="IsList"></param>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Database.Mod_Queries.SQL_Insert(System.String,System.String,System.String[])">
+	<summary>
+ A Wrapper for an SQL Creating and Executing A Insert Statement
+ </summary>
+	<param name="IsConnection">The ConnectionString for the Query</param>
+	<param name="Table">The Name of the Table you want to Use</param>
+	<param name="Values"></param>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Database.Queries.AutoAddStandardError">
+	<summary>
+ If True Then all New <see cref="T:Aaron.Main.Database.Queries">Queries</see> will have the <see cref="M:Aaron.Main.Database.QueryError.StandardError">Standard Error</see> Added to its OnError Event
+ </summary>
+</member><member name="E:Aaron.Main.Database.Queries.OnError">
+	<summary>
+ An Event that is Raised When A Query has an Error. 
+ Event = Action(Of)
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Database.Queries.CheckColumns(System.String[])">
+	<summary>
+ Removes any Duplicate Columns from a {Query}
+ </summary>
+	<param name="Columns">A List of Columns(as String) to be cleaned of Duplicates</param>
+</member><member name="M:Aaron.Main.Database.Queries._Query(System.String)">
+	<summary>A Standard Query</summary>
+	<param name="IsQuery">The Query to Grab the Data</param>
+	<stepthrough>Enabled</stepthrough>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Database.Queries.FormatSQL(System.String,System.String[],System.Int32,System.String)">
+	<summary>
+	</summary>
+	<param name="Table"></param>
+	<param name="IsColumns"></param>
+	<param name="SortColumn"></param>
+	<param name="Filter"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Database.Queries.#ctor(Aaron.Main.Mod_Interfaces.IQueringControl{System.Data.DataTable},System.String)">
+	<summary>
+ Sets up the ConnectionString and the DataTable(Currently the DataTable is not used)
+ </summary>
+	<param name="IsParentControl">The Parent Object that will use this Class</param>
+	<param name="ConnectionString">The ConecctionString that will be used</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Queries.ClearOnError">
+	<summary>Removes All Handles from the OnError Event</summary>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.Queries.Query(System.String,System.String)">
+	<summary>A Standard Query with</summary>
+	<param name="IsQuery">The Query to Grab the Data</param>
+	<param name="SortColumn"></param>
+	<remarks>
+ Query(+1)
+ Aaron: 10/17/2011    Converted From A Function into A Sub
+ </remarks>
+</member><member name="M:Aaron.Main.Database.Queries.Query(System.String,System.String[],System.Int32)">
+	<summary>A Query that Returns the Selected Columns with a Filter</summary>
+	<param name="IsTable">The Table the Data is Located in</param>
+	<param name="IsColumns">The Columns you want the Data From</param>
+	<param name="SortColumn"></param>
+	<remarks>Query(+2)</remarks>
+</member><member name="M:Aaron.Main.Database.Queries.Query(System.String,System.String,System.String[],System.Int32)">
+	<summary>A Query that Returns the Selected Columns with a Filter</summary>
+	<param name="IsTable">The Table the Data is Located in</param>
+	<param name="IsFilter">The Filter(as String) without the WHERE</param>
+	<param name="IsColumns">The Columns you want the Data From</param>
+	<param name="SortColumn"></param>
+	<remarks>Query(+3)</remarks>
+</member><member name="M:Aaron.Main.Database.Queries.Query(System.String,System.String,System.String,System.String[],System.Int32)">
+	<summary>
+ A Query that Selects Columns and uses a Filter
+ </summary>
+	<param name="IsTable">The Tale to Grab the Data from</param>
+	<param name="IsFilterColumn">The Column used in the Filter</param>
+	<param name="IsFilterValue">The Value(as String) of the Filter</param>
+	<param name="IsColumns">The Columns you want to Grab Data from</param>
+	<param name="SortColumn"></param>
+	<remarks>Query(+4)</remarks>
+</member><member name="M:Aaron.Main.Database.Queries.Query(System.String,System.String,System.String)">
+	<summary>
+ Runs A Query that Uses A Select Statement, Column and Value(to Use in A Filter)
+ </summary>
+	<param name="IsQuery">The Select Part of the SQL Statement</param>
+	<param name="IsColumn">The Column to use in the Filter</param>
+	<param name="IsValue">The Value you want Each Item in the Selected Column to =</param>
+	<remarks>Query(+5)</remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Database.Queries">
+	<summary>
+ Add This Class as a Partial to the Database Class
+ Do the Same thing for the SQL Class
+ 
+ Integrate this with the SQL Class BUT do not Combine them
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Database.QueryError.Query">
+	<summary>The Description of the Public Sub Query Overload that Failed</summary>
+</member><member name="P:Aaron.Main.Database.QueryError.SQL">
+	<summary>The SQL of the Query [As best as Could be Gathered, NOT always A Valid Query</summary>
+</member><member name="P:Aaron.Main.Database.QueryError.Err">
+	<summary>The Error that was Thrown</summary>
+</member><member name="M:Aaron.Main.Database.QueryError.#ctor(System.String,System.String,System.Exception)">
+	<summary>
+	</summary>
+	<param name="Query">The Description of the Public Sub Query Overload that Failed</param>
+	<param name="SQL">The SQL of the Query [As best as Could be Gathered, NOT always A Valid Query</param>
+	<param name="Err">The Error that was Thrown</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Database.QueryError.StandardError">
+	<summary>
+ Returns the Standard Error Action for this Class
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Database.QueryError">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.StreamElements(System.String)">
+	<summary>
+ Returns the <see cref="T:System.Xml.Linq.XElement">Elements</see>  from A File Using [Iterator]
+ </summary>
+	<param name="Path">The Path of the XML File to Read.</param>
+	<returns>The File's Elements1</returns>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.StreamElements(System.String,System.String[])">
+	<summary>
+ Returns the <see cref="T:System.Xml.Linq.XElement">Elements</see> from A File Using [Iterator]
+ </summary>
+	<param name="Path">The Path of the XML File to Read.</param>
+	<param name="Name">The Names of the Elements you want</param>
+	<returns>The File's Elements</returns>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.ToXML``1(``0)">
+	<summary>
+ Converts an Object into an <see cref="T:System.Xml.Linq.XElement">XElement</see>
+	</summary>
+	<param name="Thing">The Object you want to Convert</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.Get``1(System.String)">
+	<summary>
+ Deserializes an XML File and Returns the Data as A List
+ </summary>
+	<typeparam name="T">The Type that should be Returned</typeparam>
+	<param name="File">The URL of the XML File</param>
+	<returns></returns>
+	<remarks>
+		<para>
+ Using Documentation http://msdn.microsoft.com/en-us/library/htd05whh.aspx 
+ <History>
+     Date: 11/18/2011   Aaron: Renamed To [Get] Replace As List(Of T) with T and T() with T
+ </History>
+		</para>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.Get``1">
+	<summary>
+  Deserializes an XML File and Returns the Data as A List; Lets the User Select the File
+ </summary>
+	<typeparam name="T">The Type used within the XML's List</typeparam>
+	<returns></returns>
+	<remarks>
+		<History>
+     Date: 11/18/2011   Aaron: Renamed To [Get] Replace As List(Of T) with T and T() with T
+ </History>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.Get``1(System.IO.Stream)">
+	<summary>
+  Deserializes an XML File and Returns the Data as A List; Lets the User Select the File
+ </summary>
+	<typeparam name="T">The Type that was Serialized unto the File</typeparam>
+	<param name="Steam"></param>
+	<returns></returns>
+	<remarks>
+		<History>
+     Date: 11/18/2011   Aaron: Renamed To [Get]
+ </History>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.Set(System.Object,System.String,System.String)">
+	<summary>
+ Deserializes an XML File and Returns the Data as A List. 
+ The Data Must all be of the Same Type
+ </summary>
+	<param name="Data">The Data you want to Save</param>
+	<remarks>
+		<history>
+     Date: 11/18/2011   
+     Aaron: Commented The Using and Replaced it with the Uncommented one. 
+            Tests Show that the Framework Saves the Data as An Array No Matter what.
+            When Saving A List(Of _Contact)(From the Note Program), Each Method Produced the Same XML File.
+            By Removing the Extra Code, There is no more Boxing(From Adding into the ArrayList) and No ForEach
+ 
+ 
+            Removed File As New IO.FileInfo as The File will Automatically be created if it does not Exist  
+    
+            Changed Name to [Set]
+     </history>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_XML.Set_XML(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="XML"></param>
+	<param name="File"></param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Actions.Mod_XML">
+	<summary>
+ Contains Actions Relating to XML
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.FindFilter``1(System.String,``0)">
+	<summary>
+ Determines whether <paramref name="value"><c>[Value]</c></paramref> Passes/Matches the Filter Criteria
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.FindFilter``1(System.String,``0,System.Reflection.PropertyInfo)">
+	<summary>
+ Determines whether <paramref name="value"><c>[Value]</c></paramref> Passes/Matches the Filter Criteria and uses no Reflection for Greater Speed
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Filter"></param>
+	<param name="value"></param>
+	<param name="PropertyInfo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.NumCompare(System.String,System.Double,System.Double)">
+	<summary>
+ Compares Two Doubles Using Bit Operations
+ </summary>
+	<param name="strType">Must be one of the Following Operations([Use the Symbols] G = Greater Then || L = Less Then) 
+ {G, L, G=,L=,LG, =}</param>
+	<param name="propval"></param>
+	<param name="compareval"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.StringCompare(System.String,System.String,System.String)">
+	<summary>
+ Compares Two Strings Using Bit Operations
+ </summary>
+	<param name="strType">Must be one of the Following Operations([Use the Symbols] G = Greater Then || L = Less Then) 
+ {G, L, G=,L=,LG, =, like}</param>
+	<param name="propval"></param>
+	<param name="compareval"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.CreateFilter(System.String,System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="IsFilterType"></param>
+	<param name="IsColumn"></param>
+	<param name="IsFilter"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Filters.CreateFilter(System.Boolean,Aaron.Main.Classes.Boxes.Box2[])">
+	<summary>
+	</summary>
+	<param name="IsSeperator_AND"> If <c>True</c> Then Separator = "AND" <c>Else</c> Separator = "OR"</param>
+	<param name="IsFilters">[IsFilters.Key = Filter Type], IsFilters.Value = Filter Column], [IsFilters.Value2 = Filter String]</param>
+	<returns></returns>
+	<remarks>
+ Here Is An Example of the Filter <para>*</para>
+		<code> IsString += CreateFilter(Item.Key, Item.Value, Item.Value2) +* If(IsSeperator_AND, "AND", "OR")</code>
+	</remarks>
+</member><member name="T:Aaron.Main.Mod_Actions.Filters">
+	<summary>
+ Contains Power Filters that work like SQL!!!
+ </summary>
+	<remarks>Uses A lot of Reflection and Might be Sloe</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.ShutOff">
+This code calls the system shutdown procedure.
+
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.Logoff">
+This code calls the LogOff procedure above.
+
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.Restart">
+This code calls the system Restart procedure.
+
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.Hibernate">
+This code calls the system hibernation procedure.
+
+</member><member name="P:Aaron.Main.Mod_Actions.MyPowerExtension1.BatteryPercent">
+This code will retrieve the BatteryLifePercent property and convert it to a percent.
+
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.LockSystem">
+This code runs the shell program that acts just like the Switch User icon in Windows XP.
+
+</member><member name="M:Aaron.Main.Mod_Actions.MyPowerExtension1.AbortShutdown">
+Name says it all.    
+
+</member><member name="T:Aaron.Main.Mod_Actions.MyPowerExtension1">
+	<summary>
+ Remove the Enum and Use Every Sub Directly
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Collections.Compare_Null``1(System.Boolean,``0,``0)">
+	<summary>
+ Try Moving this into the Mod_Actions!!
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="Assending"></param>
+	<param name="x"></param>
+	<param name="y"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Collections.RemoveDuplicates``1(System.Collections.Generic.List{``0},System.Reflection.PropertyInfo)">
+	<summary>
+ Remove Duplicates From A List. Much Slower then <see cref="M:Aaron.Main.Mod_Actions.Collections.RemoveDuplicates``1(System.Collections.Generic.List{``0},System.Reflection.PropertyInfo)"/>
+	</summary>
+	<remarks>This is Slow because it Uses Reflection</remarks>
+</member><member name="T:Aaron.Main.Mod_Actions.Collections">
+	<summary>
+ Contains features Relating to Collections
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Actions.Mod_Misc.AllowedText">
+	<summary>
+ Determines what Values can be Input into a TextBoxBase. Can use AND/OR(ODK what One) to Use Several Restrictions
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Mod_Misc.Restrict_TextBox_Text(System.Windows.Forms.TextBoxBase@,Aaron.Main.Mod_Actions.Mod_Misc.AllowedText)">
+	<summary>
+ Restricts the Text that can be Entered into A TextBoxBase by Using AddHandler on it's KeyPress Event
+ </summary>
+	<param name="TextBoxBase"></param>
+	<param name="IsAllowed">The Restrictions you want to place on the Valid Text</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Actions.Mod_Misc">
+	<summary>
+ Contains Random Actions that I wanted to add but did not want to Junk up the Main Mod_Actions with
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Disabled</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Actions.Scanning.Scanner.TypePatterns">
+	<summary>
+	</summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.ReturnValue(System.String,System.String)">
+	<summary>
+ Return the Value inside of an object that boxes the built in type or references the string
+ </summary>
+	<param name="typeName"></param>
+	<param name="sValue"></param>
+	<returns></returns>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.ReturnPattern(System.String)">
+	<summary>
+ Return a pattern for regular expressions that will match the built in type specified by name
+ </summary>
+	<param name="typeName"></param>
+	<returns></returns>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.BuildPattern(System.String)">
+	<summary>
+	</summary>
+	<param name="fieldSpecification"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.ModifyPattern(System.String)">
+	<summary>
+	</summary>
+	<param name="Pattern"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.GetPattern(Aaron.Main.Mod_Actions.Scanning.Pattern)">
+	<summary>
+	</summary>
+	<param name="Pattern"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.Scan(System.String,System.String)">
+	<summary>
+ Scan memics scanf.
+ A master regular expression pattern is created that will group each "word" in the text and using regex grouping
+ extract the values for the field specifications.
+ Example text: "Hello true 6.5"  fieldSpecification: "{String} {Boolean} {Double}"
+ The fieldSpecification will result in the generation of a master Pattern:
+ ([\w\d\S]+)\s+(true|false)\s+([-]|[.]|[-.]|[0-9][0-9]*[.]*[0-9]+)
+ This masterPattern is ran against the text string and the groups are extracted.
+ </summary>
+	<param name="text"></param>
+	<param name="fieldSpecification">A string that may contain simple field specifications of the form {Int16}, {String}, etc</param>
+	<returns>object[] that contains values for each field</returns>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.Scan(System.String,System.String,System.Object[])">
+	<summary>
+ Scan memics scanf.
+ A master regular expression pattern is created that will group each "word" in the text and using regex grouping
+ extract the values for the field specifications.
+ Example text: "Hello true 6.5"  fieldSpecification: "{0} {1} {2}" and the target array has objects of these types: "String, ,Boolean, Double"
+ The targets are scanned and each target type is extracted in order to build a master pattern based on these types
+ The fieldSpecification and target types will result in the generation of a master Pattern:
+ ([\w\d\S]+)\s+(true|false)\s+([-]|[.]|[-.]|[0-9][0-9]*[.]*[0-9]+)
+ This masterPattern is ran against the text string and the groups are extracted and placed back into the targets
+  </summary>
+	<param name="text">The Text you want to Scan(I think)</param>
+	<param name="fieldSpecification">A string that may contain simple field specifications of the form {Int16}, {String}, etc</param>
+	<param name="targets"></param>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.ScanBasic(System.String,System.String)">
+	<summary>
+ Performs A Basic Pattern Search and Returns the results. 
+ Results are Returned as Objects are are NOT Converted into there Actual Type as of Yet
+ </summary>
+	<param name="text">The Text you want to Scan</param>
+	<param name="fieldSpecification">A string that may contain simple field specifications of the form {Int16}, {String}, etc</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.Validate(System.String,Aaron.Main.Mod_Actions.Scanning.Pattern)">
+	<summary>
+ Validates the Text based on A <see cref="T:Aaron.Main.Mod_Actions.Scanning.Pattern"/>
+	</summary>
+	<param name="Text">The Text to Test</param>
+	<param name="Pattern">The Regex Pattern to Use</param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.MultiScan(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="text"></param>
+	<param name="fieldSpecification"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.Documentation">
+	<summary>
+	</summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Mod_Actions.Scanning.Scanner.Break">
+	<summary>Contains: <code>Debugger.Break</code></summary>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Mod_Actions.Scanning.Scanner">
+	<summary>
+ A Regular Expression Matcher; AKA Searches Text for Matches 
+ Consider Removing this Class and Moving the Contents into  Scanning
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Actions.Scanning.ScanExeption">
+	<summary>
+ Exceptions that are thrown by this namespace and the Scanner Class
+ Try using the Regex Editor if you get an Error
+ </summary>
+</member><member name="T:Aaron.Main.Mod_Actions.Scanning">
+	<summary>
+ Contains A Regular Expression Matcher
+ </summary>
+	<remarks>http://www.codeproject.com/KB/recipes/csscanf.aspx</remarks>
+</member><member name="F:Aaron.Main.Mod_Actions.Regexes.NumberCheck">
+	<summary>
+ Can Check to see if String is A Valid Number of some kind
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Actions.Regexes">
+	<summary>
+ Contains Premade <see cref="T:System.Text.RegularExpressions.Regex"/>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.NativeMethods.AllocConsole">
+	<summary>
+ Allocates a new console for the calling process.
+ </summary>
+	<returns>true if the function succeeds; otherwise, false.</returns>
+	<remarks>
+ A process can be associated with only one console,
+ so the function fails if the calling process already has a console. 
+ http://msdn.microsoft.com/en-us/library/ms681944(VS.85).aspx
+ </remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.NativeMethods.FreeConsole">
+	<summary>
+ Detaches the calling process from its console.
+ </summary>
+	<returns>true if the function succeeds; otherwise, false.</returns>
+	<remarks>
+ If the calling process is not already attached to a console,
+ the error code returned is ERROR_INVALID_PARAMETER (87). 
+ http://msdn.microsoft.com/en-us/library/ms683150(VS.85).aspx
+ </remarks>
+</member><member name="T:Aaron.Main.Mod_Actions.NativeMethods">
+	<summary>
+ Contains Native Methods
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Actions">
+	<summary>Contains Basic Actions</summary>
+</member><member name="M:Aaron.Main.Mod_Actions.DisableCloseButton(System.IntPtr)">
+	<summary>
+ Disables the Close Button on a Form
+ </summary>
+	<param name="hwnd">just Enter Me.Handle Here</param>
+</member><member name="M:Aaron.Main.Mod_Actions.MyOpen(System.String)">
+	<summary>
+ Opens a URL(as String)
+ </summary>
+	<param name="Path">The <paramref name="Path"/>(as String) to Open</param>
+	<remarks>
+		<c>Operations In Order</c><list type="bullet">
+			<item>Checks for ""</item>
+			<item>Check for (www.)</item>
+			<item>Check for (http)</item>
+			<item>Check for (My.Computer.FileSystem.DirectoryExists(<paramref name="MyFile"/>))</item>
+			<item>Check for (My.Computer.FileSystem.FileExists(<paramref name="MyFile"/>))</item>
+			<item>Check for (<paramref name="MyFile"/>.Contains(".")): 
+ If <c>True</c> Then (If Not [My.Computer.FileSystem.FileExists(<paramref name="MyFile"/>)] Then Create File) Else Open</item>
+			<item>Finally: Create A Folder at the Path and Open it</item>
+		</list>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Actions.MyOpen(System.Windows.Forms.Form@)">
+	<summary>Shows a {Form} in Dialog Mode</summary>
+	<param name="MyForm">The {Form} to Open || Use [New] to Create a New Instance of that {Form}</param>
+</member><member name="M:Aaron.Main.Mod_Actions.GetMonthName(System.Int32)">
+	<summary>
+ Gets the Name of the Month(As Integer)
+ </summary>
+	<param name="Month">The Number Value of the Month you want</param>
+	<returns>The Name of the Month Requested</returns>
+	<remarks>
+ Code: <code>Return New DateTime(1, Month, 1).ToString("MMM")</code>
+		<History>Date: 10/15/2011     Removed Try Catch + 2 Lines of Commented Out Code</History>
+	</remarks>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Mod_Actions.DetermineNumberofDays(System.DateTime)">
+	<summary>
+ Returns the Number of Days between Now and <paramref name="IsDate">A Date</paramref>
+	</summary>
+	<param name="Date">The Date you want to use in the Calculation</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Mod_Actions.PrintFile(System.String)">
+	<summary>
+ Prints the Text in a File
+ </summary>
+	<param name="Path">The Path of the File you want to Print</param>
+	<remarks>Code: <code>Dim piStart As New ProcessStartInfo With {.FileName = Path, .Verb = "print", .WindowStyle = ProcessWindowStyle.Hidden} : 
+ Process.Start(piStart)</code></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.PrintMessage(System.String)">
+	<summary>
+ Print the Supplied <paramref name="Text">Text</paramref>
+	</summary>
+	<param name="Text">The Text you want to Print</param>
+	<remarks>Saves the Text to A Temp File and then <see cref="M:Aaron.Main.Mod_Actions.PrintFile(System.String)">Prints</see> it</remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.Find_ProgramFiles">
+	<summary>Returns the URL(as String) of the [Program Files]</summary>
+	<remarks>Code: <code></code>Return If(IO.Directory.Exists("C:\Program Files (x86)"), "C:\Program Files (x86)", "C:\Program Files")</remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.ErrorMessage(System.Exception)">
+	<summary>
+ Displays an Error Message to the User then Logs the Error
+ </summary>
+	<param name="Err">The Error that was Thrown</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Actions.SpeedTest(System.Int32,System.Action)">
+	<summary>
+ Measures the Time it takes to Compete an Action X(as RunTimes) Number of Times
+ </summary>
+	<param name="RunTimes">The Number of Times you want to Time the Test</param>
+	<param name="Action">The Action to want to Time</param>
+	<returns>Returns A Tuple(Of Total Time, Individual Times)</returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Enum.GetValue``1(System.Enum)">
+	<summary>
+ Returns the First Attribute(As <typeparamref name="TAttribute">TAttribute</typeparamref>
+	</summary>
+	<typeparam name="TAttribute">The Type of the Attribute you want</typeparam>
+	<param name="Value"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Mod_Enum.DateInterval">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<filterpriority></filterpriority>
+</member><member name="T:Aaron.Main.Mod_Enum.HML">
+	<summary>
+ Contains 3 Options: {High, Medium, Low}
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Enum.DataType">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<filterpriority></filterpriority>
+</member><member name="T:Aaron.Main.Mod_Enum">
+	<summary>Contains Events that Use Enum</summary>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Mod_Att.ExtraComments">
+	<summary>
+ Consider Giving this A Type....Like HELP WEBSITE
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Att.AsStringAttribute.String">
+	<summary>
+ The String Representation of the Enum
+ </summary>
+</member><member name="M:Aaron.Main.Mod_Att.AsStringAttribute.#ctor(System.String)">
+	<summary>
+	</summary>
+	<param name="String">The String Representation of the Enum</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Att.AsStringAttribute">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Att.AsSQLAttribute.SQL">
+	<summary>
+ The SQL Representation of the Enum
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Att.AsSQLAttribute.#ctor(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="String">The String Representation of the Enum</param>
+	<param name="SQL">The SQL Representation of the Enum</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Att.AsSQLAttribute">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Att">
+	<summary>
+ Contains Custom Attributes
+ </summary>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Mod_Att.OrderedPropertyGrid.PropertySorter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Gets a value indicating whether this object supports properties using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true because <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)"/> should be called to find the properties of this object. This method never returns false.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Att.OrderedPropertyGrid.PropertySorter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+	<summary>
+ Gets a collection of properties for the type of object specified by the value parameter.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+	<param name="value">An <see cref="T:System.Object"/> that specifies the type of object to get the properties for.</param>
+	<param name="attributes">An array of type <see cref="T:System.Attribute"/> that will be used as a filter.</param><returns>
+ A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for the component, or null if there are no properties.
+ </returns>
+</member><member name="T:Aaron.Main.Mod_Att.OrderedPropertyGrid">
+	<summary>
+	</summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough></stepthrough>
+</member><member name="P:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter.Instance">
+	<summary>
+ The Single Instance of the SuperAsserter that will be Used through out the Debugging Process.
+ Also Calls <see cref="M:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter.Setup">Setup</see>
+	</summary>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter.Problems">
+	<summary>
+ A Comfort Wrapper for <see cref="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.Problems"/>
+	</summary>
+	<value></value>
+	<remarks></remarks>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter.Setup">
+	<summary>
+ Initializes the SuperAsserter. Using this Resets the Ignore List [It just Creates A New Asserter In Fact (Thus Resetting Everything)]
+ </summary>
+	<remarks>
+ Date: 12/18/2011 Aaron: Added the 2 Lines for the Trace 
+ </remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter.Fail(System.String,System.String)">
+	<summary>
+ Emits or displays detailed messages and a stack trace for an assertion that always fails.
+ </summary>
+	<param name="message">The message to emit or display.</param>
+	<param name="detailMessage">The detailed message to emit or display.</param>
+	<PermissionSet>
+		<IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/>
+		<IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence"/>
+		<IPermission class="System.Security.Permissions.UIPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/>
+	</PermissionSet>
+</member><member name="T:Aaron.Main.Mod_Debugging.AssertBox.SuperAsserter">
+	<summary>
+ Summary description for SuperAsserter.
+ Add A Better Description
+ 
+ 
+ An Upgraded <see cref="M:System.Diagnostics.Debug.Assert(System.Boolean)">Debug.Assert</see> DialogBox
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.ProblemReason.Problem">
+	<summary>
+ The Problem that Occurred
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.ProblemReason.Reasons">
+	<summary>
+ The Reasons that the Problem Occurred
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.ProblemReason.#ctor(System.String,System.String[])">
+	<summary>
+	</summary>
+	<param name="Problem">The Problem that Occurred</param>
+	<param name="Reasons">The Reasons that the Problem Occurred</param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Debugging.DebugAssist.ProblemReason">
+	<summary>
+ The problem/reason object. Consider Converting this into a Structure
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Step</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DbgProblemCollection.Item(System.String)">
+	<summary>
+	</summary>
+	<param name="key"></param>
+	<value></value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DbgProblemCollection.Add(System.String,System.String,System.String[])">
+	<summary>
+	</summary>
+	<param name="key"></param>
+	<param name="problem"></param>
+	<param name="reasonList"></param>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DbgProblemCollection.Contains(System.String)">
+	<summary>
+	</summary>
+	<param name="key"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DbgProblemCollection.GetProblems">
+	<summary>
+	</summary>
+	<returns></returns>
+	<remarks>Aaron Added This</remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="T:Aaron.Main.Mod_Debugging.DebugAssist.DbgProblemCollection">
+	<summary>
+ The Problem/Reason Collection
+ </summary>
+	<remarks></remarks>
+	<features></features>
+	<stepthrough>Step</stepthrough>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.Problems">
+	<summary>
+ Return the Problem/Reason Collection
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.AutoFlush">
+	<summary>
+ Gets or sets a value indicating whether System.Diagnostics.Debug.Flush should be called on the System.Diagnostics.Debug.Listeners after every write.
+ </summary>
+	<value>true if System.Diagnostics.Debug.Flush is called on the System.Diagnostics.Debug.Listeners after every write; otherwise, false.</value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.IndentLevel">
+	<summary>
+ Gets or sets the indent level.
+ </summary>
+	<value>The indent level. The default is 0.</value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.IndentSize">
+	<summary>
+ Gets or sets the number of spaces in an indent.
+ </summary>
+	<value>The number of spaces in an indent. The default is four.</value>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Debugging.DebugAssist.DBG.Listeners">
+	<summary>
+ Gets the collection of listeners that is monitoring the trace output.
+ </summary>
+	<value>A System.Diagnostics.TraceListenerCollection that represents a collection of type System.Diagnostics.TraceListener monitoring the trace output.</value>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.InitializeUnhandledExceptionHandler">
+	<summary>
+ I don't know what this does... So here is the Code
+ <code>AddHandler AppDomain.CurrentDomain.UnhandledException, New UnhandledExceptionEventHandler(AddressOf DbgExceptionHandler)</code>
+	</summary>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.GetExplanations(System.String)">
+	<summary>Put together the list of possible reasons for the particular problem.</summary>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.Warn(System.Boolean,System.String)">
+	<summary>The Warn method is enabled in release mode</summary>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.AssertFatal(System.Boolean,System.String)">
+	<summary>The Assert method is enabled in release mode</summary>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.Assert(System.Boolean,System.String,System.String)">
+	<summary>
+ A Comfort Wrapper for <see cref="M:System.Diagnostics.Trace.Assert(System.Boolean)"/>
+	</summary>
+	<param name="Condition">If True then a fail Message is not sent</param>
+	<param name="Message">The Message</param>
+	<param name="DetailMessage">The Second Message. Only used if there is A <paramref name="Message">Message</paramref></param>
+	<remarks></remarks>
+	<stepthrough>Enabled</stepthrough>
+	<ComfortWrapper>True</ComfortWrapper>
+</member><member name="M:Aaron.Main.Mod_Debugging.DebugAssist.DBG.ReadProblems">
+	<summary>
+ Returns A String Containing A Description of all the Errors
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="T:Aaron.Main.Mod_Debugging.DebugAssist.DBG">
+	<summary>
+ Contains Many Debugging Extensions
+ </summary>
+	<remarks>http://www.codeproject.com/KB/trace/debugtreatise.aspx</remarks>
+	<features></features>
+	<stepthrough>Disabled Until Testing is Complete</stepthrough>
+</member><member name="M:Aaron.Main.Mod_Interfaces.IToXML.ToXML">
+	<summary>
+ Converts the Class into an <see cref="T:System.Xml.Linq.XElement">XElement</see>. 
+ General Translation: XElement.Name To Me.Name; XElement.Attributes To Me.Properties(As Value); XElement.Elements To Me.Properties(As Collection)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Mod_Interfaces.IToXML">
+	<summary>
+ Converts the Class into an XML Representation
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Interfaces.IFromXML.FromXML(System.Xml.Linq.XElement)">
+	<summary>
+ Sets up the values of the Class using the Data from an <see cref="T:System.Xml.Linq.XElement">XElement</see>. 
+ General Translation: XElement.Name To Me.Name; XElement.Attributes To Me.Properties(As Value); XElement.Elements To Me.Properties(As Collection)
+ </summary>
+	<param name="Element">The Element that Contains the Data you want to Use to Setup this Class</param>
+	<exception cref="T:System.Xml.XmlException">An XElement with the Wrong Name was Used</exception>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="T:Aaron.Main.Mod_Interfaces.IFromXML">
+	<summary>
+ Sets the Classes Values/Properties to Match Values from an XElement
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Interfaces.IXML">
+	<summary>
+ Combines <see cref="T:Aaron.Main.Mod_Interfaces.IToXML"/> and <see cref="T:Aaron.Main.Mod_Interfaces.IFromXML"/>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Interfaces.IDisplay.Text">
+	<summary>Returns the Text for the List's Group/Title Property</summary>
+</member><member name="T:Aaron.Main.Mod_Interfaces.IDisplay">
+	<summary>Sets the Text for the Parent Node of the List When using <see cref="T:Aaron.Main.Mod_Editors.ListExpandableConverter"/></summary>
+</member><member name="T:Aaron.Main.Mod_Interfaces">
+	<summary>
+ Contains Interfaces to be used in the rest of the Framework
+ </summary>
+	<remarks></remarks>
+	<filterpriority>2</filterpriority>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Short.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> should be called to find a common set of values the object supports; otherwise, false.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Short.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> is an exclusive list of possible values, using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> is an exhaustive list of possible values; false if other values are possible.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Short.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param><returns>
+ A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Long.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> should be called to find a common set of values the object supports; otherwise, false.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Long.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> is an exclusive list of possible values, using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> is an exhaustive list of possible values; false if other values are possible.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.States_Long.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param><returns>
+ A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.ListExpandableConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+	<summary>
+ Makes the PropertyGrid Display the Class's Properties in A List
+ </summary>
+	<param name="context"></param>
+	<param name="culture"></param>
+	<param name="value"></param>
+	<param name="destType"></param>
+	<returns></returns>
+</member><member name="M:Aaron.Main.Mod_Editors.ListExpandableConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Gets a value indicating whether this object supports properties using the specified context.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param><returns>
+ true because <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)"/> should be called to find the properties of this object. This method never returns false.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.ListExpandableConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+	<summary>
+ Gets a collection of properties for the type of object specified by the value parameter.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+	<param name="value">An <see cref="T:System.Object"/> that specifies the type of object to get the properties for.</param>
+	<param name="attributes">An array of type <see cref="T:System.Attribute"/> that will be used as a filter.</param><returns>
+ A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for the component, or null if there are no properties.
+ </returns>
+</member><member name="T:Aaron.Main.Mod_Editors.ListExpandableConverter">
+	<summary>
+ Makes the PropertyGrid Display the Class's Properties in A List
+ </summary>
+	<remarks>
+ Example <example><code>[TypeConverterAttribute(GetType(CarApplication.Converters.ListExpandableConverter))]</code></example>
+	</remarks>
+</member><member name="P:Aaron.Main.Mod_Editors.PropertyOrderAttribute.Order">
+	<summary>
+ Sets the Order When Used in an ExpandAble List OR When A Custom DisplayName is Used
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Aaron.Main.Mod_Editors.PropertyOrderAttribute.#ctor(System.String)">
+	<summary>
+ Sets the Order of the Tab
+ </summary>
+	<param name="DisplayName">The Name you want to Display</param>
+</member><member name="M:Aaron.Main.Mod_Editors.PropertyOrderAttribute.#ctor(System.Int32)">
+	<summary>
+ Sets the Order of the Tab
+ </summary>
+	<param name="Order"></param>
+</member><member name="M:Aaron.Main.Mod_Editors.PropertyOrderAttribute.#ctor(System.Int32,System.Int32,System.String)">
+	<summary>
+ Sets the Order of the Tab and Optionally Its DisplayName
+ </summary>
+	<param name="Order">The Rank the Property will be Displayed At</param>
+	<param name="Total">Sets up how Tabs are Added to the Properties Name...but Why o.O</param>
+	<param name="DisplayName">The Optional Display name of the Property. If Nothing Then Normal Name is Used</param>
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.Properties">
+	<summary>Contains the Names of All Properties that can be Displayed</summary>
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab._Bitmap">
+	<summary>
+ The Bitmap for the PropertyTab's Button
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.Bitmap">
+	<summary>
+ Gets the bitmap that is displayed for the <see cref="T:System.Windows.Forms.Design.PropertyTab"/>.
+ </summary>
+	<returns>The <see cref="T:System.Drawing.Bitmap"/> to display for the <see cref="T:System.Windows.Forms.Design.PropertyTab"/>.</returns>
+	<PermissionSet>
+		<IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/>
+	</PermissionSet>
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.TabName">
+	<summary>Gets the name for the property tab.</summary>
+	<returns>The name for the property tab.</returns>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.#ctor(System.String)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab"/> class.
+ </summary>
+	<param name="TabName">The Display Name for the PropertyTab</param>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.#ctor(System.String,System.String[])">
+	<summary>
+ Initializes a new instance of the <see cref="T:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab"/> class.
+ </summary>
+	<param name="TabName">The Display Name for the PropertyTab</param>
+	<param name="Properties">The properties.</param>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab.GetProperties(System.Object,System.Attribute[])">
+	<summary>
+ Gets the properties of the specified component that match the specified attributes.
+ </summary>
+	<param name="component">The component to retrieve properties from.</param>
+	<param name="attributes">An array of type <see cref="T:System.Attribute"/> that indicates the attributes of the properties to retrieve.</param><returns>
+ A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> that contains the properties.
+ </returns>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.BaseCustomPropertyTab">
+	<summary>
+ Adds A PropertyTab to any PropertyGrid that Displays the Class that Uses this Attribute
+ </summary>
+	<remarks>Example:<code>[System.ComponentModel.PropertyTabAttribute(GetType(TabTest))]</code></remarks>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UIListBox">
+	<summary>
+	</summary>
+	<remarks>This is A MustInherit because you cannot Fill the TreeView with Nodes From Anywhere but Inside the Class</remarks>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UIFile.UIFilenameEditor">
+	<summary>
+ Grabs the Folder From 
+ </summary>
+	<remarks>Uses </remarks>
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.UIFile.FileDialogFilterAttribute.Filter">
+-----------------------------------------------------------------------------
+ <summary>
+ The filter to use in the file dialog in UIFilenameEditor.
+ </summary>
+	<remarks>The following is an example of a filter string: "Text files (*.txt)|*.txt|All files (*.*)|*.*"</remarks>
+	<history>
+ 	[Vadim] 	30/12/2003	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.UIFile.FileDialogFilterAttribute.#ctor(System.String)">
+-----------------------------------------------------------------------------
+ <summary>
+ Define a filter for the UIFilenameEditor.
+ </summary>
+	<param name="filter">The filter to use in the file dialog in UIFilenameEditor. The following is an example of a filter string: "Text files (*.txt)|*.txt|All files (*.*)|*.*"</param>
+	<remarks></remarks>
+	<history>
+ 	[Vadim] 	30/12/2003	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.SourceCollectionAttribute">
+-----------------------------------------------------------------------------
+ Class		: SourceCollectionAttribute
+
+-----------------------------------------------------------------------------
+ <summary>
+ Service attribute to point to the source collection.
+ </summary>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	25/12/2003	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.ValueMemberAttribute.ValuePropertyName">
+-----------------------------------------------------------------------------
+ <summary>
+ Gets the name of the property used as value member by the dynamic combo type editor.
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.ValueMemberAttribute.#ctor(System.String)">
+-----------------------------------------------------------------------------
+ <summary>
+ Specifies the member returning value in the list control used by the dynamic combo editor.
+ </summary>
+	<param name="valueMemberPropertyName">The name of the property used as value member by the dynamic combo type editor.</param>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.ValueMemberAttribute">
+-----------------------------------------------------------------------------
+ Class		: ValueMemberAttribute
+
+-----------------------------------------------------------------------------
+ <summary>
+ Specifies the member returning value in the list control used by the dynamic combo editor.
+ </summary>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="P:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.DisplayMemberAttribute.DisplayPropertyName">
+-----------------------------------------------------------------------------
+ <summary>
+ Gets the name of the property displayed in the list control used by the dynamic combo editor.
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.DisplayMemberAttribute.#ctor(System.String)">
+-----------------------------------------------------------------------------
+ <summary>
+ Specifies the property displayed in the list control used by the dynamic combo editor.
+ </summary>
+	<param name="displayMemberPropertyName">The name of the property displayed in the dynamic combo type editor.</param>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown.DisplayMemberAttribute">
+-----------------------------------------------------------------------------
+ Class		: DisplayMemberAttribute
+
+-----------------------------------------------------------------------------
+ <summary>
+ Specifies the member displayed in the list control used by the dynamic combo editor.
+ </summary>
+	<remarks></remarks>
+	<history>
+ 	[afiq] 	05/02/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditors.UniversalDropdown">
+	<summary>See Remarks for an Example</summary>
+	<remarks>
+		<example>
+			<code>
+Public Class DemoObjectInspector
+    Private f As Object
+    Private _methName As String
+    Private _evtName As String
+
+    [Browsable(False)]
+    Public ReadOnly Property Methods() As Reflection.MethodInfo()
+        Get
+            Return f.GetType.GetMethods()
+        End Get
+    End Property
+
+    [Browsable(False)]
+    Public ReadOnly Property Events() As Reflection.EventInfo()
+        Get
+            Return f.GetType.GetEvents()
+        End Get
+    End Property
+
+    [Description("A method from the selected class."),
+    Editor(GetType(UniversalDropdownEditor.UniversalDropdownEditor), GetType(System.Drawing.Design.UITypeEditor)),
+    SourceCollection("Methods"), DisplayMember("Name"), ValueMember("Name")]
+    Public Property SelectedMethod() As String
+        Get
+            Return Me._methName
+        End Get
+        Set(ByVal Value As String)
+            Me._methName = Value
+        End Set
+    End Property
+
+    [Description("An event from the selected class."), Editor(GetType(UniversalDropdownEditor.UniversalDropdownEditor),
+        GetType(System.Drawing.Design.UITypeEditor)), SourceCollection("Events"), DisplayMember("Name"), ValueMember("Name")]
+    Public Property SelectedEvent() As String
+        Get
+            Return Me._evtName
+        End Get
+        Set(ByVal Value As String)
+            Me._evtName = Value
+        End Set
+    End Property
+
+    Public Sub New(ByVal obj As Object)
+        MyBase.New()
+        Me.f = obj
+    End Sub
+End Class
+ </code>
+		</example>
+	</remarks>
+</member><member name="F:Aaron.Main.Mod_Editors.VisualStudio_Editors.FileNameEditor">
+	<summary>
+ Creates an <see cref="T:System.Windows.Forms.OpenFileDialog"/> Editor
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Aaron.Main.Mod_Editors.VisualStudio_Editors.FolderNameEditor">
+	<summary>
+ Creates an <see cref="T:System.Windows.Forms.FolderBrowserDialog"/> Editor
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Aaron.Main.Mod_Editors.VisualStudio_Editors.MultilineStringEditor">
+	<summary>
+ Creates A MultilineStringEditor Editor
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Aaron.Main.Mod_Editors.VisualStudio_Editors">
+	<summary>
+ Contains the FullName for many Editors Found inside Visual Studio
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Aaron.Main.Mod_Editors.UIEditorControls.m_EscapePressed">
+	<summary>Date: 5/19/2013  Aaron: Changed from Private to Protected</summary>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Gets the editor style used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)"/> method.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that can be used to gain additional context information.</param><returns>
+ A <see cref="T:System.Drawing.Design.UITypeEditorEditStyle"/> value that indicates the style of editor used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)"/> method. If the <see cref="T:System.Drawing.Design.UITypeEditor"/> does not support this method, then <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle"/> will return <see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None"/>.
+ </returns>
+	<remarks>
+ Do Not Override!! If you do MAKE SURE to call this Function or errors will occur!
+ </remarks>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+	<summary>
+ Edits the specified object's value using the editor style indicated by the <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle"/> method.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that can be used to gain additional context information.</param>
+	<param name="provider">An <see cref="T:System.IServiceProvider"/> that this editor can use to obtain services.</param>
+	<param name="value">The object to edit.</param><returns>
+ The new value of the object. If the value of the object has not changed, this should return the same object it was passed.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.GetIWindowsFormsEditorService">
+	<summary>
+ Provides the interface for this UITypeEditor to display Windows Forms or to 
+ display a control in a DropDown area from the property grid control in design mode.
+ </summary>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.CloseDropDownWindow">
+	<summary>Close DropDown window to finish editing</summary>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.m_EditControl_PreviewKeyDown(System.Object,System.Windows.Forms.PreviewKeyDownEventArgs)">
+	<summary>Date: 5/19/2013  Aaron: Changed from Private to Protected</summary>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditorControls">
+	<summary>
+ This is a UITypeEditor base class usefull for simple editing of control properties 
+ in a DropDown or a ModalDialogForm window at design mode (in VisualStudio.Net IDE). 
+ To use this, inherits a class from it and add this attribute to your control property(ies): 
+ &lt;Editor(GetType(MyPropertyEditor), GetType(System.Drawing.Design.UITypeEditor))&gt;  
+ </summary>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox.ComboBox_DisplayMember_ValueMember">
+	<summary>
+ Returns A Tuple(Of DisplayMember, ValueMember) for the ComboBox
+ </summary>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox.GetEditControl(System.String,System.Object)">
+	<summary>Gets the edit control.</summary>
+	<param name="PropertyName">Name of the property.</param>
+	<param name="CurrentValue">The current value.</param><returns></returns>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox.GetEditedValue(System.Windows.Forms.Control,System.String,System.Object)">
+	<summary>Gets the edited value.</summary>
+	<param name="EditControl">The edit control.</param>
+	<param name="PropertyName">Name of the property.</param>
+	<param name="OldValue">The old value.</param><returns></returns>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+	<summary>
+ Gets the editor style used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)"/> method.
+ </summary>
+	<param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that can be used to gain additional context information.</param><returns>
+ A <see cref="T:System.Drawing.Design.UITypeEditorEditStyle"/> value that indicates the style of editor used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)"/> method. If the <see cref="T:System.Drawing.Design.UITypeEditor"/> does not support this method, then <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle"/> will return <see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None"/>.
+ </returns>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox._ListBox_HandleCreated(System.Object,System.EventArgs)">
+	<summary>Handles the HandleCreated event of the _ListBox control.</summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditorControls.UIComboBox">
+	<summary>
+	</summary>
+	<remarks>This is A MustInherit because you cannot Fill the TreeView with Nodes From Anywhere but Inside the Class</remarks>
+</member><member name="T:Aaron.Main.Mod_Editors.UIEditorControls.UITreeView">
+	<summary>
+	</summary>
+	<remarks>This is A MustInherit because you cannot Fill the TreeView with Nodes From Anywhere but Inside the Class</remarks>
+</member><member name="M:Aaron.Main.Mod_Editors.UIEditorControls.UIConnectionString.DBType.GetConnection(Aaron.Main.Mod_Editors.UIEditorControls.UIConnectionString.DBType.DB)">
+	<summary>
+ Upgrade
+ </summary>
+	<param name="Type"></param>
+	<returns></returns>
+	<remarks></remarks>
+	<stepthrough></stepthrough>
+</member><member name="P:Aaron.Main.Mod_Reflection.SimpleMunger.AspectName">
+	<summary>
+ The name of the aspect that is to be peeked or poked.
+ </summary>
+	<remarks>
+		<para>
+ This name can be a field, property or method. 
+ When using a method to get a value, the method must be parameter-less.
+ When using a method to set a value, the method must accept 1 parameter.
+ </para>
+		<para>
+ It cannot be a dotted name.
+ </para>
+	</remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.SimpleMunger.#ctor(System.String)">
+	<summary>
+ Create a SimpleMunger
+ </summary>
+	<param name="aspectName"></param>
+</member><member name="M:Aaron.Main.Mod_Reflection.SimpleMunger.GetValue(System.Object)">
+	<summary>
+ Get a value from the given target
+ </summary>
+	<param name="target"></param>
+	<returns></returns>
+</member><member name="M:Aaron.Main.Mod_Reflection.SimpleMunger.PutValue(System.Object,System.Object)">
+	<summary>
+ Poke the given value into the given target indicated by our AspectName.
+ </summary>
+	<param name="target">The object that will be poked</param>
+	<param name="value">The value that will be poked into the target</param>
+	<returns>bool indicating if the put worked</returns>
+</member><member name="T:Aaron.Main.Mod_Reflection.SimpleMunger">
+	<summary>
+ A SimpleMunger deals with a single property/field/method on its target.
+ </summary>
+	<remarks>
+ Munger uses a chain of these resolve a dotted aspect name.
+ </remarks>
+</member><member name="M:Aaron.Main.Mod_Reflection.MungerException.#ctor(Aaron.Main.Mod_Reflection.SimpleMunger,System.Object,System.Exception)">
+	<summary>
+ Create a MungerException
+ </summary>
+	<param name="munger"></param>
+	<param name="target"></param>
+	<param name="ex"></param>
+</member><member name="P:Aaron.Main.Mod_Reflection.MungerException.Munger">
+	<summary>
+ Get the munger that raised the exception
+ </summary>
+</member><member name="P:Aaron.Main.Mod_Reflection.MungerException.Target">
+	<summary>
+ Gets the target that threw the exception
+ </summary>
+</member><member name="T:Aaron.Main.Mod_Reflection.MungerException">
+	<summary>
+ These exceptions are raised when a munger finds something it cannot process
+ </summary>
+</member>
+</members>
+</doc>
