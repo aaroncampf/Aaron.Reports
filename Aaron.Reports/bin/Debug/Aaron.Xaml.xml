@@ -477,40 +477,40 @@ Aaron.Xaml
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="T:Aaron.Xaml.XamlHelper1">
+<member name="T:Aaron.Xaml.XamlHelper">
  <summary>
  Helper class for XAML
  </summary>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.LoadXamlFromString(System.String)">
+<member name="M:Aaron.Xaml.XamlHelper.LoadXamlFromString(System.String)">
  <summary>
  Loads a XAML object from string
  </summary>
  <param name="s">string containing the XAML object</param>
  <returns>XAML object or null, if string was empty</returns>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.CloneTableRow(System.Windows.Documents.TableRow)">
+<member name="M:Aaron.Xaml.XamlHelper.CloneTableRow(System.Windows.Documents.TableRow)">
  <summary>
  Clones a table row
  </summary>
  <param name="orig">original table row</param>
  <returns>cloned table row</returns>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.CloneBlock(System.Windows.Documents.Block)">
+<member name="M:Aaron.Xaml.XamlHelper.CloneBlock(System.Windows.Documents.Block)">
  <summary>
  Clones a complete block
  </summary>
  <param name="orig">orininal block</param>
  <returns>cloned block</returns>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.CloneUIElement(System.Windows.UIElement)">
+<member name="M:Aaron.Xaml.XamlHelper.CloneUIElement(System.Windows.UIElement)">
  <summary>
  Clones a complete UIElement
  </summary>
  <param name="orig">original UIElement</param>
  <returns>cloned UIElement</returns>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.SaveImageBmp(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+<member name="M:Aaron.Xaml.XamlHelper.SaveImageBmp(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
  <summary>
  Saves a visual to bitmap into stream
  </summary>
@@ -521,7 +521,7 @@ Aaron.Xaml
  <param name="dpiX">X DPI resolution</param>
  <param name="dpiY">Y DPI resolution</param>
 </member>
-<member name="M:Aaron.Xaml.XamlHelper1.SaveImagePng(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+<member name="M:Aaron.Xaml.XamlHelper.SaveImagePng(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
  <summary>
  Saves a visual to PNG into stream
  </summary>

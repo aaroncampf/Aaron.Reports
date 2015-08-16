@@ -51,9 +51,6 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodeReason.Reports.Charts.Visifire">
-      <HintPath>..\External References\CodeReason.Reports.Charts.Visifire.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\External References\itextsharp.dll</HintPath>
     </Reference>
@@ -109,7 +106,7 @@
     <Compile Include="ReportPaginator.vb" />
     <Compile Include="ReportContextValues.vb" />
     <Compile Include="ReportToPDF.vb" />
-    <Compile Include="XamlHelper1.vb" />
+    <Compile Include="XamlHelper.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
