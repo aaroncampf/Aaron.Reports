@@ -56,3 +56,4 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Xaml.xml

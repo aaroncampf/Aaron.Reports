@@ -88,12 +88,8 @@
   <ItemGroup>
     <Compile Include="DocSuperWalker.vb" />
     <Compile Include="DocWalker.vb" />
-    <Compile Include="Obsolete\DataRowBoundEventArgs1.vb" />
-    <Compile Include="Obsolete\DocumentWalker1.vb" />
     <Compile Include="Mod_Misc.vb" />
-    <Compile Include="Obsolete\Mod_Errors.vb" />
     <Compile Include="Mod_Helpers.vb" />
-    <Compile Include="Obsolete\MultipleReportPaginator1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -109,11 +105,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Obsolete\ReportData.vb" />
-    <Compile Include="Obsolete\ReportData1.vb" />
     <Compile Include="ReportDocument.vb" />
     <Compile Include="ReportPaginator.vb" />
-    <Compile Include="Obsolete\ReportPaginatorDynamicCache1.vb" />
     <Compile Include="ReportContextValues.vb" />
     <Compile Include="ReportToPDF.vb" />
     <Compile Include="XamlHelper1.vb" />

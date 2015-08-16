@@ -21,3 +21,14 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple WPF Reports\Aaron.Xaml\obj\Debug\Aa
 C:\Users\Aaron Campf\Documents\GitHub\Simple WPF Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple WPF Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple WPF Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\Aaron.Xaml.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\Aaron.Xaml.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\Aaron.Xaml.xml
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\CodeReason.Reports.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\WPFVisifire.Charts.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.Resources.resources
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.vbproj.GenerateResource.Cache
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.xml
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.pdb
