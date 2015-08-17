@@ -45,5 +45,7 @@ Temporary Items
 #Manually Excluded
 bin
 obj
+bin/
+obj/
 *.suo
 *.user
