@@ -1,3 +1,13 @@
+
+#Manually Excluded
+bin
+obj
+bin/*
+obj/
+*.suo
+*.user
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -42,10 +52,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#Manually Excluded
-bin
-obj
-bin/
-obj/
-*.suo
-*.user
+
+
+Aaron.Reports/bin/Debug/Aaron.Reports.xml
+Aaron.Reports/bin/Debug/Aaron.Reports.xml

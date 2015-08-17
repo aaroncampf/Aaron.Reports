@@ -440,20 +440,18 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.AsStream(CodeReason.Reports.ReportDocument,System.Int32,System.Single)">
+<member name="M:Aaron.Reports.Reports.Basic.AsStream(CodeReason.Reports.ReportDocument,System.Int32)">
  <summary>
  
  </summary>
- <param name="Quality"></param>
  <returns></returns>
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.AsPDF(System.Single)">
+<member name="M:Aaron.Reports.Reports.Basic.AsPDF">
  <summary>
  Converts the report into a PDF file and returns the files's path
  </summary>
- <param name="Quality"></param>
  <returns>The Full Name of the PDF File</returns>
  <remarks></remarks>
  <stepthrough></stepthrough>
@@ -527,23 +525,17 @@ Aaron.Reports
  Gets or Sets the image format for thumbnail
  </summary>
 </member>
-<member name="P:Aaron.Reports.XpsImage.OutputQuality">
- <summary>
- Gets or Sets the image quality for thumbnail
- </summary>
-</member>
 <member name="P:Aaron.Reports.XpsImage.OutputStream">
  <summary>
  Returns the Memory stream of generated thumbnail
  </summary>
 </member>
-<member name="M:Aaron.Reports.XpsImage.#ctor(System.String,Aaron.Reports.XpsImage.Output,System.Single)">
+<member name="M:Aaron.Reports.XpsImage.#ctor(System.String,Aaron.Reports.XpsImage.Output)">
  <summary>
  
  </summary>
  <param name="XpsFileName"></param>
  <param name="OutputFormat"></param>
- <param name="OutputQuality"></param>
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
@@ -571,11 +563,6 @@ Aaron.Reports
 <member name="T:Aaron.Reports.XpsImage.Output">
  <summary>
  Imageformat
- </summary>
-</member>
-<member name="T:Aaron.Reports.XpsImage.Quality">
- <summary>
- Image Quality
  </summary>
 </member>
 </members>
