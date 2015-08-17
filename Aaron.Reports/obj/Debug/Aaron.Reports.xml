@@ -451,7 +451,7 @@ Aaron.Reports
 </member>
 <member name="M:Aaron.Reports.Reports.Basic.AsPDF(System.Single)">
  <summary>
- 
+ Converts the report into a PDF file and returns the files's path
  </summary>
  <param name="Quality"></param>
  <returns>The Full Name of the PDF File</returns>

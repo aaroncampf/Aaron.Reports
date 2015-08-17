@@ -1,18 +1,18 @@
 ﻿Imports D = System.Windows.Documents, E = System.Runtime.CompilerServices.ExtensionAttribute, SC = System.ComponentModel
 
-
 ''' <summary>
 ''' 
 ''' </summary>
 ''' <remarks></remarks>
 ''' <stepthrough></stepthrough>
 Public Module Extensions
-'*************************************************************
-'Module Attributes crash the program
 
-'<HideModuleName()>
-'<SC.EditorBrowsable(SC.EditorBrowsableState.Advanced)>
-'*************************************************************
+    '*************************************************************
+    'Module Attributes crash the program
+
+    '<HideModuleName()>
+    '<SC.EditorBrowsable(SC.EditorBrowsableState.Advanced)>
+    '*************************************************************
 
     ''' <summary>
     ''' Adds A Range of Strings to A <see cref="D.InlineCollection">InlineCollection</see> Converting Each NewLine into A {LineBreak/} and 
@@ -31,8 +31,6 @@ Public Module Extensions
         Next
         InlineCollection.Remove(InlineCollection.LastInline)
     End Sub
-
-
 
 
     ' ''' <summary>
@@ -100,7 +98,7 @@ Public Module Extensions
             Row.Cells.Add(New D.TableCell(New D.Paragraph(New D.Run(Item)) With {.TextAlignment = Default_Alignment, .FontSize = FontSize}))
         Next
 
-		Table.RowGroups(RowGroupIndex).Rows.Add(Row)
+        Table.RowGroups(RowGroupIndex).Rows.Add(Row)
     End Sub
 
 
@@ -126,9 +124,6 @@ Public Module Extensions
         Next
     End Sub 'TODO: Upgrade All Quotes to use this!!
 
-
-
-
     ''' <summary>
     ''' Converts A <see cref="DependencyObject">DependencyObject</see> into an XElement
     ''' </summary>
@@ -139,14 +134,8 @@ Public Module Extensions
     ''' <filterpriority>2</filterpriority>
     <E()> <SC.EditorBrowsable(SC.EditorBrowsableState.Advanced)> <DebuggerNonUserCode()>
     Function ToXML(DependencyObject As DependencyObject) As XElement
-		Return XElement.Parse(Windows.Markup.XamlWriter.Save(DependencyObject))
+        Return XElement.Parse(Windows.Markup.XamlWriter.Save(DependencyObject))
     End Function
-
-
-
-
-
-
 
 End Module
 

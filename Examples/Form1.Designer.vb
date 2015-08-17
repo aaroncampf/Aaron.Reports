@@ -22,9 +22,41 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.btnReport1 = New System.Windows.Forms.Button()
+        Me.btnComplexReports = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'btnReport1
+        '
+        Me.btnReport1.Location = New System.Drawing.Point(13, 13)
+        Me.btnReport1.Name = "btnReport1"
+        Me.btnReport1.Size = New System.Drawing.Size(100, 23)
+        Me.btnReport1.TabIndex = 0
+        Me.btnReport1.Text = "Sample Report 1"
+        Me.btnReport1.UseVisualStyleBackColor = True
+        '
+        'btnComplexReports
+        '
+        Me.btnComplexReports.Location = New System.Drawing.Point(119, 13)
+        Me.btnComplexReports.Name = "btnComplexReports"
+        Me.btnComplexReports.Size = New System.Drawing.Size(100, 23)
+        Me.btnComplexReports.TabIndex = 1
+        Me.btnComplexReports.Text = "Complex Reports"
+        Me.btnComplexReports.UseVisualStyleBackColor = True
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(970, 557)
+        Me.Controls.Add(Me.btnComplexReports)
+        Me.Controls.Add(Me.btnReport1)
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.ResumeLayout(False)
+
     End Sub
 
+    Friend WithEvents btnReport1 As Button
+    Friend WithEvents btnComplexReports As Button
 End Class

@@ -17,33 +17,21 @@ Public Class XpsImage
     Property OutputFormat As Output
 
     ''' <summary>
-    ''' Gets or Sets the image quality for thumbnail
-    ''' </summary>
-    Property OutputQuality As Single
-
-
-    ''' <summary>
     ''' Returns the Memory stream of generated thumbnail
     ''' </summary>
     Property OutputStream As MemoryStream
-
 
     ''' <summary>
     ''' 
     ''' </summary>
     ''' <param name="XpsFileName"></param>
     ''' <param name="OutputFormat"></param>
-    ''' <param name="OutputQuality"></param>
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
-    Sub New(XpsFileName As String, OutputFormat As Output, OutputQuality As Single)
+    Sub New(XpsFileName As String, OutputFormat As Output)
         Me.XpsFileName = XpsFileName
         Me.OutputFormat = OutputFormat
-        Me.OutputQuality = OutputQuality
     End Sub
-
-
-
 
     ''' <summary>
     ''' Generate the thumbnail of given document and populates the ThumbnailStream property
@@ -54,8 +42,6 @@ Public Class XpsImage
 
         Dim fileNameWithoutExtension As String = Path.GetFileNameWithoutExtension(Me.XpsFileName)
         Dim fileExtension As String = String.Empty
-
-
 
         Select Case Me.OutputFormat
             Case Output.Jpeg
@@ -72,23 +58,8 @@ Public Class XpsImage
                 bitmapEncoder = New JpegBitmapEncoder()
         End Select
 
-
-
-
-        'Dim imageQualityRatio As Double = 1.0
-        'Select Case Me.OutputQuality
-        '    Case Quality.Low
-        '        imageQualityRatio /= 2.0
-        '    Case Quality.Good
-        '        imageQualityRatio *= 2.0
-        '    Case Quality.Super
-        '        imageQualityRatio *= 5.0
-        '    Case Else
-        '        imageQualityRatio *= 1.0
-        'End Select
-
         Dim documentPage As DocumentPage = documentPageSequence.DocumentPaginator.GetPage(0)
-        Dim targetBitmap As New RenderTargetBitmap(documentPage.Size.Width * OutputQuality, documentPage.Size.Height * OutputQuality, 96.0 * OutputQuality, 96.0 * OutputQuality, PixelFormats.Pbgra32)
+        Dim targetBitmap As New RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, PixelFormats.Pbgra32)
         targetBitmap.Render(documentPage.Visual)
 
         bitmapEncoder.Frames.Add(BitmapFrame.Create(targetBitmap))
@@ -140,16 +111,5 @@ Partial Class XpsImage
         Jpeg
         Png
         Gif
-    End Enum
-
-    ''' <summary>
-    ''' Image Quality
-    ''' </summary>
-    <Obsolete("Just use a single", True)>
-    Public Enum Quality
-        Low
-        Normal
-        Good
-        Super
     End Enum
 End Class

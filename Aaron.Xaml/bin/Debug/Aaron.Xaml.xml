@@ -231,9 +231,7 @@ Aaron.Xaml
  <returns></returns>
 </member>
 <member name="P:Aaron.Xaml.InlineDocumentValue.PropertyName">
- <summary>
- Gets or sets the property name
- </summary>
+ <summary>Gets or sets the property name</summary>
 </member>
 <member name="M:Aaron.Xaml.Mod_Helpers.AddFontResourceToFixedPage(System.Windows.Xps.Packaging.IXpsFixedPageWriter,System.String)">
  <summary>

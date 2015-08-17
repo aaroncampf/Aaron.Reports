@@ -45,8 +45,6 @@ Public NotInheritable Class Mod_Test
 
     End Class
 
-
-
     Public Class CustomReport
         Inherits ReportDocument_Child
 

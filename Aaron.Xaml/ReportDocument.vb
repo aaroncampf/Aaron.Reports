@@ -257,14 +257,11 @@ Public Class ReportDocument
     'End Sub
 
 
-
-
     ''' <summary>
     ''' Helper method to create page header or footer from flow document template
     ''' </summary>
     ''' <returns></returns>
     Public Function CreateXpsDocument() As XpsDocument
-        'Public Function CreateXpsDocument(data As ReportData) As XpsDocument
         Dim ms As New MemoryStream()
         Dim pkg As Package = Package.Open(ms, FileMode.Create, FileAccess.ReadWrite)
         Dim pack As String = "pack://report.xps"
@@ -274,7 +271,7 @@ Public Class ReportDocument
         Dim rsm As New XpsSerializationManager(New XpsPackagingPolicy(doc), False)
         Dim paginator As DocumentPaginator = DirectCast(CreateFlowDocument(), IDocumentPaginatorSource).DocumentPaginator
 
-        Dim rp As New ReportPaginator(Me) ', data)
+        Dim rp As New ReportPaginator(Me)
         rsm.SaveAsXaml(rp)
         Return doc
     End Function
@@ -335,36 +332,27 @@ Public Class ReportDocument
     <DebuggerStepThrough()>
     Protected Overridable Sub ShowHelper()
         Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
-        'Dim this As New Windows.Controls.DocumentViewer With {.Document = CreateXpsDocument(Data).GetFixedDocumentSequence}
-        Dim this As New Windows.Controls.DocumentViewer With {.Document = CreateXpsDocument.GetFixedDocumentSequence}
+        Dim this As New DocumentViewer With {.Document = CreateXpsDocument.GetFixedDocumentSequence}
         IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
         IsForm.ShowDialog()
     End Sub
 
 
-
-
-
-
-
     ''' <summary>
-    ''' 
+    ''' Streams a single page of the report
     ''' </summary>
-    ''' <param name="Quality"></param>
+    ''' <param name="Page">The page you want to stream.</param>
     ''' <returns></returns>
-    ''' <remarks></remarks>
-    ''' <stepthrough></stepthrough>
     <DebuggerNonUserCode()>
-    Overridable Function AsStream(Page As Integer, Quality As Single) As IO.MemoryStream
-        Dim bitmapEncoder As New Windows.Media.Imaging.JpegBitmapEncoder
-        Dim documentPage As Documents.DocumentPage = Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
-        Dim targetBitmap As New Windows.Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * Quality, documentPage.Size.Height * Quality,
-                                                                         96.0 * Quality, 96.0 * Quality, Windows.Media.PixelFormats.Pbgra32)
+    Overridable Function AsStream(Page As Integer) As MemoryStream
+        Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
+        Dim documentPage As DocumentPage = Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
+        Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
 
         targetBitmap.Render(documentPage.Visual)
-        bitmapEncoder.Frames.Add(Windows.Media.Imaging.BitmapFrame.Create(targetBitmap))
+        bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
-        Dim Stream As New IO.MemoryStream
+        Dim Stream As New MemoryStream
         bitmapEncoder.Save(Stream)
         Return Stream
     End Function
@@ -372,39 +360,26 @@ Public Class ReportDocument
     ''' <summary>
     ''' 
     ''' </summary>
-    ''' <param name="Quality"></param>
     ''' <returns>The Full Name of the PDF File</returns>
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
-    Overridable Function AsPDF(Quality As Single) As String
+    Overridable Function AsPDF() As String
         Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
 
         'TODO Make sure this Using Works Properly
-        Using Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
+        Using Stream As New IO.FileStream(TempFile, FileMode.Create)
             Dim oPdfDoc As New iTextSharp.text.Document()
             Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
-
-
-            'Dim Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
-            'Dim oPdfDoc As New iTextSharp.text.Document()
-            'Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
             oPdfDoc.Open()
 
-            'Dim Report As New ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
-            'If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
             If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
             If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
-
-            'Report.XamlData = Me.GetString		'Check to see if this Works!
-
             For I = 0 To Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-                'ReportToPDF.AddImage(True, AsStream(Report, I, Quality), oPdfDoc, oPdfWriter)
-                ReportToPDF.AddImage(True, AsStream(I, Quality), oPdfDoc, oPdfWriter)
+                ReportToPDF.AddImage(True, AsStream(I), oPdfDoc, oPdfWriter)
             Next
 
             oPdfDoc.Close()
             oPdfWriter.Close()
-            'Stream.Close()
         End Using
 
         Return TempFile
@@ -417,17 +392,15 @@ Public Class ReportDocument
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
     Overridable Sub Print(Hidden As Boolean)
-        'Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
         If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
         If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
         If Hidden Then
-            Dim PD As New Windows.Controls.PrintDialog
+            Dim PD As New PrintDialog
             PD.PrintDocument(Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator, Nothing)
         Else
-            Dim this As New Windows.Controls.DocumentViewer With {.Document = Me.CreateXpsDocument().GetFixedDocumentSequence}
+            Dim this As New DocumentViewer With {.Document = Me.CreateXpsDocument().GetFixedDocumentSequence}
             this.Print()
         End If
     End Sub
-
 
 End Class
