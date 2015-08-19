@@ -338,24 +338,52 @@ Public Class ReportDocument
     End Sub
 
 
-    ''' <summary>
-    ''' Streams a single page of the report
-    ''' </summary>
-    ''' <param name="Page">The page you want to stream.</param>
-    ''' <returns></returns>
-    <DebuggerNonUserCode()>
-    Overridable Function AsStream(Page As Integer) As MemoryStream
-        Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
-        Dim documentPage As DocumentPage = Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
-        Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
+    '''' <summary>
+    '''' Streams a single page of the report
+    '''' </summary>
+    '''' <param name="Page">The page you want to stream.</param>
+    '''' <returns></returns>
+    '<DebuggerNonUserCode()>
+    'Overridable Function AsStream(Page As Integer) As MemoryStream
+    '    Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
+    '    Dim documentPage As DocumentPage = Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
+    '    Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
 
-        targetBitmap.Render(documentPage.Visual)
-        bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
+    '    targetBitmap.Render(documentPage.Visual)
+    '    bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
-        Dim Stream As New MemoryStream
-        bitmapEncoder.Save(Stream)
-        Return Stream
-    End Function
+    '    Dim Stream As New MemoryStream
+    '    bitmapEncoder.Save(Stream)
+    '    Return Stream
+    'End Function
+
+    '''' <summary>
+    '''' 
+    '''' </summary>
+    '''' <returns>The Full Name of the PDF File</returns>
+    '''' <remarks></remarks>
+    '''' <stepthrough></stepthrough>
+    'Overridable Function AsPDF() As String
+    '    Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+
+    '    'TODO Make sure this Using Works Properly
+    '    Using Stream As New IO.FileStream(TempFile, FileMode.Create)
+    '        Dim oPdfDoc As New iTextSharp.text.Document()
+    '        Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
+    '        oPdfDoc.Open()
+
+    '        If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+    '        If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+    '        For I = 0 To Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
+    '            Base_Report_Temp.AddPage(True, AsStream(I), oPdfDoc, oPdfWriter)
+    '        Next
+
+    '        oPdfDoc.Close()
+    '        oPdfWriter.Close()
+    '    End Using
+
+    '    Return TempFile
+    'End Function
 
     ''' <summary>
     ''' 
@@ -364,26 +392,15 @@ Public Class ReportDocument
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
     Overridable Function AsPDF() As String
-        Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
-
-        'TODO Make sure this Using Works Properly
-        Using Stream As New IO.FileStream(TempFile, FileMode.Create)
-            Dim oPdfDoc As New iTextSharp.text.Document()
-            Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
-            oPdfDoc.Open()
-
-            If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
-            If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
-            For I = 0 To Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-                Base_Report_Temp.AddPage(True, AsStream(I), oPdfDoc, oPdfWriter)
-            Next
-
-            oPdfDoc.Close()
-            oPdfWriter.Close()
-        End Using
-
-        Return TempFile
+        If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+        If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+        Return Aaron.Xaml.Base_Report_Temp.AsPDF(Me.CreateXpsDocument())
     End Function
+
+
+
+
+
 
     ''' <summary>
     ''' 

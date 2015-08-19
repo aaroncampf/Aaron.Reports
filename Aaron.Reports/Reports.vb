@@ -147,25 +147,54 @@ Public NotInheritable Class Reports
 
 #Region "       Utilities   >>>"
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
-        ''' <stepthrough></stepthrough>
-        '<DebuggerNonUserCode()>
-        Overridable Function AsStream(Report As CodeReason.Reports.ReportDocument, Page As Integer) As IO.MemoryStream
-            Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
-            Dim documentPage As Documents.DocumentPage = Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
-            Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
+        '''' <summary>
+        '''' 
+        '''' </summary>
+        '''' <returns></returns>
+        '''' <remarks></remarks>
+        '''' <stepthrough></stepthrough>
+        ''<DebuggerNonUserCode()>
+        'Overridable Function AsStream(Report As CodeReason.Reports.ReportDocument, Page As Integer) As IO.MemoryStream
+        '    Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
+        '    Dim documentPage As Documents.DocumentPage = Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
+        '    Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
 
-            targetBitmap.Render(documentPage.Visual)
-            bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
+        '    targetBitmap.Render(documentPage.Visual)
+        '    bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
-            Dim Stream As New IO.MemoryStream
-            bitmapEncoder.Save(Stream)
-            Return Stream
-        End Function
+        '    Dim Stream As New IO.MemoryStream
+        '    bitmapEncoder.Save(Stream)
+        '    Return Stream
+        'End Function
+
+
+        '''' <summary>
+        '''' Converts the report into a PDF file and returns the files's path
+        '''' </summary>
+        '''' <returns>The Full Name of the PDF File</returns>
+        '''' <remarks></remarks>
+        '''' <stepthrough></stepthrough>
+        'Overridable Function AsPDF() As String
+        '    Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+        '    Dim Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
+        '    Dim oPdfDoc As New iTextSharp.text.Document()
+        '    Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
+        '    oPdfDoc.Open()
+
+        '    Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
+        '    If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
+        '    Report.XamlData = Me.GetString      'Check to see if this Works!
+
+        '    For I = 0 To Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
+        '        Aaron.Xaml.Base_Report_Temp.AddPage(True, AsStream(Report, I), oPdfDoc, oPdfWriter)
+        '    Next
+
+        '    oPdfDoc.Close()
+        '    oPdfWriter.Close()
+        '    Stream.Close()
+
+        '    Return TempFile
+        'End Function
 
 
         ''' <summary>
@@ -175,25 +204,10 @@ Public NotInheritable Class Reports
         ''' <remarks></remarks>
         ''' <stepthrough></stepthrough>
         Overridable Function AsPDF() As String
-            Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
-            Dim Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
-            Dim oPdfDoc As New iTextSharp.text.Document()
-            Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
-            oPdfDoc.Open()
-
             Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
             If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
-            Report.XamlData = Me.GetString      'Check to see if this Works!
-
-            For I = 0 To Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-                Base_Report_Temp.AddPage(True, AsStream(Report, I), oPdfDoc, oPdfWriter)
-            Next
-
-            oPdfDoc.Close()
-            oPdfWriter.Close()
-            Stream.Close()
-
-            Return TempFile
+            Report.XamlData = Me.GetString
+            Return Aaron.Xaml.Base_Report_Temp.AsPDF(Report.CreateXpsDocument(Me.Data))
         End Function
 
 
