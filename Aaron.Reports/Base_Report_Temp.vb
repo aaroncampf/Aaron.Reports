@@ -1,18 +1,38 @@
-﻿''' <summary>
-''' Leave this Class here for now and just See where the Best place to put code is
-''' </summary>
-''' <remarks></remarks>
-''' <features></features>
-''' <stepthrough></stepthrough>
-Public NotInheritable Class ReportToPDF
-    Private Sub New()
-    End Sub
+﻿Imports System.Windows.Documents
+
+Public Class Base_Report_Temp
 
 
+    'Friend Shared Function AsPDF() As String
+    '    Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+
+    '    'TODO Make sure this Using Works Properly
+    '    Using Stream As New IO.FileStream(TempFile, FileMode.Create)
+    '        Dim oPdfDoc As New iTextSharp.text.Document()
+    '        Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
+    '        oPdfDoc.Open()
+
+    '        For I = 0 To Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
+    '            Base_Report_Temp.AddPage(True, AsStream(I), oPdfDoc, oPdfWriter)
+    '        Next
+
+    '        oPdfDoc.Close()
+    '        oPdfWriter.Close()
+    'End Function
 
 
+    Private Shared Function AsStream(Document As Xps.Packaging.XpsDocument, Page As Integer) As IO.MemoryStream
+        Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
+        Dim documentPage As DocumentPage = Document.GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
+        Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
 
+        targetBitmap.Render(documentPage.Visual)
+        bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
+        Dim Stream As New IO.MemoryStream
+        bitmapEncoder.Save(Stream)
+        Return Stream
+    End Function
 
     ''' <summary>
     ''' 
@@ -23,7 +43,7 @@ Public NotInheritable Class ReportToPDF
     ''' <param name="oPdfWriter"></param>
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
-    Shared Sub AddImage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
+    Shared Sub AddPage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
         Dim oImage As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(Image)
         Dim iWidth As Single = oImage.Width, iHeight As Single = oImage.Height
 
@@ -41,8 +61,7 @@ Public NotInheritable Class ReportToPDF
         Dim iHeightPage As Single = iTextSharp.text.PageSize.LETTER.Height
         Dim iPageAspectRatio As Double = iWidthPage / iHeightPage
 
-        Dim iWidthGoal As Single = 0
-        Dim iHeightGoal As Single = 0
+        Dim iWidthGoal As Single = 0, iHeightGoal As Single = 0
 
         If iWidth < iWidthPage And iHeight < iHeightPage Then
             'Image fits within the page
@@ -65,9 +84,6 @@ Public NotInheritable Class ReportToPDF
         oImage.ScaleAbsolute(iWidthGoal, iHeightGoal)
         oPdfWriter.DirectContent.AddImage(oImage)
     End Sub
-
-
-
 
 
 End Class

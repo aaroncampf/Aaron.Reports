@@ -90,6 +90,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base_Report_Temp.vb" />
     <Compile Include="Google\PieGraph.vb" />
     <Compile Include="Mod_Test.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -110,7 +111,6 @@
     <Compile Include="Charts.vb" />
     <Compile Include="Extensions.vb" />
     <Compile Include="Reports.vb" />
-    <Compile Include="ReportToPDF.vb" />
     <Compile Include="Sections.vb" />
     <Compile Include="XpsImage.vb" />
   </ItemGroup>

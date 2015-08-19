@@ -1,12 +1,4 @@
-﻿''' <summary>
-''' Leave this Class here for now and just See where the Best place to put code is
-''' </summary>
-''' <remarks></remarks>
-''' <features></features>
-''' <stepthrough></stepthrough>
-Public NotInheritable Class ReportToPDF
-    Private Sub New()
-    End Sub
+﻿Public Class Base_Report_Temp
 
 
     ''' <summary>
@@ -18,7 +10,7 @@ Public NotInheritable Class ReportToPDF
     ''' <param name="oPdfWriter"></param>
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
-    Shared Sub AddImage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
+    Friend Shared Sub AddPage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
         Dim oImage As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(Image)
         Dim iWidth As Single = oImage.Width, iHeight As Single = oImage.Height
 
@@ -36,8 +28,7 @@ Public NotInheritable Class ReportToPDF
         Dim iHeightPage As Single = iTextSharp.text.PageSize.LETTER.Height
         Dim iPageAspectRatio As Double = iWidthPage / iHeightPage
 
-        Dim iWidthGoal As Single = 0
-        Dim iHeightGoal As Single = 0
+        Dim iWidthGoal As Single = 0, iHeightGoal As Single = 0
 
         If iWidth < iWidthPage And iHeight < iHeightPage Then
             'Image fits within the page
@@ -60,4 +51,6 @@ Public NotInheritable Class ReportToPDF
         oImage.ScaleAbsolute(iWidthGoal, iHeightGoal)
         oPdfWriter.DirectContent.AddImage(oImage)
     End Sub
+
+
 End Class

@@ -84,6 +84,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base_Report_Temp.vb" />
     <Compile Include="DocSuperWalker.vb" />
     <Compile Include="DocWalker.vb" />
     <Compile Include="Mod_Misc.vb" />
@@ -106,7 +107,6 @@
     <Compile Include="ReportDocument.vb" />
     <Compile Include="ReportPaginator.vb" />
     <Compile Include="ReportContextValues.vb" />
-    <Compile Include="ReportToPDF.vb" />
     <Compile Include="XamlHelper.vb" />
   </ItemGroup>
   <ItemGroup>

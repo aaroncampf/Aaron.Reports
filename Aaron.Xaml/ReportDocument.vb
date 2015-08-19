@@ -375,7 +375,7 @@ Public Class ReportDocument
             If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
             If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
             For I = 0 To Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-                ReportToPDF.AddImage(True, AsStream(I), oPdfDoc, oPdfWriter)
+                Base_Report_Temp.AddPage(True, AsStream(I), oPdfDoc, oPdfWriter)
             Next
 
             oPdfDoc.Close()
@@ -402,5 +402,4 @@ Public Class ReportDocument
             this.Print()
         End If
     End Sub
-
 End Class

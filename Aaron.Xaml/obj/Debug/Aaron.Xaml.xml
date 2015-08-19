@@ -6,6 +6,17 @@ Aaron.Xaml
 </name>
 </assembly>
 <members>
+<member name="M:Aaron.Xaml.Base_Report_Temp.AddPage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
+ <summary>
+ 
+ </summary>
+ <param name="Resize"></param>
+ <param name="Image"></param>
+ <param name="oPdfDoc"></param>
+ <param name="oPdfWriter"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
 <member name="T:Aaron.Xaml.DocSuperWalker">
  <summary>
  Dynamic cache class for report paginator
@@ -13,7 +24,7 @@ Aaron.Xaml
 </member>
 <member name="P:Aaron.Xaml.DocSuperWalker.FlowDocument">
  <summary>
- Gets the associacted flow document
+ Gets the associated flow document
  </summary>
 </member>
 <member name="M:Aaron.Xaml.DocSuperWalker.#ctor(System.Windows.Documents.FlowDocument)">
@@ -452,25 +463,6 @@ Aaron.Xaml
  </summary>
  <param name="name">name of report context value</param>
  <returns>null, if it does not exist</returns>
-</member>
-<member name="T:Aaron.Xaml.ReportToPDF">
- <summary>
- Leave this Class here for now and just See where the Best place to put code is
- </summary>
- <remarks></remarks>
- <features></features>
- <stepthrough></stepthrough>
-</member>
-<member name="M:Aaron.Xaml.ReportToPDF.AddImage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
- <summary>
- 
- </summary>
- <param name="Resize"></param>
- <param name="Image"></param>
- <param name="oPdfDoc"></param>
- <param name="oPdfWriter"></param>
- <remarks></remarks>
- <stepthrough></stepthrough>
 </member>
 <member name="T:Aaron.Xaml.XamlHelper">
  <summary>

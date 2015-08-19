@@ -153,7 +153,7 @@ Public NotInheritable Class Reports
         ''' <returns></returns>
         ''' <remarks></remarks>
         ''' <stepthrough></stepthrough>
-        <DebuggerNonUserCode()>
+        '<DebuggerNonUserCode()>
         Overridable Function AsStream(Report As CodeReason.Reports.ReportDocument, Page As Integer) As IO.MemoryStream
             Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
             Dim documentPage As Documents.DocumentPage = Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
@@ -186,7 +186,7 @@ Public NotInheritable Class Reports
             Report.XamlData = Me.GetString      'Check to see if this Works!
 
             For I = 0 To Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-                ReportToPDF.AddImage(True, AsStream(Report, I), oPdfDoc, oPdfWriter)
+                Base_Report_Temp.AddPage(True, AsStream(Report, I), oPdfDoc, oPdfWriter)
             Next
 
             oPdfDoc.Close()
@@ -296,9 +296,9 @@ Public NotInheritable Class Reports
                                 <TableRow>
                                     <TableCell>
                                         <Paragraph>
-												Page
-												<InlineContextValue PropertyName="PageNumber" FontWeight="Bold"/> of
-												<InlineContextValue PropertyName="PageCount" FontWeight="Bold"/>
+                                                Page
+                                                <InlineContextValue PropertyName="PageNumber" FontWeight="Bold"/> of
+                                                <InlineContextValue PropertyName="PageCount" FontWeight="Bold"/>
                                         </Paragraph>
                                     </TableCell>
                                     <TableCell>
@@ -319,8 +319,8 @@ Public NotInheritable Class Reports
                     </Section>
 
                     <!--
-					<%= From x In Sections Select x.ToXML %>
-					-->
+                    <%= From x In Sections Select x.ToXML %>
+                    -->
                     <%= From x In Formatted_Sections %>
 
                     <SectionReportFooter PageFooterHeight="2" Padding="10,0,10,10" FontSize="12">

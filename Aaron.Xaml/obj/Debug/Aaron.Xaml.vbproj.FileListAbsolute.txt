@@ -30,3 +30,4 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aa
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.pdb
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\bin\Debug\itextsharp.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Xaml\obj\Debug\Aaron.Xaml.vbprojResolveAssemblyReference.cache

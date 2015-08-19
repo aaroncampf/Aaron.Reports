@@ -34,7 +34,8 @@ Public Class Form1
         Report.Sections.Add(New Sections.Basic("Header", "Body", "Footer"))
 
         If My.Computer.FileSystem.FileExists("PDFExample.pdf") Then My.Computer.FileSystem.DeleteFile("PDFExample.pdf")
-        My.Computer.FileSystem.MoveFile(Report.AsPDF(5), "PDFExample.pdf")
+        Dim File = Report.AsPDF
+        My.Computer.FileSystem.MoveFile(File, "PDFExample.pdf")
         Process.Start("PDFExample.pdf")
     End Sub
 End Class
