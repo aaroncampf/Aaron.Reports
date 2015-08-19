@@ -5,7 +5,7 @@ bin/*
 obj/*
 *.suo
 *.user
-**/Debug/**
+*/Debug/*
 
 
 # Windows image file caches
