@@ -6,17 +6,6 @@ Aaron.Reports
 </name>
 </assembly>
 <members>
-<member name="M:Aaron.Reports.Base_Report_Temp.AddPage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
- <summary>
- 
- </summary>
- <param name="Resize"></param>
- <param name="Image"></param>
- <param name="oPdfDoc"></param>
- <param name="oPdfWriter"></param>
- <remarks></remarks>
- <stepthrough></stepthrough>
-</member>
 <member name="T:Aaron.Reports.Google.ChartItem">
  <summary>
  

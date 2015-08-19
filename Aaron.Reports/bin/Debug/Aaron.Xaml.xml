@@ -335,13 +335,6 @@ Aaron.Xaml
  <exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
  <exception cref="T:System.ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
 </member>
-<member name="M:Aaron.Xaml.ReportDocument.AsStream(System.Int32)">
- <summary>
- Streams a single page of the report
- </summary>
- <param name="Page">The page you want to stream.</param>
- <returns></returns>
-</member>
 <member name="M:Aaron.Xaml.ReportDocument.AsPDF">
  <summary>
  
