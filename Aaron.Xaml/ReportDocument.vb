@@ -325,17 +325,18 @@ Public Class ReportDocument
         If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
         'If Not Data.DocumentValues.ContainsKey("ReportTitle") Then Data.DocumentValues.Add("ReportTitle", Me.Data.ReportTitle)
 
-        ShowHelper()
+        'ShowHelper()
+        Base_Report_Temp.ShowHelper(CreateXpsDocument)
     End Sub
 
 
-    <DebuggerStepThrough()>
-    Protected Overridable Sub ShowHelper()
-        Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
-        Dim this As New DocumentViewer With {.Document = CreateXpsDocument.GetFixedDocumentSequence}
-        IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
-        IsForm.ShowDialog()
-    End Sub
+    '<DebuggerStepThrough()>
+    'Protected Overridable Sub ShowHelper()
+    '    Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
+    '    Dim this As New DocumentViewer With {.Document = CreateXpsDocument.GetFixedDocumentSequence}
+    '    IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
+    '    IsForm.ShowDialog()
+    'End Sub
 
 
     '''' <summary>
@@ -411,12 +412,15 @@ Public Class ReportDocument
     Overridable Sub Print(Hidden As Boolean)
         If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
         If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
-        If Hidden Then
-            Dim PD As New PrintDialog
-            PD.PrintDocument(Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator, Nothing)
-        Else
-            Dim this As New DocumentViewer With {.Document = Me.CreateXpsDocument().GetFixedDocumentSequence}
-            this.Print()
-        End If
+
+        Aaron.Xaml.Base_Report_Temp.Print(Hidden, Me.CreateXpsDocument())
+
+        'If Hidden Then
+        '    Dim PD As New PrintDialog
+        '    PD.PrintDocument(Me.CreateXpsDocument().GetFixedDocumentSequence.DocumentPaginator, Nothing)
+        'Else
+        '    Dim this As New DocumentViewer With {.Document = Me.CreateXpsDocument().GetFixedDocumentSequence}
+        '    this.Print()
+        'End If
     End Sub
 End Class

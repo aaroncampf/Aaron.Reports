@@ -223,29 +223,31 @@ Public NotInheritable Class Reports
             Dim Text As String = Me.GetString
             Report.XamlData = Text
 
-            If Hidden Then
-                Dim PD As New Windows.Controls.PrintDialog
-                PD.PrintDocument(Report.CreateXpsDocument(Data).GetFixedDocumentSequence.DocumentPaginator, Nothing)
-            Else
-                Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
-                this.Print()
-            End If
+            Aaron.Xaml.Base_Report_Temp.Print(Hidden, Report.CreateXpsDocument(Data))
+
+            'If Hidden Then
+            '    Dim PD As New Windows.Controls.PrintDialog
+            '    PD.PrintDocument(Report.CreateXpsDocument(Data).GetFixedDocumentSequence.DocumentPaginator, Nothing)
+            'Else
+            '    Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
+            '    this.Print()
+            'End If
         End Sub
 
-        ''' <summary>
-        ''' Displays the Report that was Generated in <see cref="Show"/>
-        ''' </summary>
-        ''' <param name="Report"></param>
-        ''' <param name="Data"></param>
-        ''' <remarks></remarks>
-        ''' <stepthrough>Enabled</stepthrough>
-        <DebuggerStepThrough()>
-        Protected Overridable Sub ShowHelper(Report As CodeReason.Reports.ReportDocument, Data As CodeReason.Reports.ReportData)
-            Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
-            Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
-            IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
-            IsForm.ShowDialog()
-        End Sub
+        '''' <summary>
+        '''' Displays the Report that was Generated in <see cref="Show"/>
+        '''' </summary>
+        '''' <param name="Report"></param>
+        '''' <param name="Data"></param>
+        '''' <remarks></remarks>
+        '''' <stepthrough>Enabled</stepthrough>
+        '<DebuggerStepThrough()>
+        'Protected Overridable Sub ShowHelper(Report As CodeReason.Reports.ReportDocument, Data As CodeReason.Reports.ReportData)
+        '    Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
+        '    Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
+        '    IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
+        '    IsForm.ShowDialog()
+        'End Sub
 
         ''' <summary>
         ''' Prepares A <see cref="CodeReason.Reports.ReportDocument">ReportDocument</see> and <see cref="CodeReason.Reports.ReportData">ReportData</see>
@@ -260,14 +262,11 @@ Public NotInheritable Class Reports
             If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
             Dim Text As String = Me.GetString
 
-            'Temp Testing Only
-            'If False Then
-            '    Text = My.Computer.FileSystem.ReadAllText("C:\Hand_Made_Quote.xml")
-            'End If
-
-
             Report.XamlData = Text
-            ShowHelper(Report, Data)
+            'ShowHelper(Report, Data)
+
+            Xaml.Base_Report_Temp.ShowHelper(Report.CreateXpsDocument(Data))
+
         End Sub
 
 #End Region

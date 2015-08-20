@@ -3,6 +3,8 @@ Imports System.Windows.Documents
 
 Public Class Base_Report_Temp
 
+#Region "   PDF"
+
     Public Shared Function AsPDF(Document As Xps.Packaging.XpsDocument) As String
         Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
 
@@ -87,6 +89,27 @@ Public Class Base_Report_Temp
         oImage.ScaleAbsolute(iWidthGoal, iHeightGoal)
         oPdfWriter.DirectContent.AddImage(oImage)
     End Sub
+
+#End Region
+
+
+    Public Shared Sub Print(Hidden As Boolean, Document As Xps.Packaging.XpsDocument)
+        If Hidden Then
+            Dim PD As New Windows.Controls.PrintDialog
+            PD.PrintDocument(Document.GetFixedDocumentSequence.DocumentPaginator, Nothing)
+        Else
+            Dim this As New Windows.Controls.DocumentViewer With {.Document = Document.GetFixedDocumentSequence}
+            this.Print()
+        End If
+    End Sub
+
+    Public Shared Sub ShowHelper(Document As Xps.Packaging.XpsDocument)
+        Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
+        Dim this As New Controls.DocumentViewer With {.Document = Document.GetFixedDocumentSequence}
+        IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
+        IsForm.ShowDialog()
+    End Sub
+
 
 
 End Class

@@ -456,19 +456,10 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.ShowHelper(CodeReason.Reports.ReportDocument,CodeReason.Reports.ReportData)">
- <summary>
- Displays the Report that was Generated in <see cref="M:Aaron.Reports.Reports.Basic.Show"/>
- </summary>
- <param name="Report"></param>
- <param name="Data"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
-</member>
 <member name="M:Aaron.Reports.Reports.Basic.Show">
  <summary>
  Prepares A <see cref="T:CodeReason.Reports.ReportDocument">ReportDocument</see> and <see cref="T:CodeReason.Reports.ReportData">ReportData</see>
- and Uses then in <see cref="M:Aaron.Reports.Reports.Basic.ShowHelper(CodeReason.Reports.ReportDocument,CodeReason.Reports.ReportData)"/>
+ and Uses then in <see cref="!:ShowHelper"/>
  </summary>
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
