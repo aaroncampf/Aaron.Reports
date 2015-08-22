@@ -47,12 +47,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodeReason.Reports">
-      <HintPath>..\External References\CodeReason.Reports.dll</HintPath>
-    </Reference>
-    <Reference Include="CodeReason.Reports.Charts.Visifire">
-      <HintPath>..\External References\CodeReason.Reports.Charts.Visifire.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp, Version=5.1.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External References\itextsharp.dll</HintPath>
@@ -69,10 +63,6 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
-    <Reference Include="WPFVisifire.Charts, Version=2.2.5.0, Culture=neutral, PublicKeyToken=99d724542e4db593, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External References\WPFVisifire.Charts.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Aaron" />
@@ -90,8 +80,11 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Google\PieGraph.vb" />
-    <Compile Include="Mod_Test.vb" />
+    <Compile Include="Document Generator\DocSuperWalker.vb" />
+    <Compile Include="Document Generator\DocWalker.vb" />
+    <Compile Include="Document Generator\Mod_Misc.vb" />
+    <Compile Include="Document Generator\ReportContextValues.vb" />
+    <Compile Include="Document Generator\XamlHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,10 +100,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Charts.vb" />
     <Compile Include="Extensions.vb" />
-    <Compile Include="Reports.vb" />
     <Compile Include="Sections.vb" />
+    <Compile Include="Document Generator\ReportPaginator.vb" />
+    <Compile Include="Reports.vb" />
     <Compile Include="XpsImage.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -131,27 +124,15 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Documentation\Visifire Documentation.chm" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Documentation\Documentation.xml" />
-    <Content Include="Documentation\Help.txt" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="LineGraph!.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TextFile1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aaron.Xaml\Aaron.Xaml.vbproj">
-      <Project>{c7e21190-8e4e-440b-a1b0-56c4229b4be0}</Project>
-      <Name>Aaron.Xaml</Name>
-    </ProjectReference>
+    <Folder Include="Testing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

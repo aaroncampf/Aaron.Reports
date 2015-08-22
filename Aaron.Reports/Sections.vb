@@ -403,45 +403,46 @@ Public NotInheritable Class Sections
 
     End Class
 
-    ''' <summary>
-    ''' A Section Containing A Chart
-    ''' </summary>
-    ''' <remarks></remarks>
-    ''' <features></features>
-    ''' <stepthrough></stepthrough>
-    Public Class ChartS
-        Inherits Base
+    '''' <summary>
+    '''' A Section Containing A Chart
+    '''' </summary>
+    '''' <remarks></remarks>
+    '''' <features></features>
+    '''' <stepthrough></stepthrough>
+    'Public Class ChartS
+    '    Inherits Base
 
-        Dim _Chart As Aaron.Reports.Chart
-        ReadOnly Property Chart As Aaron.Reports.Chart
-            Get
-                Return _Chart
-            End Get
-        End Property
+    '    Dim _Chart As Aaron.Reports.Chart
+    '    ReadOnly Property Chart As Aaron.Reports.Chart
+    '        Get
+    '            Return _Chart
+    '        End Get
+    '    End Property
 
-        ''' <summary>
-        '''
-        ''' </summary>
-        ''' <param name="Title"></param>
-        ''' <param name="Details"></param>
-        ''' <remarks></remarks>
-        ''' <stepthrough></stepthrough>
-        <DebuggerNonUserCode()>
-        Sub New(TableName As String, Columns As String, Optional ColumnType As Visifire.Charts.RenderAs = Visifire.Charts.RenderAs.Column,
-                Optional Title As String = "", Optional Details As String = "")
+    '    ''' <summary>
+    '    '''
+    '    ''' </summary>
+    '    ''' <param name="Title"></param>
+    '    ''' <param name="Details"></param>
+    '    ''' <remarks></remarks>
+    '    ''' <stepthrough></stepthrough>
+    '    <DebuggerNonUserCode()>
+    '    Sub New(TableName As String, Columns As String, Optional ColumnType As Visifire.Charts.RenderAs = Visifire.Charts.RenderAs.Column,
+    '            Optional Title As String = "", Optional Details As String = "")
 
-            MyBase.New(Title, Details)
-            'Dim T1 As Documents.Paragraph
+    '        MyBase.New(Title, Details)
+    '        'Dim T1 As Documents.Paragraph
 
-            _Chart = New Aaron.Reports.Chart(TableName, Columns, ColumnType)
-        End Sub
+    '        _Chart = New Aaron.Reports.Chart(TableName, Columns, ColumnType)
+    '    End Sub
 
-        Protected Overrides Function Content() As XElement
-            Dim XE = <Paragraph/>
-            XE.Add(Chart.ToXML)
-            Return XE
-        End Function
+    '    Protected Overrides Function Content() As XElement
+    '        MyBase.Content()
+    '        Dim XE = <Paragraph/>
+    '        XE.Add(Chart.ToXML)
+    '        Return XE
+    '    End Function
 
-    End Class
+    'End Class
 
 End Class

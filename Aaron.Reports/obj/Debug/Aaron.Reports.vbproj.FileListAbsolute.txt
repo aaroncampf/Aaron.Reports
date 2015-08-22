@@ -44,11 +44,9 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple WPF Reports\Aaron.Reports\obj\Debug
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Reports.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Reports.pdb
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Reports.xml
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Xaml.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Xaml.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\itextsharp.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.vbprojResolveAssemblyReference.cache
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\LineGraph!.baml
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\TextFile1.baml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports_MarkupCompile.cache
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.g.resources
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.Resources.resources
@@ -56,8 +54,3 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.pdb
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\Aaron.Xaml.xml
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\CodeReason.Reports.Charts.Visifire.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\CodeReason.Reports.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\itextsharp.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Debug\WPFVisifire.Charts.dll

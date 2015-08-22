@@ -1,79 +1,79 @@
-﻿Imports <xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-Imports <xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿Imports System.IO
+Imports System.IO.Packaging
+Imports System.Windows.Controls
+Imports System.Windows.Documents
+Imports System.Windows.Markup
+Imports System.Windows.Xps.Packaging
+Imports System.Windows.Xps.Serialization
 
 ''' <summary>
-''' 
+''' Contains a complete report template without data
 ''' </summary>
-''' <remarks></remarks>
-''' <features></features>
-''' <stepthrough>Disabled</stepthrough>
-Public NotInheritable Class Reports
-    Private Sub New()
-    End Sub
+Public Class Basic
 
+#Region "       Properties		>>>"
+    Public Const XML_Namespace = "xmlns:xrd=""clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml"""
 
     ''' <summary>
-    ''' A Basic Report and the Base Class for All Reports
+    ''' The Default Date associated with the Report
+    ''' </summary>
+    ''' <value></value>
+    ''' <remarks>
+    ''' <see cref="ReportContextValues.Types.ReportDate"/>
+    ''' </remarks>
+    Public Property ReportDate As String
+
+    ''' <summary>
+    ''' Gets a list of document values
+    ''' </summary>
+    Public Property DocumentValues As New Dictionary(Of String, Object)
+
+    ''' <summary>
+    ''' Shows all unknown values on the page
+    ''' </summary>
+    Public Property ShowUnknownValues As Boolean = True
+
+    ''' <summary>
+    ''' Gets the original page height of the FlowDocument
+    ''' </summary>
+    Public ReadOnly Property PageHeight As Double = Double.NaN
+
+    ''' <summary>
+    ''' Gets the original page width of the FlowDocument
+    ''' </summary>
+    Public ReadOnly Property PageWidth As Double = Double.NaN
+
+    ''' <summary>
+    ''' Gets or sets the optional report name
+    ''' </summary>
+    Public Property ReportName As String
+
+    ''' <summary>
+    ''' Gets or sets the optional report title.
     ''' </summary>
     ''' <remarks>
-    ''' 'TODO Upgrade to use Aaron.XAML(I think the Report Document)
+    ''' XAML to use: {xrd:InlineContextValue Format="D" PropertyName="ReportTitle" />}
     ''' </remarks>
-    ''' <features></features>
-    ''' <stepthrough></stepthrough>
-    Public Class Basic
+    Public Property ReportTitle As String
 
-#Region "       Properties  >>>"
+    Overridable Property CustomXAML As String
 
-        Overridable Property CustomXAML As String
-
-        ''' <summary>The Text for the Bottom Left of the Page</summary> 
-        Property Bottom_Left As New Documents.Paragraph
-
-        ''' <summary>The Text for the Bottom Right of the Page</summary> 
-        Property Bottom_Right As New Documents.Paragraph
-
-        ''' <summary>Use this to setup how the SectionReportHeader is Constructed</summary>
-        Property Header As New CodeReason.Reports.Document.SectionReportHeader
-
-        ''' <summary>Use this to setup how the SectionReportFooter is Constructed</summary>
-        Property Footer As New CodeReason.Reports.Document.SectionReportHeader
-
-        ''' <summary>The Sections that make up the Report</summary> 
-        Property Sections As New List(Of Sections.Base)
-
-        Property Data As New CodeReason.Reports.ReportData
-
-        ReadOnly Property ReportDocumentValues As Dictionary(Of String, Object)
-            Get
-                Return Data.ReportDocumentValues
-            End Get
-        End Property
+    ''' <summary>The Sections that make up the Report</summary> 
+    Property Sections As New List(Of Sections.Base)
 
 
+    ''' <summary>The Title of the Report</summary> 
+    ReadOnly Property Title As Documents.Paragraph
 
-        Dim _Title As Documents.Paragraph
-        ''' <summary>The Title of the Report</summary> 
-        ReadOnly Property Title As Documents.Paragraph
-            Get
-                Return _Title
-            End Get
-        End Property
+    ''' <summary>An Optional Paragraph Detailing the Report</summary> 
+    ReadOnly Property Details As Documents.Paragraph
 
 
-        Dim _Details As Documents.Paragraph
-        ''' <summary>An Optional Paragraph Detailing the Report</summary> 
-        ReadOnly Property Details As Documents.Paragraph
-            Get
-                Return _Details
-            End Get
-        End Property
-
-
-        Dim _Resources As XElement
-        Overridable ReadOnly Property Resources As XElement
-            Get
-                If _Resources Is Nothing Then
-                    _Resources =
+    Dim _Resources As XElement
+    Overridable ReadOnly Property Resources As XElement
+        Get
+            If _Resources Is Nothing Then
+                _Resources =
                         <FlowDocument.Resources>
                             <!-- Style for header/footer rows. -->
                             <Style Key="headerFooterRowStyle" TargetType="{x:Type TableRowGroup}">
@@ -102,274 +102,354 @@ Public NotInheritable Class Reports
                             </Style>
 
                         </FlowDocument.Resources>
-                End If
-                Return _Resources
-            End Get
-        End Property
+            End If
+            Return _Resources
+        End Get
+    End Property
+
+    ''' <summary>The Text for the Bottom Left of the Page</summary> 
+    Property Bottom_Left As New Documents.Paragraph
+
+    ''' <summary>The Text for the Bottom Right of the Page</summary> 
+    Property Bottom_Right As New Documents.Paragraph
 
 #End Region
+
+    ''' <summary>
+    ''' Helper method to create page header or footer from flow document template
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function CreateXpsDocument() As XpsDocument
+        Dim ms As New MemoryStream()
+        Dim pkg As Package = Package.Open(ms, FileMode.Create, FileAccess.ReadWrite)
+        Dim pack As String = "pack://report.xps"
+        PackageStore.RemovePackage(New Uri(pack))
+        PackageStore.AddPackage(New Uri(pack), pkg)
+        Dim doc As New XpsDocument(pkg, CompressionOption.NotCompressed, pack)
+        Dim rsm As New XpsSerializationManager(New XpsPackagingPolicy(doc), False)
+        Dim paginator As DocumentPaginator = DirectCast(CreateFlowDocument(), IDocumentPaginatorSource).DocumentPaginator
+
+        Dim rp As New ReportPaginator(Me)
+        rsm.SaveAsXaml(rp)
+        Return doc
+    End Function
+
+    Overridable Function Get_Default_Template() As String
+        Return "<FlowDocument/>"
+    End Function
+
+
+    ''' <summary>
+    ''' Creates a flow document of the report data
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <exception cref="ArgumentException">Flow document must have a specified page height</exception>
+    ''' <exception cref="ArgumentException">Flow document must have a specified page width</exception>
+    ''' <exception cref="ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
+    Public Function CreateFlowDocument() As FlowDocument
+        Dim mem As New MemoryStream()
+        Dim buf As Byte() = Text.Encoding.UTF8.GetBytes(GetString())
+        mem.Write(buf, 0, buf.Length)
+        mem.Position = 0
+        Dim res As FlowDocument = TryCast(XamlReader.Load(mem), FlowDocument)
+
+        If res.PageHeight = Double.NaN Then
+            Throw New ArgumentException("Flow document must have a specified page height")
+        End If
+        If res.PageWidth = Double.NaN Then
+            Throw New ArgumentException("Flow document must have a specified page width")
+        End If
+
+        ' remember original values
+        _PageHeight = res.PageHeight
+        _PageWidth = res.PageWidth
+
+        Dim headers As List(Of SectionReportHeader) = DocWalker.Walk(Of SectionReportHeader)(res)
+        Dim footers As List(Of SectionReportFooter) = DocWalker.Walk(Of SectionReportFooter)(res)
+
+        ' make height smaller to have enough space for page header and page footer
+        'res.PageHeight = _pageHeight - _pageHeight * (PageHeaderHeight + PageFooterHeight) / 100.0
+        res.PageHeight = _PageHeight - _PageHeight * (
+            If(headers.Count = 0, 0, headers.First.PageHeaderHeight) +
+            If(footers.Count = 0, 0, footers.First.PageFooterHeight)) / 100.0
+
+        Return res
+    End Function
+
+    '<DebuggerStepThrough>
+    Overridable Sub Show()
+        'If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
+        If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+        If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+        'If Not Data.DocumentValues.ContainsKey("ReportTitle") Then Data.DocumentValues.Add("ReportTitle", Me.Data.ReportTitle)
+        ShowHelper(CreateXpsDocument)
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <returns>The Full Name of the PDF File</returns>
+    ''' <remarks></remarks>
+    ''' <stepthrough></stepthrough>
+    Overridable Function AsPDF() As String
+        If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+        If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+        Return AsPDF(Me.CreateXpsDocument())
+    End Function
+
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="Hidden"></param>
+    ''' <remarks></remarks>
+    ''' <stepthrough></stepthrough>
+    Overridable Sub Print(Hidden As Boolean)
+        If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+        If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+        Print(Hidden, Me.CreateXpsDocument())
+    End Sub
+
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' Aaron Campf: 6/7/2013 Added [Formatted_Sections]
+    ''' </remarks>
+    ''' <stepthrough>Disabled</stepthrough>
+    Overridable Function GetString() As String
+        'Remember about Using <Bold>Text</Bold> and <Italic>Text</Italic>
+        If Not String.IsNullOrWhiteSpace(Me.CustomXAML) Then Return Me.CustomXAML
+
+        Dim Formatted_Sections As New List(Of XElement) 'Aaron Campf: 6/7/2013 Added [Formatted_Sections]
+        For Each Item In Me.Sections
+            Formatted_Sections.Add(Item.ToXML)
+
+            If Item.BreakPageAfter Then
+                Formatted_Sections.Add(<Section BreakPageBefore="true"/>)
+            End If
+        Next
+
+        Dim IsXML =
+            <FlowDocument
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:xrd="clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml"
+                PageHeight="29.7cm" PageWidth="21cm" ColumnWidth="21cm">
+                <!--xmlns:crcv="clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire"-->
+
+                <%= Me.Resources %>
+
+                <SectionReportHeader PageHeaderHeight="2" Padding="10,10,10,0" FontSize="12">
+                    <Table>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                                Page
+                                                <InlineContextValue PropertyName="PageNumber" FontWeight="Bold"/> of
+                                                <InlineContextValue PropertyName="PageCount" FontWeight="Bold"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph TextAlignment="Right">
+                                        <InlineDocumentValue PropertyName=<%= Today.ToShortDateString %> Format="dd.MM.yyyy"/>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </SectionReportHeader>
+
+                <Section Padding="40,10,40,10" FontSize="12">
+                    <%= Me.Title?.ToXML %>
+                    <!--
+                    <%= If(CType(_Details.Inlines(0), Windows.Documents.Run).Text.Length > 0, Me.Details.ToXML, Nothing) %>
+                    -->
+                    <%= Me.Details?.ToXML %>
+                </Section>
+
+                <%= From x In Formatted_Sections %>
+                <SectionReportFooter PageFooterHeight="2" Padding="10,0,10,10" FontSize="12">
+                    <Table>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <%= Me.Bottom_Left.ToXML %>
+                                </TableCell>
+                                <TableCell>
+                                    <%= Me.Bottom_Right.ToXML %>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </SectionReportFooter>
+            </FlowDocument>
+
+
+        Dim Builder As New Text.StringBuilder(IsXML.ToString)
+
+
+        Builder.Replace("ReportProperties", "xrd:ReportProperties")
+        Builder.Replace("SectionReport", "xrd:SectionReport")
+        Builder.Replace("InlineContextValue", "xrd:InlineContextValue")
+        Builder.Replace("InlineDocumentValue", "xrd:InlineDocumentValue")
+        Builder.Replace("<Style Key", "<Style x:Key")
+        Builder.Replace("SectionDataGroup", "xrd:SectionDataGroup")
+        Builder.Replace("TableRowFor", "xrd:TableRowFor")
+
+        Builder.Replace("xmlns=""""", "")
+        Return Builder.ToString
+    End Function
+
 
 
 #Region "       Sub New     >>>"
 
-        ''' <summary>
-        ''' 
-        ''' </summary>  
-        ''' <param name="Title">The Title of the Report</param>
-        ''' <param name="Details">The Details of the Report</param>
-        ''' <param name="Paragraph_Text_Alignment"></param>
-        ''' <remarks></remarks>
-        ''' <stepthrough>Enabled</stepthrough>
-        <DebuggerNonUserCode()>
-        Sub New(Optional Title As String = "", Optional Details As String = "", Optional Paragraph_Text_Alignment As TextAlignment = TextAlignment.Left)
-            _Title = New Documents.Paragraph(New Documents.Run(Title)) With {.FontSize = 24, .TextAlignment = TextAlignment.Center, .FontWeight = FontWeights.Bold}
-            _Details = New Documents.Paragraph(New Documents.Run(Details)) With {.FontSize = 12, .TextAlignment = Paragraph_Text_Alignment}
-        End Sub
+    Sub New()
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>  
+    ''' <param name="Title">The Title of the Report</param>
+    ''' <param name="Details">The Details of the Report</param>
+    ''' <param name="Paragraph_Text_Alignment"></param>
+    ''' <remarks></remarks>
+    ''' <stepthrough>Enabled</stepthrough>
+    <DebuggerNonUserCode()>
+    Sub New(Optional Title As String = "", Optional Details As String = "", Optional Paragraph_Text_Alignment As TextAlignment = TextAlignment.Left)
+        _Title = New Documents.Paragraph(New Documents.Run(Title)) With {.FontSize = 24, .TextAlignment = TextAlignment.Center, .FontWeight = FontWeights.Bold}
+        _Details = New Documents.Paragraph(New Documents.Run(Details)) With {.FontSize = 12, .TextAlignment = Paragraph_Text_Alignment}
+    End Sub
 
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="Title">The Title of the Report</param>
-        ''' <param name="Details">The Details of the Report</param>
-        ''' <param name="Sections"></param>
-        ''' <remarks></remarks>
-        ''' <stepthrough>Enabled</stepthrough>
-        <DebuggerNonUserCode()>
-        Sub New(Title As String, Details As String, ParamArray Sections As Sections.Base())
-            _Title = New Documents.Paragraph(New Documents.Run(Title)) With {.FontSize = 24, .TextAlignment = TextAlignment.Center, .FontWeight = FontWeights.Bold}
-            _Details = New Documents.Paragraph(New Documents.Run(Details)) With {.FontSize = 12, .TextAlignment = TextAlignment.Center}
-            Me.Sections.AddRange(Sections)
-        End Sub
-
-#End Region
-
-
-#Region "       Utilities   >>>"
-
-        '''' <summary>
-        '''' 
-        '''' </summary>
-        '''' <returns></returns>
-        '''' <remarks></remarks>
-        '''' <stepthrough></stepthrough>
-        ''<DebuggerNonUserCode()>
-        'Overridable Function AsStream(Report As CodeReason.Reports.ReportDocument, Page As Integer) As IO.MemoryStream
-        '    Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
-        '    Dim documentPage As Documents.DocumentPage = Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
-        '    Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
-
-        '    targetBitmap.Render(documentPage.Visual)
-        '    bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
-
-        '    Dim Stream As New IO.MemoryStream
-        '    bitmapEncoder.Save(Stream)
-        '    Return Stream
-        'End Function
-
-
-        '''' <summary>
-        '''' Converts the report into a PDF file and returns the files's path
-        '''' </summary>
-        '''' <returns>The Full Name of the PDF File</returns>
-        '''' <remarks></remarks>
-        '''' <stepthrough></stepthrough>
-        'Overridable Function AsPDF() As String
-        '    Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
-        '    Dim Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
-        '    Dim oPdfDoc As New iTextSharp.text.Document()
-        '    Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
-        '    oPdfDoc.Open()
-
-        '    Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
-        '    If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
-        '    Report.XamlData = Me.GetString      'Check to see if this Works!
-
-        '    For I = 0 To Report.CreateXpsDocument(Me.Data).GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-        '        Aaron.Xaml.Base_Report_Temp.AddPage(True, AsStream(Report, I), oPdfDoc, oPdfWriter)
-        '    Next
-
-        '    oPdfDoc.Close()
-        '    oPdfWriter.Close()
-        '    Stream.Close()
-
-        '    Return TempFile
-        'End Function
-
-
-        ''' <summary>
-        ''' Converts the report into a PDF file and returns the files's path
-        ''' </summary>
-        ''' <returns>The Full Name of the PDF File</returns>
-        ''' <remarks></remarks>
-        ''' <stepthrough></stepthrough>
-        Overridable Function AsPDF() As String
-            Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
-            If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
-            Report.XamlData = Me.GetString
-            Return Aaron.Xaml.Base_Report_Temp.AsPDF(Report.CreateXpsDocument(Me.Data))
-        End Function
-
-
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="Hidden"></param>
-        ''' <remarks></remarks>
-        ''' <stepthrough></stepthrough>
-        Overridable Sub Print(Hidden As Boolean)
-            Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
-            If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
-            Dim Text As String = Me.GetString
-            Report.XamlData = Text
-
-            Aaron.Xaml.Base_Report_Temp.Print(Hidden, Report.CreateXpsDocument(Data))
-
-            'If Hidden Then
-            '    Dim PD As New Windows.Controls.PrintDialog
-            '    PD.PrintDocument(Report.CreateXpsDocument(Data).GetFixedDocumentSequence.DocumentPaginator, Nothing)
-            'Else
-            '    Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
-            '    this.Print()
-            'End If
-        End Sub
-
-        '''' <summary>
-        '''' Displays the Report that was Generated in <see cref="Show"/>
-        '''' </summary>
-        '''' <param name="Report"></param>
-        '''' <param name="Data"></param>
-        '''' <remarks></remarks>
-        '''' <stepthrough>Enabled</stepthrough>
-        '<DebuggerStepThrough()>
-        'Protected Overridable Sub ShowHelper(Report As CodeReason.Reports.ReportDocument, Data As CodeReason.Reports.ReportData)
-        '    Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
-        '    Dim this As New Windows.Controls.DocumentViewer With {.Document = Report.CreateXpsDocument(Data).GetFixedDocumentSequence}
-        '    IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
-        '    IsForm.ShowDialog()
-        'End Sub
-
-        ''' <summary>
-        ''' Prepares A <see cref="CodeReason.Reports.ReportDocument">ReportDocument</see> and <see cref="CodeReason.Reports.ReportData">ReportData</see>
-        ''' and Uses then in <see cref="ShowHelper"/>
-        ''' </summary>
-        ''' <remarks></remarks>
-        ''' <stepthrough>Enabled</stepthrough>
-        <DebuggerStepThrough()>
-        Overridable Sub Show()
-            Dim Report As New CodeReason.Reports.ReportDocument With {.ReportTitle = "Test", .PageFooterHeight = 2, .PageHeaderHeight = 2}
-
-            If Not Data.ReportDocumentValues.ContainsKey("PrintDate") Then Data.ReportDocumentValues.Add("PrintDate", DateTime.Now)
-            Dim Text As String = Me.GetString
-
-            Report.XamlData = Text
-            'ShowHelper(Report, Data)
-
-            Xaml.Base_Report_Temp.ShowHelper(Report.CreateXpsDocument(Data))
-
-        End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="Title">The Title of the Report</param>
+    ''' <param name="Details">The Details of the Report</param>
+    ''' <param name="Sections"></param>
+    ''' <remarks></remarks>
+    ''' <stepthrough>Enabled</stepthrough>
+    <DebuggerNonUserCode()>
+    Sub New(Title As String, Details As String, ParamArray Sections As Sections.Base())
+        _Title = New Documents.Paragraph(New Documents.Run(Title)) With {.FontSize = 24, .TextAlignment = TextAlignment.Center, .FontWeight = FontWeights.Bold}
+        _Details = New Documents.Paragraph(New Documents.Run(Details)) With {.FontSize = 12, .TextAlignment = TextAlignment.Center}
+        Me.Sections.AddRange(Sections)
+    End Sub
 
 #End Region
 
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <remarks>
-        ''' Aaron Campf: 6/7/2013 Added [Formatted_Sections]
-        ''' </remarks>
-        ''' <stepthrough>Disabled</stepthrough>
-        Overridable Function GetString() As String
-            'Remember about Using <Bold>Text</Bold> and <Italic>Text</Italic>
-            If Not String.IsNullOrWhiteSpace(Me.CustomXAML) Then Return Me.CustomXAML
 
-            Dim Formatted_Sections As New List(Of XElement) 'Aaron Campf: 6/7/2013 Added [Formatted_Sections]
-            For Each Item In Me.Sections
-                Formatted_Sections.Add(Item.ToXML)
+#Region "   PDF"
 
-                If Item.BreakPageAfter Then
-                    Formatted_Sections.Add(<Section BreakPageBefore="true"/>)
-                End If
+    Public Shared Function AsPDF(Document As Xps.Packaging.XpsDocument) As String
+        Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+
+        'TODO Make sure this Using Works Properly
+        Using Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
+            Dim oPdfDoc As New iTextSharp.text.Document()
+            Dim oPdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(oPdfDoc, Stream)
+            oPdfDoc.Open()
+
+            For I = 0 To Document.GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
+                AddPage(True, AsStream(Document, I), oPdfDoc, oPdfWriter)
             Next
 
-            Dim IsXML =
-                <FlowDocument
-                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:xrd="clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports"
-                    xmlns:crcv="clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire"
-                    PageHeight="29.7cm" PageWidth="21cm" ColumnWidth="21cm">
+            oPdfDoc.Close()
+            oPdfWriter.Close()
+        End Using
 
-                    <%= Me.Resources %>
-
-                    <SectionReportHeader PageHeaderHeight="2" Padding="10,10,10,0" FontSize="12">
-                        <Table>
-                            <TableRowGroup>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                                Page
-                                                <InlineContextValue PropertyName="PageNumber" FontWeight="Bold"/> of
-                                                <InlineContextValue PropertyName="PageCount" FontWeight="Bold"/>
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph TextAlignment="Right">
-                                            <InlineDocumentValue PropertyName=<%= Today.ToShortDateString %> Format="dd.MM.yyyy"/>
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                            </TableRowGroup>
-                        </Table>
-                    </SectionReportHeader>
+        Return TempFile
+    End Function
 
 
-                    <!--Padding="80,10,40,10"-->
-                    <Section Padding="40,10,40,10" FontSize="12">
-                        <%= Me.Title.ToXML %>
-                        <%= If(CType(_Details.Inlines(0), Windows.Documents.Run).Text.Length > 0, Me.Details.ToXML, Nothing) %>
-                    </Section>
+    Private Shared Function AsStream(Document As XpsDocument, Page As Integer) As IO.MemoryStream
+        Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
+        Dim documentPage As DocumentPage = Document.GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
+        Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
 
-                    <!--
-                    <%= From x In Sections Select x.ToXML %>
-                    -->
-                    <%= From x In Formatted_Sections %>
+        targetBitmap.Render(documentPage.Visual)
+        bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
-                    <SectionReportFooter PageFooterHeight="2" Padding="10,0,10,10" FontSize="12">
-                        <Table>
-                            <TableRowGroup>
-                                <TableRow>
-                                    <TableCell>
-                                        <%= Me.Bottom_Left.ToXML %>
-                                    </TableCell>
-                                    <TableCell>
-                                        <%= Me.Bottom_Right.ToXML %>
-                                    </TableCell>
-                                </TableRow>
-                            </TableRowGroup>
-                        </Table>
-                    </SectionReportFooter>
-                </FlowDocument>
+        Dim Stream As New IO.MemoryStream
+        bitmapEncoder.Save(Stream)
+        Return Stream
+    End Function
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="Resize"></param>
+    ''' <param name="Image"></param>
+    ''' <param name="oPdfDoc"></param>
+    ''' <param name="oPdfWriter"></param>
+    ''' <remarks></remarks>
+    ''' <stepthrough></stepthrough>
+    Shared Sub AddPage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
+        Dim oImage As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(Image)
+        Dim iWidth As Single = oImage.Width, iHeight As Single = oImage.Height
+
+        If Resize Then
+            oImage.SetAbsolutePosition(1, 1)
+            oPdfDoc.SetPageSize(New iTextSharp.text.Rectangle(iWidth, iHeight))
+            oPdfDoc.NewPage()
+            oPdfWriter.DirectContent.AddImage(oImage)
+            Exit Sub
+        End If
+
+        Dim iAspectRatio As Double = iWidth / iHeight
+
+        Dim iWidthPage As Single = iTextSharp.text.PageSize.LETTER.Width
+        Dim iHeightPage As Single = iTextSharp.text.PageSize.LETTER.Height
+        Dim iPageAspectRatio As Double = iWidthPage / iHeightPage
+
+        Dim iWidthGoal As Single = 0, iHeightGoal As Single = 0
+
+        If iWidth < iWidthPage And iHeight < iHeightPage Then
+            'Image fits within the page
+            iWidthGoal = iWidth
+            iHeightGoal = iHeight
+        ElseIf iAspectRatio > iPageAspectRatio Then
+            'Width is too big
+            iWidthGoal = iWidthPage
+            iHeightGoal = iWidthPage * (iHeight / iWidth)
+        Else
+            'Height is too big
+            iWidthGoal = iHeightPage * (iWidth / iHeight)
+            iHeightGoal = iHeightPage
+        End If
+
+        oImage.SetAbsolutePosition(1, 1)
+        oPdfDoc.SetPageSize(iTextSharp.text.PageSize.LETTER)
+
+        oPdfDoc.NewPage()
+        oImage.ScaleAbsolute(iWidthGoal, iHeightGoal)
+        oPdfWriter.DirectContent.AddImage(oImage)
+    End Sub
+
+#End Region
 
 
-            Dim Builder As New Text.StringBuilder(IsXML.ToString)
+    Public Shared Sub Print(Hidden As Boolean, Document As XpsDocument)
+        If Hidden Then
+            Dim PD As New PrintDialog
+            PD.PrintDocument(Document.GetFixedDocumentSequence.DocumentPaginator, Nothing)
+        Else
+            Dim this As New DocumentViewer With {.Document = Document.GetFixedDocumentSequence}
+            this.Print()
+        End If
+    End Sub
 
-
-            Builder.Replace("ReportProperties", "xrd:ReportProperties")
-            Builder.Replace("SectionReport", "xrd:SectionReport")
-            Builder.Replace("InlineContextValue", "xrd:InlineContextValue")
-            Builder.Replace("InlineDocumentValue", "xrd:InlineDocumentValue")
-            Builder.Replace("<Style Key", "<Style x:Key")
-            Builder.Replace("SectionDataGroup", "xrd:SectionDataGroup")
-            Builder.Replace("TableRowFor", "xrd:TableRowFor")
-
-            Builder.Replace("xmlns=""""", "")
-            'Test Fuck Fucc
-            ''''Builder.Replace("Style=""{StaticResource TableHeader}""", "")
-            Return Builder.ToString
-        End Function
-
-    End Class 'TODO Upgrade to use Aaron.XAML(I think the Report Document)
+    Public Shared Sub ShowHelper(Document As XpsDocument)
+        Dim IsForm As New Forms.Form With {.WindowState = Forms.FormWindowState.Maximized}
+        Dim this As New DocumentViewer With {.Document = Document.GetFixedDocumentSequence}
+        IsForm.Controls.Add(New Forms.Integration.ElementHost With {.Dock = Forms.DockStyle.Fill, .Child = this})
+        IsForm.ShowDialog()
+    End Sub
 
 End Class

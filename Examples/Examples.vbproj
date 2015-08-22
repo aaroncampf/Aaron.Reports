@@ -126,10 +126,6 @@
       <Project>{768c4e83-af63-45f1-8c02-eef10fecb361}</Project>
       <Name>Aaron.Reports</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Aaron.Xaml\Aaron.Xaml.vbproj">
-      <Project>{c7e21190-8e4e-440b-a1b0-56c4229b4be0}</Project>
-      <Name>Aaron.Xaml</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,15 +3,9 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Exam
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Examples.pdb
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Examples.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Reports.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Xaml.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\CodeReason.Reports.Charts.Visifire.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\CodeReason.Reports.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\itextsharp.dll
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\WPFVisifire.Charts.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Reports.pdb
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Reports.xml
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Xaml.pdb
-C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\bin\Debug\Aaron.Xaml.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.vbprojResolveAssemblyReference.cache
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.Form1.resources
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.Resources.resources

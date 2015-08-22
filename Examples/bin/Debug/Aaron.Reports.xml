@@ -6,7 +6,200 @@ Aaron.Reports
 </name>
 </assembly>
 <members>
-<member name="T:Aaron.Reports.Google.ChartItem">
+<member name="T:Aaron.Reports.DocSuperWalker">
+ <summary>
+ Dynamic cache class for report paginator
+ </summary>
+</member>
+<member name="P:Aaron.Reports.DocSuperWalker.FlowDocument">
+ <summary>
+ Gets the associated flow document
+ </summary>
+</member>
+<member name="M:Aaron.Reports.DocSuperWalker.#ctor(System.Windows.Documents.FlowDocument)">
+ <summary>
+ Constructor
+ </summary>
+ <param name="flowDocument">flow document</param>
+</member>
+<member name="M:Aaron.Reports.DocSuperWalker.GetFlowDocumentVisualListByType(System.Type)">
+ <summary>
+ Gets an ArrayList of all document visual object of a specific type
+ </summary>
+ <param name="type">type of document visual object</param>
+ <returns>empty ArrayList, if type does not exist</returns>
+</member>
+<member name="T:Aaron.Reports.DocWalker.DocumentVisitedEventHandler">
+ <summary>
+ THe delegate type of the event that will be raised
+ </summary>
+</member>
+<member name="M:Aaron.Reports.DocWalker.Walk(System.Windows.Documents.FlowDocument,Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses whole document
+ </summary>
+ <param name="fd">FlowDocument</param>
+ <returns>list of inlines</returns>
+</member>
+<member name="M:Aaron.Reports.DocWalker.Walk``1(System.Windows.Documents.FlowDocument,Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses whole document
+ </summary>
+ <param name="fd">FlowDocument</param>
+ <returns>list of inlines</returns>
+</member>
+<member name="M:Aaron.Reports.DocWalker.TraverseInlines``1(System.Windows.Documents.InlineCollection,Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses an InlineCollection
+ </summary>
+ <param name="inlines">InlineCollection to be traversed</param>
+ <returns>list of inlines</returns>
+</member>
+<member name="M:Aaron.Reports.DocWalker.TraverseParagraph``1(System.Windows.Documents.Paragraph,Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses only passed paragraph
+ </summary>
+ <param name="p">paragraph</param>
+ <returns>list of inlines</returns>
+</member>
+<member name="M:Aaron.Reports.DocWalker.TraverseBlockCollection_1``1(System.Collections.Generic.IEnumerable{System.Windows.Documents.Block},Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses passed block collection
+ </summary>
+ <param name="blocks">blocks to be traversed</param>
+ <returns>list of inlines</returns>
+    
+</member>
+<member name="M:Aaron.Reports.DocWalker.TraverseBlockCollection``1(System.Collections.Generic.IEnumerable{System.Windows.Documents.Block},Aaron.Reports.DocWalker.DocumentVisitedEventHandler)">
+ <summary>
+ Traverses passed block collection
+ </summary>
+ <param name="blocks">blocks to be traversed</param>
+ <returns>list of inlines</returns>
+    
+</member>
+<member name="T:Aaron.Reports.SectionReportHeader">
+ <summary>
+ Section representing the report header
+ </summary>
+</member>
+<member name="P:Aaron.Reports.SectionReportHeader.PageHeaderHeight">
+ <summary>
+ Gets or sets the page header height in percent
+ </summary>
+</member>
+<member name="T:Aaron.Reports.SectionReportFooter">
+ <summary>
+ Section representing the report footer
+ </summary>
+</member>
+<member name="P:Aaron.Reports.SectionReportFooter.PageFooterHeight">
+ <summary>
+ Gets or sets the page footer height in percent
+ </summary>
+</member>
+<member name="T:Aaron.Reports.IChart1">
+ <summary>
+ Interface for a chart object
+ </summary>
+</member>
+<member name="P:Aaron.Reports.IChart1.TableColumns">
+ <summary>
+ Gets or sets the table columns which are used to draw the chart
+ </summary>
+</member>
+<member name="P:Aaron.Reports.IChart1.TableName">
+ <summary>
+ Gets or sets the table name containing the data to be drawn
+ </summary>
+</member>
+<member name="P:Aaron.Reports.IChart1.DataColumns">
+ <summary>
+ Gets or sets the data columns which are used to draw the chart
+ </summary>
+</member>
+<member name="P:Aaron.Reports.IChart1.DataView">
+ <summary>
+ Data view to be used to draw the data
+ </summary>
+</member>
+<member name="M:Aaron.Reports.IChart1.UpdateChart">
+ <summary>
+ Updates the chart to use the chart data
+ </summary>
+</member>
+<member name="T:Aaron.Reports.InlineContextValue">
+ <summary>
+ Contains a single report context value that is to be displayed on the report
+ </summary>
+</member>
+<member name="P:Aaron.Reports.InlineContextValue.Format">
+ <summary>
+ Gets or sets the value format
+ </summary>
+</member>
+<member name="P:Aaron.Reports.InlineContextValue.PropertyName">
+ <summary>
+ Gets or sets the property name
+ </summary>
+</member>
+<member name="P:Aaron.Reports.InlineContextValue.Value">
+ <summary>
+ Gets or sets the object value
+ </summary>
+</member>
+<member name="M:Aaron.Reports.InlineContextValue.FormatValue(System.Object,System.String)">
+ <summary>
+ Formats a value for output
+ </summary>
+ <param name="value">value</param>
+ <param name="format">format</param>
+ <returns></returns>
+</member>
+<member name="M:Aaron.Reports.InlineContextValue.OnValueChanged(System.Windows.RoutedPropertyChangedEventArgs{System.Decimal})">
+ <summary>
+ Raises the ValueChanged event.
+ </summary>
+ <param name="args">Arguments associated with the ValueChanged event.</param>
+</member>
+<member name="T:Aaron.Reports.InlineDocumentValue">
+ <summary>
+ Contains a single report value that is to be displayed on the report (e.g. report title)
+ </summary>
+</member>
+<member name="P:Aaron.Reports.InlineDocumentValue.Format">
+ <summary>
+ Gets or sets the value format
+ </summary>
+</member>
+<member name="P:Aaron.Reports.InlineDocumentValue.Value">
+ <summary>
+ Gets or sets the object value
+ </summary>
+</member>
+<member name="F:Aaron.Reports.InlineDocumentValue.ValueChangedEvent">
+ <summary>
+ Identifies the ValueChanged routed event.
+ </summary>
+</member>
+<member name="M:Aaron.Reports.InlineDocumentValue.OnValueChanged(System.Windows.RoutedPropertyChangedEventArgs{System.Decimal})">
+ <summary>
+ Raises the ValueChanged event.
+ </summary>
+ <param name="args">Arguments associated with the ValueChanged event.</param>
+</member>
+<member name="M:Aaron.Reports.InlineDocumentValue.FormatValue(System.Object,System.String)">
+ <summary>
+ Formats a value for output
+ </summary>
+ <param name="value">value</param>
+ <param name="format">format</param>
+ <returns></returns>
+</member>
+<member name="P:Aaron.Reports.InlineDocumentValue.PropertyName">
+ <summary>Gets or sets the property name</summary>
+</member>
+<member name="T:Aaron.Reports.ReportContextValues">
  <summary>
  
  </summary>
@@ -14,104 +207,102 @@ Aaron.Reports
  <features></features>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Google.ChartItem.#ctor(System.Double,System.String,System.String)">
+<member name="T:Aaron.Reports.ReportContextValues.Types">
  <summary>
- 
- </summary>
- <param name="Value"></param>
- <param name="Lable"></param>
- <param name="Legend"></param>
- <remarks></remarks>
- <stepthrough></stepthrough>
-</member>
-<member name="T:Aaron.Reports.Google.Chart">
- <summary>
- Summary description for PieGraph
+ Enumeration of all available context value types
  </summary>
 </member>
-<member name="P:Aaron.Reports.Google.Chart.GraphTitle">
+<member name="F:Aaron.Reports.ReportContextValues.Types.PageNumber">
  <summary>
- Graph Title to be displayed above the Graph
- </summary> 
-</member>
-<member name="P:Aaron.Reports.Google.Chart.GraphWidth">
- <summary>
- Graph Dimensions width (2:1 -|- width:height)
- </summary> 
-</member>
-<member name="P:Aaron.Reports.Google.Chart.GraphHeight">
- <summary>
- Graph Dimensions Height (2:1 -|- width:height)
- </summary> 
-</member>
-<member name="P:Aaron.Reports.Google.Chart.GraphTitleColor">
- <summary>
- Graph Title Color (Title Font Color eg:5533AA)
- </summary> 
-</member>
-<member name="P:Aaron.Reports.Google.Chart.GraphTitleSize">
- <summary>
- Graph Title Size (Title Font Size in pixcels 1-20)
- </summary>  
-</member>
-<member name="P:Aaron.Reports.Google.Chart.Data">
- <summary>
- DataSet for Drawing the Graph Column:2 for Labels and Column:3 for Column Data
- </summary> 
-</member>
-<member name="M:Aaron.Reports.Google.Chart.GenerateGraph">
- <summary>
- Method which returns the Url be placed in the image src tag
+ Current page number
  </summary>
- <returns>URL String </returns>
 </member>
-<member name="P:Aaron.Reports.Mod_Test.CustomReport.Details">
- <summary>An Optional Paragraph Detailing the Report</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Left">
- <summary>The Text for the Bottom Left of the Page</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Center">
- <summary>The Text for the Bottom Center of the Page</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Bottom_Right">
- <summary>The Text for the Bottom Right of the Page</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Sections">
- <summary>The Sections that make up the Report</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Title">
- <summary>The Title of the Report</summary> 
-</member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Details">
- <summary>An Optional Paragraph Detailing the Report</summary> 
-</member>
-<member name="M:Aaron.Reports.Mod_Test.ReportDocument_Child.#ctor(System.String,System.String,System.Windows.TextAlignment)">
+<member name="F:Aaron.Reports.ReportContextValues.Types.PageCount">
  <summary>
- 
- </summary>  
- <param name="Title">The Title of the Report</param>
- <param name="Details">The Details of the Report</param>
- <param name="Paragraph_Text_Alignment"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
-</member>
-<member name="M:Aaron.Reports.Mod_Test.ReportDocument_Child.#ctor(System.String,System.String,Aaron.Reports.Sections.Base[])">
- <summary>
- 
+ Total page count
  </summary>
- <param name="Title">The Title of the Report</param>
- <param name="Details">The Details of the Report</param>
- <param name="Sections"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
 </member>
-<member name="P:Aaron.Reports.Mod_Test.ReportDocument_Child.Resources">
+<member name="F:Aaron.Reports.ReportContextValues.Types.ReportName">
  <summary>
- 
+ Report name
  </summary>
- <value></value>
- <remarks>Already set with Default Resources</remarks>
+</member>
+<member name="F:Aaron.Reports.ReportContextValues.Types.ReportTitle">
+ <summary>
+ Report title
+ </summary>
+</member>
+<member name="F:Aaron.Reports.ReportContextValues.Types.ReportDate">
+ <summary>
+ The Default Date associated with the Report
+ </summary>
+</member>
+<member name="M:Aaron.Reports.ReportContextValues.#cctor">
+ <summary>
+ Static constructor
+ </summary>
+</member>
+<member name="M:Aaron.Reports.ReportContextValues.GetReportContextValueTypeByName(System.String)">
+ <summary>
+ Gets a report context value type by name
+ </summary>
+ <param name="name">name of report context value</param>
+ <returns>null, if it does not exist</returns>
+</member>
+<member name="T:Aaron.Reports.XamlHelper">
+ <summary>
+ Helper class for XAML
+ </summary>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.LoadXamlFromString(System.String)">
+ <summary>
+ Loads a XAML object from string
+ </summary>
+ <param name="s">string containing the XAML object</param>
+ <returns>XAML object or null, if string was empty</returns>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.CloneTableRow(System.Windows.Documents.TableRow)">
+ <summary>
+ Clones a table row
+ </summary>
+ <param name="orig">original table row</param>
+ <returns>cloned table row</returns>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.CloneBlock(System.Windows.Documents.Block)">
+ <summary>
+ Clones a complete block
+ </summary>
+ <param name="orig">orininal block</param>
+ <returns>cloned block</returns>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.CloneUIElement(System.Windows.UIElement)">
+ <summary>
+ Clones a complete UIElement
+ </summary>
+ <param name="orig">original UIElement</param>
+ <returns>cloned UIElement</returns>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.SaveImageBmp(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+ <summary>
+ Saves a visual to bitmap into stream
+ </summary>
+ <param name="visual">visual</param>
+ <param name="stream">stream</param>
+ <param name="width">width</param>
+ <param name="height">height</param>
+ <param name="dpiX">X DPI resolution</param>
+ <param name="dpiY">Y DPI resolution</param>
+</member>
+<member name="M:Aaron.Reports.XamlHelper.SaveImagePng(System.Windows.Media.Visual,System.IO.Stream,System.Int32,System.Int32,System.Double,System.Double)">
+ <summary>
+ Saves a visual to PNG into stream
+ </summary>
+ <param name="visual">visual</param>
+ <param name="stream">stream</param>
+ <param name="width">width</param>
+ <param name="height">height</param>
+ <param name="dpiX">X DPI resolution</param>
+ <param name="dpiY">Y DPI resolution</param>
 </member>
 <member name="T:Aaron.Reports.My.Resources.Resources">
 <summary>
@@ -174,6 +365,69 @@ Aaron.Reports
         &lt;Style x:Key=&quot;headerFooterRowStyle&quot; TargetType=&quot;{x:Type TableRowGroup}&quot;&gt;
             &lt;Setter Property=&quot; [rest of string was truncated]&quot;;.
 </summary>
+</member>
+<member name="T:Aaron.Reports.Extensions">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRange(System.Windows.Documents.InlineCollection@,System.String[])">
+ <summary>
+ Adds A Range of Strings to A <see cref="T:System.Windows.Documents.InlineCollection">InlineCollection</see> Converting Each NewLine into A {LineBreak/} and 
+ Adding A {LineBreak/} After each Section
+ </summary>
+ <param name="InlineCollection">The InlineCollection you want to Add to</param>
+ <param name="Sections">The Sections you want to Add to the InlineCollection</param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Windows.TextAlignment,System.String[])">
+ <summary>
+ Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ </summary>
+ <param name="Table">The Table you want to Use</param>
+ <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
+ <param name="Default_Alignment"></param>
+ 
+ <param name="Cells"></param>
+ <remarks></remarks>
+ <stepthrough>The Cells you want to Add</stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Int32,System.Windows.TextAlignment,System.String[])">
+ <summary>
+ Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ </summary>
+ <param name="Table">The Table you want to Use</param>
+ <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
+ <param name="Default_Alignment"></param>
+ 
+ <param name="Cells"></param>
+ <remarks></remarks>
+ <stepthrough>The Cells you want to Add</stepthrough>
+ <filterpriority>2</filterpriority>
+</member>
+<member name="M:Aaron.Reports.Extensions.Standardize_CellBorderThickness(System.Windows.Documents.TableRowGroup,System.Single)">
+ <summary>
+ Standardizes the Actual Thickness of Cell Borders when the Cell Padding is 0
+ </summary>
+ <param name="RowGroup"></param>
+ <param name="Thickness"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Extensions.ToXML(System.Windows.DependencyObject)">
+ <summary>
+ Converts A <see cref="T:System.Windows.DependencyObject">DependencyObject</see> into an XElement
+ </summary>
+ <param name="DependencyObject"></param>
+ <returns></returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+ <filterpriority>2</filterpriority>
 </member>
 <member name="T:Aaron.Reports.Sections">
  <summary>
@@ -282,145 +536,166 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
-<member name="T:Aaron.Reports.Sections.ChartS">
+<member name="F:Aaron.Reports.ReportPaginator_Testing._paginator">
  <summary>
- A Section Containing A Chart
+ Reference to a original flowdoc paginator
  </summary>
- <remarks></remarks>
- <features></features>
- <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Sections.ChartS.#ctor(System.String,System.String,Visifire.Charts.RenderAs,System.String,System.String)">
+<member name="P:Aaron.Reports.ReportPaginator_Testing.IsPageCountValid">
  <summary>
-
+ Determines if the current page count is valid
  </summary>
- <param name="Title"></param>
- <param name="Details"></param>
- <remarks></remarks>
- <stepthrough></stepthrough>
 </member>
-<member name="P:Aaron.Reports.Chart.DataView">
- <summary>Data view to be used to draw the data</summary>
-</member>
-<member name="M:Aaron.Reports.Chart.#ctor(System.String,System.String,Visifire.Charts.RenderAs)">
+<member name="P:Aaron.Reports.ReportPaginator_Testing.PageCount">
  <summary>
- 
+ Gets the total page count
  </summary>
- <param name="ChartType"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
 </member>
-<member name="M:Aaron.Reports.Chart.#ctor(System.String,System.String,System.String,Visifire.Charts.RenderAs)">
+<member name="P:Aaron.Reports.ReportPaginator_Testing.PageSize">
  <summary>
- 
+ Gets or sets the page size
  </summary>
- <param name="ChartType"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
 </member>
-<member name="T:Aaron.Reports.Extensions">
+<member name="P:Aaron.Reports.ReportPaginator_Testing.Source">
  <summary>
- 
+ Gets the paginator source
  </summary>
- <remarks></remarks>
- <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Extensions.AddRange(System.Windows.Documents.InlineCollection@,System.String[])">
+<member name="M:Aaron.Reports.ReportPaginator_Testing.#ctor(Aaron.Reports.Basic)">
  <summary>
- Adds A Range of Strings to A <see cref="T:System.Windows.Documents.InlineCollection">InlineCollection</see> Converting Each NewLine into A {LineBreak/} and 
- Adding A {LineBreak/} After each Section
+ Constructor
  </summary>
- <param name="InlineCollection">The InlineCollection you want to Add to</param>
- <param name="Sections">The Sections you want to Add to the InlineCollection</param>
- <remarks></remarks>
- <stepthrough></stepthrough>
- <filterpriority>2</filterpriority>
+ <param name="report">report document</param>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
+ <exception cref="T:System.ArgumentException">Flow document can have only one report header section</exception>
+ <exception cref="T:System.ArgumentException">Flow document can have only one report footer section</exception>
 </member>
-<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Windows.TextAlignment,System.String[])">
+<member name="M:Aaron.Reports.ReportPaginator_Testing.FillData">
  <summary>
- Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ Fills document with data
  </summary>
- <param name="Table">The Table you want to Use</param>
- <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
- <param name="Default_Alignment"></param>
- 
- <param name="Cells"></param>
- <remarks></remarks>
- <stepthrough>The Cells you want to Add</stepthrough>
- <filterpriority>2</filterpriority>
 </member>
-<member name="M:Aaron.Reports.Extensions.AddRow(System.Windows.Documents.Table@,System.Int32,System.Int32,System.Windows.TextAlignment,System.String[])">
+<member name="M:Aaron.Reports.ReportPaginator_Testing.FillContextValues(System.Collections.ArrayList,System.Int32)">
  <summary>
- Adds A Row into the First RowGroup With Cells Emulating <paramref name="Cells"/>
+ Fills in Context Vales
  </summary>
- <param name="Table">The Table you want to Use</param>
- <param name="RowGroupIndex">The Index of the <see cref="T:System.Windows.Documents.TableRowGroup">TableRowGroup</see> You want to add the Row to</param>
- <param name="Default_Alignment"></param>
- 
- <param name="Cells"></param>
- <remarks></remarks>
- <stepthrough>The Cells you want to Add</stepthrough>
- <filterpriority>2</filterpriority>
-</member>
-<member name="M:Aaron.Reports.Extensions.Standardize_CellBorderThickness(System.Windows.Documents.TableRowGroup,System.Single)">
- <summary>
- Standardizes the Actual Thickness of Cell Borders when the Cell Padding is 0
- </summary>
- <param name="RowGroup"></param>
- <param name="Thickness"></param>
+ <param name="list"></param>
+ <param name="pageNumber"></param>
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.Extensions.ToXML(System.Windows.DependencyObject)">
+<member name="M:Aaron.Reports.ReportPaginator_Testing.GetPage(System.Int32)">
  <summary>
- Converts A <see cref="T:System.Windows.DependencyObject">DependencyObject</see> into an XElement
+ This is most important method, modifies the original 
  </summary>
- <param name="DependencyObject"></param>
+ <param name="pageNumber">page number</param>
  <returns></returns>
- <remarks></remarks>
- <stepthrough></stepthrough>
- <filterpriority>2</filterpriority>
 </member>
-<member name="T:Aaron.Reports.Reports">
+<member name="T:Aaron.Reports.Basic">
  <summary>
- 
+ Contains a complete report template without data
  </summary>
- <remarks></remarks>
- <features></features>
- <stepthrough>Disabled</stepthrough>
 </member>
-<member name="T:Aaron.Reports.Reports.Basic">
+<member name="P:Aaron.Reports.Basic.ReportDate">
  <summary>
- A Basic Report and the Base Class for All Reports
+ The Default Date associated with the Report
+ </summary>
+ <value></value>
+ <remarks>
+ <see cref="F:Aaron.Reports.ReportContextValues.Types.ReportDate"/>
+ </remarks>
+</member>
+<member name="P:Aaron.Reports.Basic.DocumentValues">
+ <summary>
+ Gets a list of document values
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Basic.ShowUnknownValues">
+ <summary>
+ Shows all unknown values on the page
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Basic.PageHeight">
+ <summary>
+ Gets the original page height of the FlowDocument
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Basic.PageWidth">
+ <summary>
+ Gets the original page width of the FlowDocument
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Basic.ReportName">
+ <summary>
+ Gets or sets the optional report name
+ </summary>
+</member>
+<member name="P:Aaron.Reports.Basic.ReportTitle">
+ <summary>
+ Gets or sets the optional report title.
  </summary>
  <remarks>
- 'TODO Upgrade to use Aaron.XAML(I think the Report Document)
+ XAML to use: {xrd:InlineContextValue Format="D" PropertyName="ReportTitle" />}
  </remarks>
- <features></features>
- <stepthrough></stepthrough>
 </member>
-<member name="P:Aaron.Reports.Reports.Basic.Bottom_Left">
- <summary>The Text for the Bottom Left of the Page</summary> 
-</member>
-<member name="P:Aaron.Reports.Reports.Basic.Bottom_Right">
- <summary>The Text for the Bottom Right of the Page</summary> 
-</member>
-<member name="P:Aaron.Reports.Reports.Basic.Header">
- <summary>Use this to setup how the SectionReportHeader is Constructed</summary>
-</member>
-<member name="P:Aaron.Reports.Reports.Basic.Footer">
- <summary>Use this to setup how the SectionReportFooter is Constructed</summary>
-</member>
-<member name="P:Aaron.Reports.Reports.Basic.Sections">
+<member name="P:Aaron.Reports.Basic.Sections">
  <summary>The Sections that make up the Report</summary> 
 </member>
-<member name="P:Aaron.Reports.Reports.Basic.Title">
+<member name="P:Aaron.Reports.Basic.Title">
  <summary>The Title of the Report</summary> 
 </member>
-<member name="P:Aaron.Reports.Reports.Basic.Details">
+<member name="P:Aaron.Reports.Basic.Details">
  <summary>An Optional Paragraph Detailing the Report</summary> 
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
+<member name="P:Aaron.Reports.Basic.Bottom_Left">
+ <summary>The Text for the Bottom Left of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Basic.Bottom_Right">
+ <summary>The Text for the Bottom Right of the Page</summary> 
+</member>
+<member name="M:Aaron.Reports.Basic.CreateXpsDocument">
+ <summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Aaron.Reports.Basic.CreateFlowDocument">
+ <summary>
+ Creates a flow document of the report data
+ </summary>
+ <returns></returns>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
+ <exception cref="T:System.ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
+</member>
+<member name="M:Aaron.Reports.Basic.AsPDF">
+ <summary>
+ 
+ </summary>
+ <returns>The Full Name of the PDF File</returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.Print(System.Boolean)">
+ <summary>
+ 
+ </summary>
+ <param name="Hidden"></param>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.GetString">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks>
+ Aaron Campf: 6/7/2013 Added [Formatted_Sections]
+ </remarks>
+ <stepthrough>Disabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
  <summary>
  
  </summary>  
@@ -430,7 +705,7 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.#ctor(System.String,System.String,Aaron.Reports.Sections.Base[])">
+<member name="M:Aaron.Reports.Basic.#ctor(System.String,System.String,Aaron.Reports.Sections.Base[])">
  <summary>
  
  </summary>
@@ -440,39 +715,16 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
-<member name="M:Aaron.Reports.Reports.Basic.AsPDF">
- <summary>
- Converts the report into a PDF file and returns the files's path
- </summary>
- <returns>The Full Name of the PDF File</returns>
- <remarks></remarks>
- <stepthrough></stepthrough>
-</member>
-<member name="M:Aaron.Reports.Reports.Basic.Print(System.Boolean)">
+<member name="M:Aaron.Reports.Basic.AddPage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
  <summary>
  
  </summary>
- <param name="Hidden"></param>
+ <param name="Resize"></param>
+ <param name="Image"></param>
+ <param name="oPdfDoc"></param>
+ <param name="oPdfWriter"></param>
  <remarks></remarks>
  <stepthrough></stepthrough>
-</member>
-<member name="M:Aaron.Reports.Reports.Basic.Show">
- <summary>
- Prepares A <see cref="T:CodeReason.Reports.ReportDocument">ReportDocument</see> and <see cref="T:CodeReason.Reports.ReportData">ReportData</see>
- and Uses then in <see cref="!:ShowHelper"/>
- </summary>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
-</member>
-<member name="M:Aaron.Reports.Reports.Basic.GetString">
- <summary>
- 
- </summary>
- <returns></returns>
- <remarks>
- Aaron Campf: 6/7/2013 Added [Formatted_Sections]
- </remarks>
- <stepthrough>Disabled</stepthrough>
 </member>
 <member name="T:Aaron.Reports.XpsImage">
  <summary>
@@ -516,7 +768,7 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.XpsImage.Save(Aaron.Reports.Reports.Basic)">
+<member name="M:Aaron.Reports.XpsImage.Save(Aaron.Reports.Basic)">
  <summary>
  Feature Not Constructed Yet
  </summary>
