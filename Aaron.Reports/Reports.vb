@@ -236,9 +236,12 @@ Public Class Basic
             <FlowDocument
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:xrd="clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml"
+                xmlns:xrd="clr-namespace:Aaron.Reports;assembly=Aaron.Reports"
                 PageHeight="29.7cm" PageWidth="21cm" ColumnWidth="21cm">
-                <!--xmlns:crcv="clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire"-->
+                <!--
+                xmlns:xrd="clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml"
+                xmlns:crcv="clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire"
+                -->
 
                 <%= Me.Resources %>
 

@@ -21,3 +21,16 @@ C:\Storage\_Work\AJP\NeoDesktop\Aaron.Reports\obj\Release\Aaron.Reports.vbproj.G
 C:\Storage\_Work\AJP\NeoDesktop\Aaron.Reports\obj\Release\Aaron.Reports.dll
 C:\Storage\_Work\AJP\NeoDesktop\Aaron.Reports\obj\Release\Aaron.Reports.xml
 C:\Storage\_Work\AJP\NeoDesktop\Aaron.Reports\obj\Release\Aaron.Reports.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Release\Aaron.Reports.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Release\Aaron.Reports.pdb
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Release\Aaron.Reports.xml
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\bin\Release\itextsharp.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.vbprojResolveAssemblyReference.cache
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\LineGraph!.baml
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports_MarkupCompile.cache
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.g.resources
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.Resources.resources
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.vbproj.GenerateResource.Cache
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.dll
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.xml
+C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Release\Aaron.Reports.pdb

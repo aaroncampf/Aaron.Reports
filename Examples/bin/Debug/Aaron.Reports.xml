@@ -536,32 +536,32 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
-<member name="F:Aaron.Reports.ReportPaginator_Testing._paginator">
+<member name="F:Aaron.Reports.ReportPaginator._paginator">
  <summary>
  Reference to a original flowdoc paginator
  </summary>
 </member>
-<member name="P:Aaron.Reports.ReportPaginator_Testing.IsPageCountValid">
+<member name="P:Aaron.Reports.ReportPaginator.IsPageCountValid">
  <summary>
  Determines if the current page count is valid
  </summary>
 </member>
-<member name="P:Aaron.Reports.ReportPaginator_Testing.PageCount">
+<member name="P:Aaron.Reports.ReportPaginator.PageCount">
  <summary>
  Gets the total page count
  </summary>
 </member>
-<member name="P:Aaron.Reports.ReportPaginator_Testing.PageSize">
+<member name="P:Aaron.Reports.ReportPaginator.PageSize">
  <summary>
  Gets or sets the page size
  </summary>
 </member>
-<member name="P:Aaron.Reports.ReportPaginator_Testing.Source">
+<member name="P:Aaron.Reports.ReportPaginator.Source">
  <summary>
  Gets the paginator source
  </summary>
 </member>
-<member name="M:Aaron.Reports.ReportPaginator_Testing.#ctor(Aaron.Reports.Basic)">
+<member name="M:Aaron.Reports.ReportPaginator.#ctor(Aaron.Reports.Basic)">
  <summary>
  Constructor
  </summary>
@@ -571,12 +571,12 @@ Aaron.Reports
  <exception cref="T:System.ArgumentException">Flow document can have only one report header section</exception>
  <exception cref="T:System.ArgumentException">Flow document can have only one report footer section</exception>
 </member>
-<member name="M:Aaron.Reports.ReportPaginator_Testing.FillData">
+<member name="M:Aaron.Reports.ReportPaginator.FillData">
  <summary>
  Fills document with data
  </summary>
 </member>
-<member name="M:Aaron.Reports.ReportPaginator_Testing.FillContextValues(System.Collections.ArrayList,System.Int32)">
+<member name="M:Aaron.Reports.ReportPaginator.FillContextValues(System.Collections.ArrayList,System.Int32)">
  <summary>
  Fills in Context Vales
  </summary>
@@ -585,7 +585,7 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough></stepthrough>
 </member>
-<member name="M:Aaron.Reports.ReportPaginator_Testing.GetPage(System.Int32)">
+<member name="M:Aaron.Reports.ReportPaginator.GetPage(System.Int32)">
  <summary>
  This is most important method, modifies the original 
  </summary>

@@ -65,10 +65,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Import Include="Aaron" />
-    <Import Include="Aaron.Main" />
-    <Import Include="Aaron.Main.Extensions" />
-    <Import Include="Aaron.Reports.Extensions" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
