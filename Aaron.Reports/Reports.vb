@@ -394,8 +394,8 @@ Public Class Basic
     ''' <remarks></remarks>
     ''' <stepthrough></stepthrough>
     Shared Sub AddPage(Resize As Boolean, Image As IO.MemoryStream, ByRef oPdfDoc As iTextSharp.text.Document, oPdfWriter As iTextSharp.text.pdf.PdfWriter)
-        Dim oImage As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(Image)
-        Dim iWidth As Single = oImage.Width, iHeight As Single = oImage.Height
+		Dim oImage As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(Image)
+		Dim iWidth As Single = oImage.Width, iHeight As Single = oImage.Height
 
         If Resize Then
             oImage.SetAbsolutePosition(1, 1)
