@@ -9,7 +9,7 @@ All reports are created using Aaron.Report.Basic.
 To add content to the report use Add items to the report's Section property or insert custom XAML in the CustomXAML property.
 
 ##Report Features
-A repor starts out as a Basic
+A report starts out as a Basic
 
 ### Save As PDF
 To save the report as a PDF use the method AsPDF.
