@@ -47,9 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.1.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External References\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -97,9 +97,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Extensions.vb" />
-    <Compile Include="Sections.vb" />
+    <Compile Include="Sections\Base.vb" />
+    <Compile Include="Sections\Basic.vb" />
+    <Compile Include="Sections\List.vb" />
+    <Compile Include="Sections\Pictures.vb" />
     <Compile Include="Document Generator\ReportPaginator.vb" />
     <Compile Include="Reports.vb" />
+    <Compile Include="Sections\Table.vb" />
     <Compile Include="XpsImage.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +124,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="LineGraph!.xaml">
