@@ -1,5 +1,5 @@
 # Simple-WPF-Reports
-Designed to be the simplist report generator possible. You do not need use datasets, just use simple imperative code to build the report one line at a time.
+Designed to be the simplist report generator possible. You do not need to use datasets, just use simple imperative code to build the report one line at a time.
 Everything in a report other then the header and footer are sections. 
 
 
