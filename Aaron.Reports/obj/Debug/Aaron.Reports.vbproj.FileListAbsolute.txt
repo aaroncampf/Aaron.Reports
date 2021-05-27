@@ -54,3 +54,18 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.dll
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Aaron.Reports\obj\Debug\Aaron.Reports.pdb
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\bin\Debug\Aaron.Reports.dll
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\bin\Debug\Aaron.Reports.pdb
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\bin\Debug\Aaron.Reports.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\bin\Debug\itextsharp.dll
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\bin\Debug\itextsharp.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\LineGraph!.baml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports_MarkupCompile.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.g.resources
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.Resources.resources
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.vbproj.GenerateResource.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.vbproj.CoreCompileInputs.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.vbproj.CopyComplete
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.dll
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Aaron.Reports\obj\Debug\Aaron.Reports.pdb

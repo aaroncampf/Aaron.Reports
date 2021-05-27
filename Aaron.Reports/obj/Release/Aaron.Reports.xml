@@ -6,6 +6,68 @@ Aaron.Reports
 </name>
 </assembly>
 <members>
+<member name="T:Aaron.Reports.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ChartReport">
+<summary>
+  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
+              xmlns:crcv=&quot;clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire&quot;
+              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
+    &lt;xrd:ReportProperties&gt;
+        &lt;xrd:ReportProperties.ReportName&gt;Ch [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.ChartTable">
+<summary>
+  Looks up a localized string similar to &lt;Paragraph&gt;
+    &lt;crcv:ColumnChart TableName=&quot;{0}&quot; TableColumns=&quot;{1},{2}&quot; Width=&quot;{3}cm&quot; Height=&quot;{4}cm&quot; View3D=&quot;{5}&quot; Title=&quot;{6}&quot;&gt;&lt;/crcv:ColumnChart&gt;
+&lt;/Paragraph&gt;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.MyText">
+<summary>
+  Looks up a localized string similar to &lt;xrd:SectionDataGroup DataGroupName=&quot;Group2&quot;&gt;
+    &lt;Paragraph FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; BorderThickness=&quot;2&quot;&gt;{1}&lt;/Paragraph&gt;
+    &lt;Table CellSpacing=&quot;0&quot; BorderBrush=&quot;Black&quot; BorderThickness=&quot;2&quot;&gt;
+        &lt;TableRowGroup Style=&quot;{StaticResource headerFooterRowStyle}&quot;&gt;
+            &lt;xrd:TableRowForDynamicHeader TableName=&quot;{2}&quot;/&gt;
+        &lt;/TableRowGroup&gt;
+
+        &lt;TableRowGroup Style=&quot;{StaticResource dataRowStyle}&quot;&gt;
+            &lt;xrd:TableRowForDynamicDataTable TableName=&quot;{0}&quot;/&gt;
+        &lt;/TableRowGroup&gt;
+ [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:Aaron.Reports.My.Resources.Resources.Template1">
+<summary>
+  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
+              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
+
+    &lt;FlowDocument.Resources&gt;
+        &lt;!-- Style for header/footer rows. --&gt;
+        &lt;Style x:Key=&quot;headerFooterRowStyle&quot; TargetType=&quot;{x:Type TableRowGroup}&quot;&gt;
+            &lt;Setter Property=&quot; [rest of string was truncated]&quot;;.
+</summary>
+</member>
 <member name="T:Aaron.Reports.DocSuperWalker">
  <summary>
  Dynamic cache class for report paginator
@@ -304,68 +366,6 @@ Aaron.Reports
  <param name="dpiX">X DPI resolution</param>
  <param name="dpiY">Y DPI resolution</param>
 </member>
-<member name="T:Aaron.Reports.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.ResourceManager">
-<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.Culture">
-<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.ChartReport">
-<summary>
-  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
-              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
-              xmlns:crcv=&quot;clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire&quot;
-              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
-    &lt;xrd:ReportProperties&gt;
-        &lt;xrd:ReportProperties.ReportName&gt;Ch [rest of string was truncated]&quot;;.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.ChartTable">
-<summary>
-  Looks up a localized string similar to &lt;Paragraph&gt;
-    &lt;crcv:ColumnChart TableName=&quot;{0}&quot; TableColumns=&quot;{1},{2}&quot; Width=&quot;{3}cm&quot; Height=&quot;{4}cm&quot; View3D=&quot;{5}&quot; Title=&quot;{6}&quot;&gt;&lt;/crcv:ColumnChart&gt;
-&lt;/Paragraph&gt;.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.MyText">
-<summary>
-  Looks up a localized string similar to &lt;xrd:SectionDataGroup DataGroupName=&quot;Group2&quot;&gt;
-    &lt;Paragraph FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; BorderThickness=&quot;2&quot;&gt;{1}&lt;/Paragraph&gt;
-    &lt;Table CellSpacing=&quot;0&quot; BorderBrush=&quot;Black&quot; BorderThickness=&quot;2&quot;&gt;
-        &lt;TableRowGroup Style=&quot;{StaticResource headerFooterRowStyle}&quot;&gt;
-            &lt;xrd:TableRowForDynamicHeader TableName=&quot;{2}&quot;/&gt;
-        &lt;/TableRowGroup&gt;
-
-        &lt;TableRowGroup Style=&quot;{StaticResource dataRowStyle}&quot;&gt;
-            &lt;xrd:TableRowForDynamicDataTable TableName=&quot;{0}&quot;/&gt;
-        &lt;/TableRowGroup&gt;
- [rest of string was truncated]&quot;;.
-</summary>
-</member>
-<member name="P:Aaron.Reports.My.Resources.Resources.Template1">
-<summary>
-  Looks up a localized string similar to &lt;FlowDocument xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
-              xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-              xmlns:xrd=&quot;clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports&quot;
-              PageHeight=&quot;29.7cm&quot; PageWidth=&quot;21cm&quot; ColumnWidth=&quot;21cm&quot;&gt;
-
-    &lt;FlowDocument.Resources&gt;
-        &lt;!-- Style for header/footer rows. --&gt;
-        &lt;Style x:Key=&quot;headerFooterRowStyle&quot; TargetType=&quot;{x:Type TableRowGroup}&quot;&gt;
-            &lt;Setter Property=&quot; [rest of string was truncated]&quot;;.
-</summary>
-</member>
 <member name="T:Aaron.Reports.Extensions">
  <summary>
  
@@ -429,14 +429,6 @@ Aaron.Reports
  <stepthrough></stepthrough>
  <filterpriority>2</filterpriority>
 </member>
-<member name="T:Aaron.Reports.Sections">
- <summary>
-
- </summary>
- <remarks></remarks>
- <features></features>
- <stepthrough>Disabled</stepthrough>
-</member>
 <member name="T:Aaron.Reports.Sections.Base">
  <summary>
  The Base Section that all Sections Derive From
@@ -470,6 +462,27 @@ Aaron.Reports
 </member>
 <member name="P:Aaron.Reports.Sections.Basic.Custom_XAML">
  <summary>Represents the Custom Content for this Section. By Default this is not used</summary> 
+</member>
+<member name="P:Aaron.Reports.Sections.List.List">
+ <summary>A Bulleted List where the Text of Each Item is the ListItem's Tag</summary>
+</member>
+<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.String[])">
+ <summary>
+
+ </summary>
+ <param name="Title">The Title of the List. If Empty then Not Used</param>
+ <param name="ListItems"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.Windows.Documents.ListItem[])">
+ <summary>
+
+ </summary>
+ <param name="Title">The Title of the List. If Empty then Not Used</param>
+ <param name="ListItems"></param>
+ <remarks></remarks>
+ <stepthrough>Enabled</stepthrough>
 </member>
 <member name="P:Aaron.Reports.Sections.Pictures.Pictures">
  <summary>
@@ -514,27 +527,6 @@ Aaron.Reports
  <param name="Columns">The Column Header Row's values are Created from each TableColumn's Tag</param>
  <remarks></remarks>
  <stepthrough></stepthrough>
-</member>
-<member name="P:Aaron.Reports.Sections.List.List">
- <summary>A Bulleted List where the Text of Each Item is the ListItem's Tag</summary>
-</member>
-<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.String[])">
- <summary>
-
- </summary>
- <param name="Title">The Title of the List. If Empty then Not Used</param>
- <param name="ListItems"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
-</member>
-<member name="M:Aaron.Reports.Sections.List.#ctor(System.String,System.Windows.Documents.ListItem[])">
- <summary>
-
- </summary>
- <param name="Title">The Title of the List. If Empty then Not Used</param>
- <param name="ListItems"></param>
- <remarks></remarks>
- <stepthrough>Enabled</stepthrough>
 </member>
 <member name="F:Aaron.Reports.ReportPaginator._paginator">
  <summary>
@@ -654,47 +646,6 @@ Aaron.Reports
 <member name="P:Aaron.Reports.Basic.Bottom_Right">
  <summary>The Text for the Bottom Right of the Page</summary> 
 </member>
-<member name="M:Aaron.Reports.Basic.CreateXpsDocument">
- <summary>
- Helper method to create page header or footer from flow document template
- </summary>
- <returns></returns>
-</member>
-<member name="M:Aaron.Reports.Basic.CreateFlowDocument">
- <summary>
- Creates a flow document of the report data
- </summary>
- <returns></returns>
- <exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
- <exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
- <exception cref="T:System.ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
-</member>
-<member name="M:Aaron.Reports.Basic.AsPDF">
- <summary>
- 
- </summary>
- <returns>The Full Name of the PDF File</returns>
- <remarks></remarks>
- <stepthrough></stepthrough>
-</member>
-<member name="M:Aaron.Reports.Basic.Print(System.Boolean)">
- <summary>
- 
- </summary>
- <param name="Hidden"></param>
- <remarks></remarks>
- <stepthrough></stepthrough>
-</member>
-<member name="M:Aaron.Reports.Basic.GetString">
- <summary>
- 
- </summary>
- <returns></returns>
- <remarks>
- Aaron Campf: 6/7/2013 Added [Formatted_Sections]
- </remarks>
- <stepthrough>Disabled</stepthrough>
-</member>
 <member name="M:Aaron.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
  <summary>
  
@@ -715,6 +666,13 @@ Aaron.Reports
  <remarks></remarks>
  <stepthrough>Enabled</stepthrough>
 </member>
+<member name="M:Aaron.Reports.Basic.AsPDF(System.Windows.Xps.Packaging.XpsDocument)">
+ <summary>
+ Creates a PDF and saves it to a temporary file and returns that files name.
+ </summary>
+ <param name="Document"></param>
+ <returns></returns>
+</member>
 <member name="M:Aaron.Reports.Basic.AddPage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
  <summary>
  
@@ -725,6 +683,52 @@ Aaron.Reports
  <param name="oPdfWriter"></param>
  <remarks></remarks>
  <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.CreateXpsDocument">
+ <summary>
+ Helper method to create page header or footer from flow document template
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Aaron.Reports.Basic.CreateFlowDocument">
+ <summary>
+ Creates a flow document of the report data
+ </summary>
+ <returns></returns>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page height</exception>
+ <exception cref="T:System.ArgumentException">Flow document must have a specified page width</exception>
+ <exception cref="T:System.ArgumentException">"Flow document must have only one ReportProperties section, but it has {0}"</exception>
+</member>
+<member name="M:Aaron.Reports.Basic.AsPDF">
+ <summary>
+ Creates a PDF and saves it to a temporary file and returns that files name.
+ </summary>
+ <returns>The Full Name of the PDF File</returns>
+ <remarks></remarks>
+ <stepthrough></stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.Print(System.Boolean)">
+ <summary>
+ Prints this document automatically or with a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see>
+ </summary>
+ <param name="Hidden">If <c>True</c> Print the document immediately <c>Else</c> show the user a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see> for printing purposes</param>
+</member>
+<member name="M:Aaron.Reports.Basic.GetString">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks>
+ Aaron Campf: 6/7/2013 Added [Formatted_Sections]
+ </remarks>
+ <stepthrough>Disabled</stepthrough>
+</member>
+<member name="M:Aaron.Reports.Basic.Print(System.Boolean,System.Windows.Xps.Packaging.XpsDocument)">
+ <summary>
+ Prints the <paramref name="Document"/> automatically or with a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see>
+ </summary>
+ <param name="Hidden">If <c>True</c> Print the document immediately <c>Else</c> show the user a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see> for printing purposes</param>
+ <param name="Document">The document you want to print</param>
 </member>
 <member name="T:Aaron.Reports.XpsImage">
  <summary>

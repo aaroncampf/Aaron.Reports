@@ -13,3 +13,21 @@ C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Exam
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.exe
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.xml
 C:\Users\Aaron Campf\Documents\GitHub\Simple-WPF-Reports\Examples\obj\Debug\Examples.pdb
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.vbprojAssemblyReference.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.Form1.resources
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.Resources.resources
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.vbproj.GenerateResource.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.vbproj.CoreCompileInputs.cache
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Examples.exe.config
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Examples.exe
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Examples.pdb
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Examples.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Aaron.Reports.dll
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\itextsharp.dll
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Aaron.Reports.pdb
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\Aaron.Reports.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\bin\Debug\itextsharp.xml
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.vbproj.CopyComplete
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.exe
+C:\Users\acampf\Documents\GitHub\Aaron.Reports\Examples\obj\Debug\Examples.pdb
