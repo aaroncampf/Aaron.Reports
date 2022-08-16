@@ -139,7 +139,7 @@ Public Class ReportPaginator
 
     Private Function CloneVisualBlock(block As Block, pageNumber As Integer) As ContainerVisual
         Dim tmpDoc As New FlowDocument() With
-            {.ColumnWidth = Double.PositiveInfinity, .PageHeight = _report.PageHeight, .PageWidth = _report.PageWidth, .PagePadding = New Thickness(0)}
+            {.ColumnWidth = Double.PositiveInfinity, .PageHeight = _report.PageHeight_Remember, .PageWidth = _report.PageWidth_Remember, .PagePadding = New Thickness(0)}
 
         Dim xaml As String = XamlWriter.Save(block)
         Dim newBlock As Block = TryCast(XamlReader.Parse(xaml), Block)
@@ -231,7 +231,7 @@ Public Class ReportPaginator
         If _blockPageHeader Is Nothing Then
             smallerPage.Offset = New Vector(0, 0)
         Else
-            smallerPage.Offset = New Vector(0, _blockPageHeader.PageHeaderHeight / 100.0 * _report.PageHeight)
+            smallerPage.Offset = New Vector(0, _blockPageHeader.PageHeaderHeight / 100.0 * _report.PageHeight_Remember)
         End If
 
         smallerPage.Children.Add(page.Visual)
@@ -242,17 +242,17 @@ Public Class ReportPaginator
             'Here is the Problem!!!!
             Dim v As ContainerVisual = CloneVisualBlock(_blockPageFooter, pageNumber + 1)
             'v.Offset = New Vector(0, _report.PageHeight - _report.PageFooterHeight / 100.0 * _report.PageHeight)
-            v.Offset = New Vector(0, _report.PageHeight - _blockPageFooter.PageFooterHeight / 100.0 * _report.PageHeight)
+            v.Offset = New Vector(0, _report.PageHeight_Remember - _blockPageFooter.PageFooterHeight / 100.0 * _report.PageHeight_Remember)
             newPage.Children.Add(v)
         End If
 
         ' create modified BleedBox
-        Dim bleedBox As New Rect(page.BleedBox.Left, page.BleedBox.Top, page.BleedBox.Width, _report.PageHeight - (page.Size.Height - page.BleedBox.Size.Height))
+        Dim bleedBox As New Rect(page.BleedBox.Left, page.BleedBox.Top, page.BleedBox.Width, _report.PageHeight_Remember - (page.Size.Height - page.BleedBox.Size.Height))
 
         ' create modified ContentBox
-        Dim contentBox As New Rect(page.ContentBox.Left, page.ContentBox.Top, page.ContentBox.Width, _report.PageHeight - (page.Size.Height - page.ContentBox.Size.Height))
+        Dim contentBox As New Rect(page.ContentBox.Left, page.ContentBox.Top, page.ContentBox.Width, _report.PageHeight_Remember - (page.Size.Height - page.ContentBox.Size.Height))
 
-        Dim dp As New DocumentPage(newPage, New Size(_report.PageWidth, _report.PageHeight), bleedBox, contentBox)
+        Dim dp As New DocumentPage(newPage, New Size(_report.PageWidth_Remember, _report.PageHeight_Remember), bleedBox, contentBox)
         '_report.FireEventGetPageCompleted(New GetPageCompletedEventArgs(page, pageNumber, Nothing, False, Nothing))
         Return dp
     End Function

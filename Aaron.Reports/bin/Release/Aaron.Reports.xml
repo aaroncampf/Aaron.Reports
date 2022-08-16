@@ -608,12 +608,12 @@ Aaron.Reports
  Shows all unknown values on the page
  </summary>
 </member>
-<member name="P:Aaron.Reports.Basic.PageHeight">
+<member name="P:Aaron.Reports.Basic.PageHeight_Remember">
  <summary>
  Gets the original page height of the FlowDocument
  </summary>
 </member>
-<member name="P:Aaron.Reports.Basic.PageWidth">
+<member name="P:Aaron.Reports.Basic.PageWidth_Remember">
  <summary>
  Gets the original page width of the FlowDocument
  </summary>
@@ -645,6 +645,12 @@ Aaron.Reports
 </member>
 <member name="P:Aaron.Reports.Basic.Bottom_Right">
  <summary>The Text for the Bottom Right of the Page</summary> 
+</member>
+<member name="P:Aaron.Reports.Basic.PageHeight">
+ <summary>The page height for non-CustomXAML</summary> 
+</member>
+<member name="P:Aaron.Reports.Basic.PageWidth">
+ <summary>The page width for non-CustomXAML</summary> 
 </member>
 <member name="M:Aaron.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
  <summary>

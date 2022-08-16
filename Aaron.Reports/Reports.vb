@@ -36,12 +36,12 @@ Public Class Basic
 	''' <summary>
 	''' Gets the original page height of the FlowDocument
 	''' </summary>
-	Public ReadOnly Property PageHeight As Double = Double.NaN
+	Friend ReadOnly Property PageHeight_Remember As Double = Double.NaN
 
 	''' <summary>
 	''' Gets the original page width of the FlowDocument
 	''' </summary>
-	Public ReadOnly Property PageWidth As Double = Double.NaN
+	Friend ReadOnly Property PageWidth_Remember As Double = Double.NaN
 
 	''' <summary>
 	''' Gets or sets the optional report name
@@ -112,6 +112,13 @@ Public Class Basic
 
 	''' <summary>The Text for the Bottom Right of the Page</summary> 
 	Property Bottom_Right As New Documents.Paragraph
+
+	''' <summary>The page height for non-CustomXAML</summary> 
+	Public Property PageHeight As String = "29.7cm"
+
+	''' <summary>The page width for non-CustomXAML</summary> 
+	Public Property PageWidth As String = "21cm"
+
 
 #End Region
 
@@ -294,15 +301,15 @@ Public Class Basic
 		End If
 
 		' remember original values
-		_PageHeight = res.PageHeight
-		_PageWidth = res.PageWidth
+		_PageHeight_Remember = res.PageHeight
+		_PageWidth_Remember = res.PageWidth
 
 		Dim headers As List(Of SectionReportHeader) = DocWalker.Walk(Of SectionReportHeader)(res)
 		Dim footers As List(Of SectionReportFooter) = DocWalker.Walk(Of SectionReportFooter)(res)
 
 		' make height smaller to have enough space for page header and page footer
 		'res.PageHeight = _pageHeight - _pageHeight * (PageHeaderHeight + PageFooterHeight) / 100.0
-		res.PageHeight = _PageHeight - _PageHeight * (
+		res.PageHeight = _PageHeight_Remember - _PageHeight_Remember * (
 			If(headers.Count = 0, 0, headers.First.PageHeaderHeight) +
 			If(footers.Count = 0, 0, footers.First.PageFooterHeight)) / 100.0
 
@@ -368,7 +375,7 @@ Public Class Basic
 				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:xrd="clr-namespace:Aaron.Reports;assembly=Aaron.Reports"
-				PageHeight="29.7cm" PageWidth="21cm" ColumnWidth="21cm">
+				PageHeight=<%= PageHeight %> PageWidth=<%= PageWidth %> ColumnWidth=<%= PageWidth %>>
 				<!--
                 xmlns:xrd="clr-namespace:Aaron.Xaml;assembly=Aaron.Xaml"
                 xmlns:crcv="clr-namespace:CodeReason.Reports.Charts.Visifire;assembly=CodeReason.Reports.Charts.Visifire"
