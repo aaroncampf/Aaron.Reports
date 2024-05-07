@@ -167,7 +167,7 @@ Public Class Basic
 	''' <param name="Document"></param>
 	''' <returns></returns>
 	Public Shared Function AsPDF(Document As XpsDocument) As String
-		Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+		Dim TempFile As String = IO.Path.ChangeExtension(My.Computer.FileSystem.GetTempFileName, "pdf")
 
 		'TODO Make sure this Using Works Properly
 		Using Stream As New IO.FileStream(TempFile, IO.FileMode.Create)
@@ -176,7 +176,7 @@ Public Class Basic
 			oPdfDoc.Open()
 
 			For I = 0 To Document.GetFixedDocumentSequence.DocumentPaginator.PageCount - 1
-				AddPage(True, AsStream(Document, I), oPdfDoc, oPdfWriter)
+				AddPage(True, AsPNG(Document, I), oPdfDoc, oPdfWriter)
 			Next
 
 			oPdfDoc.Close()
@@ -186,8 +186,7 @@ Public Class Basic
 		Return TempFile
 	End Function
 
-
-	Private Shared Function AsStream(Document As XpsDocument, Page As Integer) As String
+	Private Shared Function AsPNG(Document As XpsDocument, Page As Integer) As String
 		Dim bitmapEncoder As New Media.Imaging.JpegBitmapEncoder
 		Dim documentPage As DocumentPage = Document.GetFixedDocumentSequence.DocumentPaginator.GetPage(Page)
 		Dim targetBitmap As New Media.Imaging.RenderTargetBitmap(documentPage.Size.Width * 5, documentPage.Size.Height * 5, 96.0 * 5, 96.0 * 5, Media.PixelFormats.Pbgra32)
@@ -195,7 +194,7 @@ Public Class Basic
 		targetBitmap.Render(documentPage.Visual)
 		bitmapEncoder.Frames.Add(Media.Imaging.BitmapFrame.Create(targetBitmap))
 
-		Dim TempFile As String = My.Computer.FileSystem.GetTempFileName
+		Dim TempFile As String = IO.Path.ChangeExtension(My.Computer.FileSystem.GetTempFileName, "png")
 		Using Stream As New IO.FileStream(TempFile, FileMode.Create)
 			bitmapEncoder.Save(Stream)
 		End Using
