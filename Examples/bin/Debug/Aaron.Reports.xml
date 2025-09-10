@@ -608,12 +608,12 @@ Aaron.Reports
  Shows all unknown values on the page
  </summary>
 </member>
-<member name="P:Aaron.Reports.Basic.PageHeight">
+<member name="P:Aaron.Reports.Basic.PageHeight_Remember">
  <summary>
  Gets the original page height of the FlowDocument
  </summary>
 </member>
-<member name="P:Aaron.Reports.Basic.PageWidth">
+<member name="P:Aaron.Reports.Basic.PageWidth_Remember">
  <summary>
  Gets the original page width of the FlowDocument
  </summary>
@@ -646,6 +646,12 @@ Aaron.Reports
 <member name="P:Aaron.Reports.Basic.Bottom_Right">
  <summary>The Text for the Bottom Right of the Page</summary> 
 </member>
+<member name="P:Aaron.Reports.Basic.PageHeight">
+ <summary>The page height for non-CustomXAML</summary> 
+</member>
+<member name="P:Aaron.Reports.Basic.PageWidth">
+ <summary>The page width for non-CustomXAML</summary> 
+</member>
 <member name="M:Aaron.Reports.Basic.#ctor(System.String,System.String,System.Windows.TextAlignment)">
  <summary>
  
@@ -673,12 +679,12 @@ Aaron.Reports
  <param name="Document"></param>
  <returns></returns>
 </member>
-<member name="M:Aaron.Reports.Basic.AddPage(System.Boolean,System.IO.MemoryStream,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
+<member name="M:Aaron.Reports.Basic.AddPage(System.Boolean,System.String,iTextSharp.text.Document@,iTextSharp.text.pdf.PdfWriter)">
  <summary>
  
  </summary>
  <param name="Resize"></param>
- <param name="Image"></param>
+ <param name="ImagePath"></param>
  <param name="oPdfDoc"></param>
  <param name="oPdfWriter"></param>
  <remarks></remarks>
@@ -712,6 +718,12 @@ Aaron.Reports
  Prints this document automatically or with a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see>
  </summary>
  <param name="Hidden">If <c>True</c> Print the document immediately <c>Else</c> show the user a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see> for printing purposes</param>
+</member>
+<member name="M:Aaron.Reports.Basic.Print(System.String)">
+ <summary>
+ Prints this document automatically or with a <see cref="T:System.Windows.Controls.PrintDialog">PrintDialog</see>
+ </summary>
+ <param name="PrinterName">The name of the printer to use</param>
 </member>
 <member name="M:Aaron.Reports.Basic.GetString">
  <summary>

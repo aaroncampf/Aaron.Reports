@@ -350,6 +350,16 @@ Public Class Basic
 		Print(Hidden, Me.CreateXpsDocument())
 	End Sub
 
+	''' <summary>
+	''' Prints this document automatically or with a <see cref="PrintDialog">PrintDialog</see>
+	''' </summary>
+	''' <param name="PrinterName">The name of the printer to use</param>
+	Overridable Sub Print(PrinterName As String)
+		If String.IsNullOrEmpty(ReportDate) Then ReportDate = DateTime.Today
+		If Not DocumentValues.ContainsKey("PrintDate") Then DocumentValues.Add("PrintDate", ReportDate)
+		Print(True, Me.CreateXpsDocument(), PrinterName)
+	End Sub
+
 
 	''' <summary>
 	''' 
@@ -459,6 +469,48 @@ Public Class Basic
 		Else
 			Dim this As New DocumentViewer With {.Document = Document.GetFixedDocumentSequence}
 			this.Print()
+		End If
+	End Sub
+
+	Public Shared Sub Print(hidden As Boolean, document As XpsDocument, printerName As String)
+		If document Is Nothing Then
+			Throw New System.ArgumentNullException(NameOf(document))
+		End If
+		If String.IsNullOrWhiteSpace(printerName) Then
+			Throw New System.ArgumentNullException(NameOf(printerName))
+		End If
+
+		' Always use the document paginator
+		Dim paginator As System.Windows.Documents.DocumentPaginator =
+		document.GetFixedDocumentSequence().DocumentPaginator
+
+		If hidden Then
+			' Print directly to the named printer without showing a dialog
+			Dim server As New System.Printing.LocalPrintServer()
+			Dim queue As System.Printing.PrintQueue = Nothing
+
+			' Look for exact match first
+			For Each pq As System.Printing.PrintQueue In server.GetPrintQueues({Printing.EnumeratedPrintQueueTypes.Local, Printing.EnumeratedPrintQueueTypes.Connections})
+				If String.Equals(pq.FullName, printerName, StringComparison.OrdinalIgnoreCase) OrElse
+			   String.Equals(pq.Name, printerName, StringComparison.OrdinalIgnoreCase) Then
+					queue = pq
+					Exit For
+				End If
+			Next
+
+			If queue Is Nothing Then
+				Throw New InvalidOperationException("Printer not found: " & printerName)
+			End If
+
+			Dim writer As Xps.XpsDocumentWriter = System.Printing.PrintQueue.CreateXpsDocumentWriter(queue)
+			writer.Write(paginator)
+
+		Else
+			' Show normal PrintDialog (user can pick printer)
+			Dim pd As New PrintDialog()
+			If pd.ShowDialog() = True Then
+				pd.PrintDocument(paginator, "My Print Job")
+			End If
 		End If
 	End Sub
 
